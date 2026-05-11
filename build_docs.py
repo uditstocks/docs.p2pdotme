@@ -414,7 +414,7 @@ const config: Config = {{
     mermaid: true,
   }},
 
-  url: 'https://docs.p2p.foundation',
+  url: '{self.config.get("url", "https://docs.p2p.foundation")}',
   baseUrl: '/',
 
   onBrokenLinks: 'warn',
@@ -473,7 +473,7 @@ const config: Config = {{
       tagName: 'meta',
       attributes: {{
         property: 'og:url',
-        content: 'https://docs.p2p.foundation',
+        content: '{self.config.get("url", "https://docs.p2p.foundation")}',
       }},
     }},
     {{
