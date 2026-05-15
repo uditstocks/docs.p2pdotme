@@ -343,7 +343,7 @@ export default sidebars;
         navbar_config = self.config.get('navbar', {})
         footer_config = self.config.get('footer', {})
         social_links = footer_config.get('socialLinks', {})
-
+        site_url = os.environ.get('DOCS_SITE_URL') or self.config.get('url', 'https://docs.p2p.foundation')
         # Build plugins array: Biel.ai + pre-generated docs plugins
         plugins = []
 
@@ -414,7 +414,7 @@ const config: Config = {{
     mermaid: true,
   }},
 
-  url: '{self.config.get("url", "https://docs.p2p.foundation")}',
+  url: '{site_url}',
   baseUrl: '/',
 
   onBrokenLinks: 'warn',
@@ -473,7 +473,7 @@ const config: Config = {{
       tagName: 'meta',
       attributes: {{
         property: 'og:url',
-        content: '{self.config.get("url", "https://docs.p2p.foundation")}',
+        content: '{site_url}',
       }},
     }},
     {{
