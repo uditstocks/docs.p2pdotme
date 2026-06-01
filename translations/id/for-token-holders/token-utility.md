@@ -9,7 +9,7 @@ slug: token-utility
 
 **Tata Kelola.** Pemegang token memberikan suara tentang parameter protokol seperti biaya, batas, aturan merchant, dan konfigurasi oracle melalui Governor on-chain, di mana satu $P2P yang di-stake = satu suara, dengan delegasi. Alokasi treasury diatur secara terpisah melalui futarchy MetaDAO di Solana.
 
-**Staking.** Circle Admin men-stake $P2P untuk mengoperasikan jaringan merchant. Anggota komunitas mendelegasikan $P2P ke Circles untuk berpartisipasi dalam bagi hasil pendapatan. Merchant men-stake USDC sebagai modal kerja. Desain staking menyelaraskan insentif dengan mensyaratkan komitmen ekonomi di setiap lapisan.
+**Staking.** Circle Admin men-stake $P2P untuk mengoperasikan jaringan merchant. Anggota komunitas mendelegasikan USDC ke dalam pool Circle untuk mendapatkan bagian dari reward merchant. Merchant men-stake USDC sebagai modal kerja. Desain staking menyelaraskan insentif dengan mensyaratkan komitmen ekonomi di setiap lapisan.
 
 **Distribusi biaya.** Pendapatan protokol disalurkan kepada para peserta.
 

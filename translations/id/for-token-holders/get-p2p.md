@@ -50,7 +50,7 @@ Selalu verifikasi alamat kontrak di atas sebelum membeli. Jangan pernah mengklik
       </svg>
     </div>
     <p className="htb-next-title">Staking $P2P</p>
-    <p className="htb-next-desc">Dapatkan biaya protokol dengan melakukan staking token Anda.</p>
+    <p className="htb-next-desc">Staking $P2P untuk mengoperasikan Circles of Trust dan memberikan suara dalam tata kelola protokol.</p>
   </a>
   <a className="htb-next-card" href="/id/for-token-holders/token-holder-governance">
     <div className="htb-next-icon">
@@ -60,7 +60,7 @@ Selalu verifikasi alamat kontrak di atas sebelum membeli. Jangan pernah mengklik
       </svg>
     </div>
     <p className="htb-next-title">Tata Kelola</p>
-    <p className="htb-next-desc">Voting untuk proposal dan bentuk arah protokol.</p>
+    <p className="htb-next-desc">Berikan suara untuk proposal dan tentukan arah protokol.</p>
   </a>
   <a className="htb-next-card" href="/id/for-community/start-here">
     <div className="htb-next-icon">

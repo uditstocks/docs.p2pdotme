@@ -18,13 +18,15 @@ O protocolo utiliza controle de acesso baseado em capacidades (RBAC), aplicado p
 ```mermaid
 flowchart TD
     superAdmin[SuperAdmin]
-    admin[Admin]
+    globalAdmin[GlobalAdmin]
+    circleAdmin[CircleAdmin]
     users[UsersAndMerchants]
     facets[DiamondFacets]
     state[ProtocolState]
 
-    superAdmin -->|launchCurrencyAndCoreParams| facets
-    admin -->|opsParamsFeesDisputes| facets
+    superAdmin -->|launchCurrencyCoreParamsAppointAdmins| facets
+    globalAdmin -->|opsParamsFeesChannels| facets
+    circleAdmin -->|circleScopedCapabilitiesDisputeSettlement| facets
     users -->|ordersStakingDisputeRaise| facets
     facets --> state
 ```

@@ -145,7 +145,7 @@ The Monthly Spotlight awards $500 to each of three recipients, for a monthly pri
 
 | Item                                | Count | Rate       | Total             |
 | ----------------------------------- | ----- | ---------- | ----------------- |
-| Keymasters (4 countries x 4 tracks) | 16    | $200       | $3,200            |
+| Keymasters (4 countries x 4 tracks) | 16    | Up to $200 | $3,200 (max)      |
 | Ciphers (16 x 5)                    | 80    | Up to $100 | $8,000 (max)      |
 | Monthly Spotlight                   | 3     | $500       | $1,500            |
 | **Total monthly spend**             |       |            | **$12,700 (max)** |

@@ -50,7 +50,7 @@ Verifica siempre la dirección del contrato indicada arriba antes de comprar. Nu
       </svg>
     </div>
     <p className="htb-next-title">Hacer staking de $P2P</p>
-    <p className="htb-next-desc">Obtén comisiones del protocolo haciendo staking de tus tokens.</p>
+    <p className="htb-next-desc">Haz staking de $P2P para operar Circles of Trust y votar en la gobernanza del protocolo.</p>
   </a>
   <a className="htb-next-card" href="/es/for-token-holders/token-holder-governance">
     <div className="htb-next-icon">

@@ -38,7 +38,7 @@ P2P on/off ramping is critical infrastructure for emerging markets. Millions of 
 
 `$P2P` is an **ownership token**. Under the target governance model, governance operates in two layers. Treasury allocation and the ability to mint new tokens are governed by MetaDAO futarchy on Solana, a decision-market where participants stake capital on whether a proposal increases or decreases value and the market's prediction decides the outcome. Protocol parameters and contract upgrades are governed by an on-chain Compound Bravo-style Governor on Base. Across both layers, control rests with token-holder governance rather than with any single team. Through these layers, holders govern protocol parameters, direct treasury allocation, and hold enforceable governance control over protocol IP. If protocol resources or IP were ever misappropriated, token-holder governance provides the mechanism to redirect control, so control over the protocol and its resources is distributed and enforced.
 
-The token enables four things. The first is decentralized governance: holders govern protocol parameters such as fees, limits, and merchant rules through the on-chain Governor, and they govern treasury allocation through MetaDAO futarchy, so no single operator controls these decisions. The second is trust staking through Circles of Trust, where token holders stake $P2P on merchant liquidity pools to attest to their trustworthiness, earning stablecoin yield from the Circle's transaction revenue.
+The token enables four things. The first is decentralized governance: holders govern protocol parameters such as fees, limits, and merchant rules through the on-chain Governor, and they govern treasury allocation through MetaDAO futarchy, so no single operator controls these decisions. The second is staking through Circles of Trust. Circle Admins stake $P2P to operate a Circle, while community members can delegate USDC into a Circle's pool to back its merchants and receive a share of the merchant rewards.
 
 The third is a governed treasury. 20% of protocol revenue flows to the treasury, and the treasury can fund buy-and-burn or other uses only through a MetaDAO futarchy decision-market. The fourth is censorship resistance: decentralized ownership means no single point of failure, so the protocol can survive regulatory pressure in any one jurisdiction because control is distributed globally among token holders.
 
@@ -91,7 +91,7 @@ The third is a governed treasury. 20% of protocol revenue flows to the treasury,
 
 **Governance.** Token holders vote on protocol parameters such as fees, limits, merchant rules, and oracle configs through the on-chain Governor, where one staked $P2P = one vote, with delegation. Treasury allocation is governed separately through MetaDAO futarchy on Solana.
 
-**Staking.** Circle Admins stake $P2P to operate merchant networks. Community members delegate $P2P to Circles to participate in revenue sharing. Merchants stake USDC as working capital. The staking design aligns incentives by requiring economic commitment at every layer.
+**Staking.** Circle Admins stake $P2P to operate merchant networks. Community members delegate USDC into a Circle's pool to share in merchant rewards. Merchants stake USDC as working capital. The staking design aligns incentives by requiring economic commitment at every layer.
 
 **Fee distribution.** Protocol revenue is routed across participants.
 
@@ -174,7 +174,7 @@ The mechanism gives token holders direct control over treasury deployment. Reven
 
 - **Circle Admins** stake $P2P to operate merchant networks. Their stake is slashable, and a portion of their rewards is locked as an insurance buffer.
 - **Merchants** stake USDC as working capital for order fulfillment. Their capacity is bounded by their stake.
-- **Delegators** stake $P2P to Circles to earn a share of revenue. Governance voting power derives from staked $P2P (one staked $P2P equals one vote), with standard on-chain delegation.
+- **Delegators** stake USDC into a Circle's pool to earn a share of merchant rewards. Governance voting power comes from staked $P2P (one staked $P2P equals one vote), with standard on-chain delegation.
 
 ---
 
@@ -315,7 +315,7 @@ Always verify the contract address above before buying. Never click $P2P buy lin
       </svg>
     </div>
     <p className="htb-next-title">Stake $P2P</p>
-    <p className="htb-next-desc">Earn protocol fees by staking your tokens.</p>
+    <p className="htb-next-desc">Stake $P2P to operate Circles of Trust and vote in protocol governance.</p>
   </a>
   <a className="htb-next-card" href="/for-token-holders/token-holder-governance">
     <div className="htb-next-icon">

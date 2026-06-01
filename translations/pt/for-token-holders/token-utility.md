@@ -9,7 +9,7 @@ slug: token-utility
 
 **Governança.** Os detentores do token votam sobre parâmetros do protocolo, como taxas, limites, regras de comerciantes e configurações de oráculos, por meio do Governor on-chain, onde um $P2P em staking equivale a um voto, com delegação. A alocação do tesouro é governada separadamente por meio do MetaDAO futarchy na Solana.
 
-**Staking.** Os Circle Admins fazem staking de $P2P para operar redes de comerciantes. Membros da comunidade delegam $P2P para Circles of Trust para participar da distribuição de receita. Os comerciantes fazem staking de USDC como capital de giro. O modelo de staking alinha os incentivos ao exigir comprometimento econômico em cada camada.
+**Staking.** Os Circle Admins fazem staking de $P2P para operar redes de comerciantes. Membros da comunidade delegam USDC para o pool de um Circle para participar da distribuição de recompensas dos comerciantes. Os comerciantes fazem staking de USDC como capital de giro. O modelo de staking alinha os incentivos ao exigir comprometimento econômico em cada camada.
 
 **Distribuição de taxas.** A receita do protocolo é distribuída entre os participantes.
 
@@ -23,4 +23,3 @@ slug: token-utility
 Nenhuma parte isolada captura a maioria da receita do protocolo. Os comerciantes ganham mais porque fornecem capital de giro e trabalho operacional. As contribuições ao tesouro vinculam o uso do protocolo ao tesouro da rede. A governança pode direcionar esses fundos para buy-and-burn ou outros usos por meio de um mercado de decisão de futarchy do MetaDAO. Os pools de seguro existem para que disputas não se tornem custos externalizados.
 
 ---
-

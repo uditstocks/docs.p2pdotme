@@ -35,13 +35,15 @@ The protocol uses capability-based access control (RBAC), enforced through `Capa
 ```mermaid
 flowchart TD
     superAdmin[SuperAdmin]
-    admin[Admin]
+    globalAdmin[GlobalAdmin]
+    circleAdmin[CircleAdmin]
     users[UsersAndMerchants]
     facets[DiamondFacets]
     state[ProtocolState]
 
-    superAdmin -->|launchCurrencyAndCoreParams| facets
-    admin -->|opsParamsFeesDisputes| facets
+    superAdmin -->|launchCurrencyCoreParamsAppointAdmins| facets
+    globalAdmin -->|opsParamsFeesChannels| facets
+    circleAdmin -->|circleScopedCapabilitiesDisputeSettlement| facets
     users -->|ordersStakingDisputeRaise| facets
     facets --> state
 ```
@@ -103,7 +105,7 @@ When token governance activates, RP and token voting become complementary. Token
 - `facets/OrderProcessorFacet.sol` (disputes, limits, thresholds)
 - `facets/MerchantRegistryFacet.sol` and `facets/MerchantOnboardFacet.sol` (merchant controls, fees, stake/unstake)
 - `facets/OrderFlowFacet.sol` and `facets/OrderFlowHelper.sol` (order lifecycle, matching, settlement)
-- `ReputationManager.sol` (standalone UUPS contract, separate from the Diamond; RP hooks, reward/verification gating)
+- `ReputationManager.sol` (standalone UUPS contract, separate from the Diamond, with RP hooks and reward/verification gating)
 - `storages/MerchantRegistryStorage.sol`, `storages/CountryStorage.sol`, `storages/OrderProcessorStorage.sol`
 - `libraries/MerchantRegistryLib.sol`
 
