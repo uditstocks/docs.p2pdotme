@@ -22,13 +22,15 @@ Also see [`/whitepaper`](/whitepaper/abstract) for protocol design and [`/for-to
 
 ## Roles and Permissions
 
-The protocol defines three governance scopes.
+The protocol uses capability-based access control (RBAC), enforced through `CapabilityFacet` and `LibCapability`.
 
-- **Super admin** launches currencies, sets core risk/limit parameters, and manages critical protocol configuration.
+- **Super admin** launches currencies, sets core risk/limit parameters, manages critical protocol configuration, and appoints global admins.
 
-- **Admin** manages operational parameters including spread, merchant fee percentages, disputes, and merchant/payment-channel actions.
+- **Global admin** holds permissions across all circles, covering operational parameters such as spread, merchant fee percentages, and merchant/payment-channel actions.
 
-- **Merchants and Users** scope covers order lifecycle, staking/registration flows, and dispute initiation according to contract rules.
+- **Circle admin** grants and revokes circle-scoped capabilities within its own circle (super admins may also do so), gating actions such as settling disputes for orders in that circle.
+
+- **Merchants and users** drive the order lifecycle, staking and registration flows, and dispute initiation according to contract rules.
 
 ```mermaid
 flowchart TD
@@ -52,7 +54,7 @@ Protocol behavior is heavily parameterized rather than hardcoded because markets
 
 - **Pricing and spread.** Base spread and price bump by currency, adjusted for local liquidity conditions.
 
-- **Risk limits.** Min stake, volume caps, RP-per-USDT limits, and max tx limits. These gate how much risk the protocol takes per merchant and per user.
+- **Risk limits.** Min stake, volume caps, RP-per-USDC limits, and max tx limits. These gate how much risk the protocol takes per merchant and per user.
 
 - **Fee controls.** Merchant fee percentage and small-order fixed fees, tuned to make micro-transactions viable without subsidizing them.
 
@@ -62,7 +64,7 @@ Protocol behavior is heavily parameterized rather than hardcoded because markets
 
 ## Disputes
 
-A user raises a dispute for an order if timing and state conditions of the order are met. The order is marked disputed; merchant dispute state is updated, and an admin settles with a fault type (`USER`, `MERCHANT`, or `BANK`). Settlement triggers order/accounting paths and [RP](#reputation) (Reputation Points) gets updated via hooks.
+A user raises a dispute for an order if timing and state conditions of the order are met. The order is marked disputed and the merchant dispute state is updated. A holder of the dispute-settle capability for the order's circle then settles with a fault type (`USER`, `MERCHANT`, or `BANK`). Settlement triggers order and accounting paths, and [RP](/for-builders/reputation) (Reputation Points) is updated via hooks.
 
 - Dispute windows differ by order type.
 - A dispute cannot be raised twice.
@@ -84,7 +86,7 @@ flowchart LR
 
 ## Reputation
 
-Reputation Points (RP) control who can do what on the protocol. RP directly governs transaction limits, dispute outcomes, and reward eligibility.
+Reputation Points (RP) control who can do what on the protocol. RP directly governs transaction limits, vote eligibility, and reward eligibility, and gates juror eligibility and proposal authoring. Dispute losses do not decide settlement. They impose RP penalties after a capability holder settles the dispute.
 
 - Volume-driven RP growth rewards consistent participation.
 - Dispute losses impose RP penalties that reduce future capacity.
@@ -101,7 +103,7 @@ When token governance activates, RP and token voting become complementary. Token
 - `facets/OrderProcessorFacet.sol` (disputes, limits, thresholds)
 - `facets/MerchantRegistryFacet.sol` and `facets/MerchantOnboardFacet.sol` (merchant controls, fees, stake/unstake)
 - `facets/OrderFlowFacet.sol` and `facets/OrderFlowHelper.sol` (order lifecycle, matching, settlement)
-- `ReputationManager.sol` (RP hooks, reward/verification gating)
+- `ReputationManager.sol` (standalone UUPS contract, separate from the Diamond; RP hooks, reward/verification gating)
 - `storages/MerchantRegistryStorage.sol`, `storages/CountryStorage.sol`, `storages/OrderProcessorStorage.sol`
 - `libraries/MerchantRegistryLib.sol`
 
@@ -166,11 +168,11 @@ The bottleneck for geographic expansion is local knowledge. Open-source configs 
 
 ### What chain are the contracts deployed on?
 
-The protocol's smart contracts are live on Base (EVM). Solana deployment is planned as part of the multichain expansion. The $P2P token is an SPL token on Solana. See [Multichain Strategy](/for-token-holders/multichain-strategy) for details.
+The protocol's smart contracts are live on Base (EVM). Solana deployment is planned as part of the multichain expansion. The $P2P token is an SPL token on Solana. See the [token and chain FAQ](/for-token-holders/faq) for details.
 
 ### Where are the contract ABIs?
 
-Contract references are listed in the [Contract References](/for-builders/contract-references) section. Source code is pending audits and will be opensourced by june 2026.
+Contract references are listed in the [Contract References](/for-builders/contract-references) section. The integration surface is already open source: the SDK ([`@p2pdotme/sdk`](https://github.com/p2pdotme/p2pdotme-sdk)), the React widgets ([`@p2pdotme/widgets`](https://github.com/p2pdotme/widgets)), and the B2B integrator contracts and interfaces ([`payment-integrators`](https://github.com/p2pdotme/payment-integrators)). The core protocol Diamond contracts are pending audit and will be open-sourced thereafter.
 
 ### Can I add a new country or currency?
 
@@ -186,7 +188,7 @@ The protocol uses EIP-2535 Diamond Standard. Functionality is split across facet
 
 ### How does RP integrate with order flow?
 
-RP hooks are whitelisted in the `ReputationManager`. Order volume updates, dispute penalties, and verification-gated rewards all flow through these hooks. See [Reputation](#reputation).
+RP hooks are whitelisted in the `ReputationManager`. Order volume updates, dispute penalties, and verification-gated rewards all flow through these hooks. See [Reputation](/for-builders/reputation).
 
 ### Where does governance detail live for token holders?
 
@@ -196,12 +198,12 @@ Token-holder governance (voting model, quorum, progressive decentralization) is 
 
 ## SDK
 
-The easiest way to integrate P2P Protocol into your application is via the TypeScript SDK (`@p2pdotme/sdk`). It provides pre-built modules for orders, user profiles, pricing, KYC, and fraud detection.
+The easiest way to integrate P2P Protocol into your application is via the TypeScript SDK (`@p2pdotme/sdk`). It provides pre-built modules for orders, user profiles, pricing, currency config, ZK-KYC, fraud detection, and QR parsing, plus an optional React provider and hooks.
 
-**Framework-agnostic** — core is pure TypeScript; optional React hooks.
-**Wallet-agnostic** — bring your own viem client.
-**No exceptions** — all methods return `Result` / `ResultAsync` types.
-**Modular** — import only what you need.
+**Framework-agnostic.** The core is pure TypeScript, with optional React hooks.
+**Wallet-agnostic.** Bring your own viem client.
+**No exceptions.** All methods return `Result` / `ResultAsync` types.
+**Modular.** Import only what you need.
 
 Installation:
 ```bash
@@ -263,9 +265,9 @@ REACT_APP_RPC_URL=https://sepolia.base.org
 ```
 
 **Recommended (commercial, faster, more reliable):**
-- [Alchemy](https://www.alchemy.com/) — free tier available
-- [Infura](https://www.infura.io/) — free tier available
-- [QuickNode](https://www.quicknode.com/) — free tier available
+- [Alchemy](https://www.alchemy.com/), free tier available
+- [Infura](https://www.infura.io/), free tier available
+- [QuickNode](https://www.quicknode.com/), free tier available
 
 #### Setup `.env.local` File
 
@@ -311,8 +313,8 @@ const SUBGRAPH_URL = import.meta.env.REACT_APP_SUBGRAPH_URL;
 
 To test SELL/PAY orders on Base Sepolia, you need ETH + USDC:
 
-- [Faucet.circle.com](https://faucet.circle.com/) — gives both ETH + testnet USDC (recommended)
-- [SepoliaFaucet.com](https://sepoliafaucet.com/) — ETH only
+- [Faucet.circle.com](https://faucet.circle.com/), gives both ETH + testnet USDC (recommended)
+- [SepoliaFaucet.com](https://sepoliafaucet.com/), ETH only
 
 ### Setup
 
@@ -376,8 +378,8 @@ function OrderFlow() {
     });
 
     result.match(
-      ({ hash, meta }) => console.log("✓ Order placed!", hash),
-      (err) => console.error(`✗ Error: ${err.code} - ${err.message}`),
+      ({ hash, meta }) => console.log("Order placed:", hash),
+      (err) => console.error(`Error: ${err.code} - ${err.message}`),
     );
   }
 
@@ -486,14 +488,14 @@ result.match(
   (ordersList) => {
     console.log(`Found ${ordersList.length} orders`);
     ordersList.forEach((order) => {
-      console.log(`Order ${order.id}: ${order.status}`);
+      console.log(`Order ${order.orderId}: ${order.status}`);
     });
   },
   (err) => console.error(`Error: ${err.code}`),
 );
 
 // Get single order
-const singleResult = await orders.getOrder({ orderId: "0x123..." });
+const singleResult = await orders.getOrder({ orderId: 42n });
 singleResult.match(
   (order) => console.log("Order:", order),
   (err) => console.error("Error:", err),
@@ -525,11 +527,15 @@ disputeResult.match(
 ### Get Fees
 
 ```ts
-const feeConfig = await orders.getFeeConfig({
-  currency: "INR",
-});
+const result = await orders.getFeeConfig({ currency: "INR" });
 
-console.log(feeConfig.spread, feeConfig.merchantFee);
+result.match(
+  (feeConfig) => {
+    // FeeConfig fields are 6-decimal bigints
+    console.log(feeConfig.smallOrderThreshold, feeConfig.smallOrderFixedFee);
+  },
+  (err) => console.error("Error:", err.code),
+);
 ```
 
 ---
@@ -542,20 +548,21 @@ Check user balances, USDC allowance, and trading limits.
 
 ```ts
 // USDC balance
-const balance = await profile.getUsdcBalance({ address: userAddress });
+const balanceResult = await profile.getUsdcBalance({ address: userAddr });
+if (balanceResult.isErr()) throw balanceResult.error;
+const usdcBalance = balanceResult.value; // bigint
 
 // USDC allowance (before SELL/PAY)
 const allowance = await profile.getUsdcAllowance({
   owner: userAddress,
 });
 
-// Fiat conversion
-const balances = await profile.getBalances({
-  address: userAddress,
-  currency: "INR",
-});
-
-console.log(balances.usdc, balances.fiat);
+// getBalances likewise returns a Result:
+const balancesResult = await profile.getBalances({ address: userAddress, currency: "INR" });
+balancesResult.match(
+  (b) => console.log(b.usdc, b.fiat),
+  (err) => console.error(err.code),
+);
 ```
 
 ### Check Limits
@@ -603,7 +610,8 @@ Before SELL:
 ```ts
 // Get USDC balance
 const balanceResult = await profile.getUsdcBalance({ address: userAddr });
-const usdcBalance = balanceResult; // Returns bigint directly
+if (balanceResult.isErr()) throw balanceResult.error;
+const usdcBalance = balanceResult.value; // bigint
 
 // Get limits
 const limitsResult = await profile.getTxLimits({
@@ -812,7 +820,8 @@ orderResult.match(
 );
 
 const balanceResult = await profile.getUsdcBalance({ address: "0x..." });
-console.log("USDC:", balanceResult);
+if (balanceResult.isErr()) throw balanceResult.error;
+console.log("USDC:", balanceResult.value); // bigint
 ```
 
 ---
@@ -825,11 +834,14 @@ Complete workflows for common patterns.
 
 ```ts
 async function buyUsdc(userAddr, currency, fiatAmount) {
-  const limits = await profile.getTxLimits({ address: userAddr, currency });
-  if (fiatAmount > limits.maxOrderAmount) throw new Error("Exceeds limit");
+  const limitsResult = await profile.getTxLimits({ address: userAddr, currency });
+  if (limitsResult.isErr()) throw limitsResult.error;
+  if (fiatAmount > limitsResult.value.buyLimit) throw new Error("Exceeds limit");
 
-  const prices = await prices.getPriceConfig({ currency });
-  const usdcAmount = (fiatAmount * 1_000_000n) / prices.price;
+  const priceClient = createPrices({ publicClient, diamondAddress });
+  const priceResult = await priceClient.getPriceConfig({ currency });
+  if (priceResult.isErr()) throw priceResult.error;
+  const usdcAmount = (fiatAmount * 1_000_000n) / priceResult.value.buyPrice;
 
   return await orders.placeOrder.execute({
     walletClient,
@@ -848,16 +860,19 @@ async function buyUsdc(userAddr, currency, fiatAmount) {
 
 ```ts
 async function sellUsdc(userAddr, currency, usdcAmount) {
-  const balance = await profile.getUsdcBalance({ address: userAddr });
-  if (balance < usdcAmount) throw new Error("Insufficient USDC");
+  const balanceResult = await profile.getUsdcBalance({ address: userAddr });
+  if (balanceResult.isErr()) throw balanceResult.error;
+  if (balanceResult.value < usdcAmount) throw new Error("Insufficient USDC");
 
   const allowance = await profile.getUsdcAllowance({ owner: userAddr });
   if (allowance < usdcAmount) {
     await orders.approveUsdc.execute({ walletClient, amount: usdcAmount });
   }
 
-  const prices = await prices.getPriceConfig({ currency });
-  const fiatAmount = (usdcAmount * prices.price) / 1_000_000n;
+  const priceClient = createPrices({ publicClient, diamondAddress });
+  const priceResult = await priceClient.getPriceConfig({ currency });
+  if (priceResult.isErr()) throw priceResult.error;
+  const fiatAmount = (usdcAmount * priceResult.value.sellPrice) / 1_000_000n;
 
   const placed = await orders.placeOrder.execute({
     walletClient,

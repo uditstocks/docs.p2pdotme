@@ -4,7 +4,7 @@
 
 The P2P Foundation Ambassador Program ("The Liberation Network") is a community-driven network that spreads financial sovereignty tools across emerging markets. It operates through country-level teams organized into four specialized tracks.
 
-**Quick links to key sections.**
+The sections below cover the program in full.
 
 - [Manifesto](/for-community/cypherpunk-20-manifesto)
 - [Hierarchy and roles](/for-community/hierarchy)
@@ -15,24 +15,21 @@ The P2P Foundation Ambassador Program ("The Liberation Network") is a community-
 - [Brand kit](/for-community/brand-kit)
 - [FAQ](/for-community/faq)
 
-Also see [`/whitepaper`](/whitepaper/abstract) for protocol context and [`/for-token-holders`](/for-token-holders/start-here) for the token thesis.
+Also see [`/whitepaper`](/whitepaper/abstract) for protocol context and [`/for-token-holders`](/for-token-holders/start-here) for token economics and governance.
 
 ---
 
 ## Cypherpunk 2.0 Manifesto
 
+_The opening lines below are quoted from Eric Hughes, A Cypherpunk's Manifesto (1993). The remainder is adapted by the P2P Foundation._
+
 Privacy is necessary for an open society in the electronic age. We cannot expect governments, corporations, or other large, faceless organizations to grant us privacy out of their beneficence.
 
 We the cypherpunks are dedicated to building anonymous systems. We are defending our privacy with cryptography, with anonymous mail forwarding systems, with digital signatures, and with electronic money.
 
-**"The Liberation Network" exists to enable the following.**
+"The Liberation Network" exists to advance four aims: financial sovereignty without surveillance, peer-to-peer systems that resist censorship, individuals transacting freely across borders, and the spread of the tools and knowledge of financial liberation.
 
-- Financial sovereignty without surveillance
-- Peer-to-peer systems that resist censorship
-- Individuals transacting freely across borders
-- Spreading the tools and knowledge of financial liberation
-
-Participation requires no identity. Contribution requires no permission. Impact is measured by action, not affiliation.
+Anyone can participate without revealing their identity, contributions require no prior permission, and the work itself is the basis on which impact is evaluated.
 
 ---
 
@@ -108,12 +105,12 @@ All tracks operate at the country level, managed by "Country Leads".
 
 ## How to Join
 
-**Becoming a Candidate.** Anyone can become a Candidate by joining [Discord](https://discord.gg/p2pfoundation). No XP requirement.
+Anyone can become a Candidate by joining [Discord](https://discord.gg/p2pfoundation), and there is no XP requirement to do so.
 
-**Candidate to "Cipher" requirements.**
+Moving from Candidate to "Cipher" requires the following steps.
 
 1. Earn minimum 500 XP through P2P Protocol apps usage (eg. P2P.me and Coins.me) and social activity
-2. Attend a mandatory induction session (held on 1st and 3rd Sunday of every month, conducted by "Country Lead")
+2. Attend a mandatory induction session (held on the 1st and 3rd Sunday of every month, 1 to 2 hours, conducted by "Country Lead")
 3. Browse open roles posted by "Keymasters" in your track/country (Eg. `#forge-portal`, `#signal-portal`, `#node-portal`, `#relay-portal`)
 4. Apply via Discord ticket in your portal
 5. Pass interview with "Keymaster"
@@ -141,12 +138,10 @@ All "Ciphers" and "Keymasters" must submit weekly updates.
 
 | Role        | Monthly Salary                     |
 | ----------- | ---------------------------------- |
-| "Keymaster" | $200                               |
+| "Keymaster" | Up to $200                         |
 | "Cipher"    | Up to $100 (based on job assigned) |
 
-**Monthly Spotlight.** $500 x 3 = $1,500 monthly prize pool.
-
-All payments made directly to your P2P wallet.
+The Monthly Spotlight awards $500 to each of three recipients, for a monthly prize pool of $1,500. All payments are made directly to your P2P wallet.
 
 | Item                                | Count | Rate       | Total             |
 | ----------------------------------- | ----- | ---------- | ----------------- |
@@ -155,7 +150,7 @@ All payments made directly to your P2P wallet.
 | Monthly Spotlight                   | 3     | $500       | $1,500            |
 | **Total monthly spend**             |       |            | **$12,700 (max)** |
 
-**Fund approval flow.** "Keymaster" raises request, "Country Lead" reviews, "Core Team" approves, disbursement.
+**Fund approval flow.** "Keymaster" raises request by the 5th of the month, "Country Lead" reviews, "Core Team" approves by the 10th, disbursement by the 15th.
 
 ---
 
@@ -183,10 +178,10 @@ THE LIBERATION NETWORK
 │
 ├── #country-leads → Country Lead workspace
 │
-├── SYNC CHANNELS
-│   ├── 🔊 keymasters-sync
-│   ├── 🔊 ciphers-sync
-│   └── 🔊 candidates-sync
+├── SYNC CHANNELS (voice)
+│   ├── keymasters-sync (voice)
+│   ├── ciphers-sync (voice)
+│   └── candidates-sync (voice)
 ```
 
 ---
@@ -195,7 +190,7 @@ THE LIBERATION NETWORK
 
 - **Anonymous-first.** No doxxing required at any level
 - **Country-led.** Each country manages all tracks locally
-- **Human selection.** "Country Leads" and "Keymasters" evaluate, not algorithms
+- **Human selection.** "Country Leads" and "Keymasters" evaluate candidates manually rather than by automated scoring
 - **Sustainable ratio.** 1 "Keymaster" per 5 "Ciphers" max
 - **Cypherpunk ethos.** Privacy, decentralization, financial sovereignty
 
@@ -212,6 +207,8 @@ Official P2P Protocol logo assets for press, partners, and community use.
 </div>
 
 [Download PNG](/brand/square.png)
+
+_The square logomark is available as PNG only. For a vector logo, use the full-lockup SVGs below._
 
 ### Logo Variants
 
@@ -278,7 +275,7 @@ For use on light backgrounds.
 
 ### Why is the token on Solana if the protocol is on Base?
 
-The token launches on Solana to build community and network effects ahead of deploying the protocol there. Solana is the planned hub chain. The protocol is live on Base today and will expand to Solana next.
+The token launches on Solana to build community and network effects ahead of deploying the protocol there. The protocol is live on Base today, and a Solana deployment is on the roadmap.
 
 ### Do I need to reveal my identity to participate?
 

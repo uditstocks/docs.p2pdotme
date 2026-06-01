@@ -2,9 +2,7 @@
 
 ## Start Here
 
-This guide covers everything merchants need to operate on P2P Protocol, from registration through order handling and Circles of Trust.
-
-**Quick links to key sections.**
+This guide covers merchant operation on P2P Protocol, from registration and staking through order handling, disputes, and Circles of Trust.
 
 - [Merchant readiness](/for-merchants/merchant-readiness)
 - [Setup flow](/for-merchants/merchant-setup-flow)
@@ -16,6 +14,7 @@ This guide covers everything merchants need to operate on P2P Protocol, from reg
 - [Disputes](/for-merchants/disputes)
 - [Delegation and revenue sharing](/for-merchants/delegation-and-revenue-sharing)
 - [Insurance](/for-merchants/insurance)
+- [Risk and reliability practices](/for-merchants/risk-and-reliability-practices)
 - [Troubleshooting](/for-merchants/troubleshooting)
 - [FAQ](/for-merchants/faq)
 
@@ -27,7 +26,7 @@ Also see [`/for-users`](/for-users/start-here) to understand user-side expectati
 
 Before operating, ensure you have the following.
 
-- An account on a supported client/admin interface (wallet is provided in-app via thirdweb integration).
+- An account on a supported client or admin interface. A non-custodial smart-account wallet is provisioned in-app.
 - Required settlement liquidity for supported currency operations.
 - Active payment rails/accounts you can operationally maintain.
 
@@ -150,17 +149,15 @@ If a dispute is raised, follow these steps.
 2. Submit supporting evidence in-app.
 3. Follow settlement updates and resulting order state transitions.
 
-Disputes are settled on-chain by authorized admins under protocol fault rules and dispute windows.
+Disputes are settled on-chain by the order's Circle Admin (or a capability-holder authorized for that Circle), who assigns user or merchant fault. Dispute windows govern when a dispute can be raised.
 
 ```mermaid
 flowchart TD
     Order["Order in Progress"] --> Issue["Issue/Conflict Detected"]
-    Issue --> Dispute["Dispute Raised (USDC Locked)"]
+    Issue --> Dispute["Dispute Raised (escrowed USDC held)"]
     
     subgraph Evidence["Evidence Phase"]
-        direction LR
-        Payer["Submit Proof of Payment"]
-        Payee["Submit Proof of Non-Receipt"]
+        User["User submits payment evidence (redacted reference)"]
     end
     
     Dispute --> Evidence
@@ -181,7 +178,7 @@ flowchart TD
 
 ## Delegation and Revenue Sharing
 
-Token holders stake $P2P on Circles to attest to merchant trustworthiness and earn a share of the Circle's transaction revenue. Revenue is split based on working capital ratio with a merchant premium. Only delegation to $P2P-denominated Circles grants governance voting rights.
+Delegators stake USDC into a Circle's delegation pool to back its merchants and earn a share of merchant rewards proportional to their delegated stake. Circle Admins separately stake $P2P to create and operate a Circle. Revenue is split in basis points configured per currency. The merchant and the Circle Admin each receive a base share of transaction volume. The merchant's share is then apportioned by the ratio of self-stake to delegated stake, and the delegated-stake portion is further divided between the merchant, the Circle Admin, and the delegation pool by configurable per-currency parameters.
 
 *The full delegation UI and Circle-level reward routing mechanics are planned for a future release.*
 
@@ -257,7 +254,7 @@ Yes. Toggle online/offline status or deactivate channels when you can't service 
 
 ### What is a Circle of Trust and how does it affect me?
 
-A Circle is a community-backed group of merchants. Circle Admins oversee operations, and community members can delegate tokens to your Circle to earn yield. As a merchant, your primary interaction is through the merchant registry and payment channels that Circles wrap.
+A Circle is a community-backed group of merchants. Circle Admins oversee operations, and community members can delegate USDC into your Circle's pool to earn a share of merchant rewards. As a merchant, your primary interaction is through the merchant registry and payment channels that Circles wrap.
 
 ### How do I earn revenue?
 

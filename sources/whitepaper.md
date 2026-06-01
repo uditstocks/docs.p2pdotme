@@ -10,45 +10,42 @@ In the wake of centralized exchanges, early decentralized exchanges led the DeFi
 
 P2P Protocol reflects a departure from fiat escrows and traditional custodians by using zero-knowledge (ZK) proofs for non-custodial KYC, making on/off-ramps privacy-preserving and governed by users' collective interests.
 
-Currently deployed on the Base network, with Solana deployment planned as the next step toward a multichain architecture, P2P Protocol trustlessly matches buyers and merchants on-chain based on staked USDC, settles trades with on-chain coordination, and resolves disputes through on-chain governance settlement rather than platform custody. The $P2P token launches on Solana to establish network effects ahead of the protocol's deployment there; Solana is the planned hub chain, with Base and future high-performance chains as supported spokes. This paper formalizes design goals, protocol flows, reputation, dispute resolution, pricing, security and privacy models, governance, and token economics.
+P2P Protocol is currently deployed on the Base network, with Solana deployment planned as the next step toward a multichain architecture. It trustlessly matches buyers and merchants on-chain based on staked USDC, settles trades with on-chain coordination, and resolves disputes through on-chain admin settlement under protocol fault rules rather than platform custody. The $P2P token launches on Solana to establish network effects ahead of the protocol's deployment there. Solana is the planned hub chain, with Base and future high-performance chains as supported spokes. This paper formalizes design goals, protocol flows, reputation, dispute resolution, pricing, security and privacy models, governance, and token economics.
 
-The end-state is a credibility-based DeFi ecosystem where peers transact, save, and build services on top of an open Proof-of-Credibility graph—useful, easy to use, privacy-first, and not reliant on over-collateralized mechanics for every everyday action. This paper lays out that vision, the principles guiding it, what works today, and the path to a mature, protocol-neutral, global network by and beyond 2026.
+The end-state is a credibility-based DeFi ecosystem where peers transact, save, and build services on top of an open Proof-of-Credibility graph that is useful, easy to use, privacy-first, and not reliant on over-collateralized mechanics for every everyday action. This paper specifies the design, principles, current implementation, and roadmap toward a mature, protocol-neutral, global network by and beyond 2026.
 
 ---
 
-## 1. The Vision
-Today, moving money between fiat and crypto means trusting intermediaries with your funds and your identity. P2P Protocol exists to make moving between fiat and crypto as private, neutral, and provable as sending a message.
-It replaces "trust me" finance with verifiable coordination without custody.
+## 1. Overview
+Today, moving money between fiat and crypto means trusting intermediaries with your funds and your identity. P2P Protocol is a non-custodial layer that matches fiat and stablecoin transactions on-chain and verifies user identity through zero-knowledge proofs. Funds are never held by an intermediary, and identity is proven without being disclosed.
 ### 1.1 From "ramps" to a privacy and credibility based economy
 
-P2P Protocol starts with the most practical chokepoint—moving between fiat and stablecoins—without custodial escrow. The same rails, proofs, and incentives that make an honest ramp work at scale also enable the next layer: credibility-based liquidity, bridging the gap between fiat and crypto currencies, for all DeFi.
+P2P Protocol starts with the most practical chokepoint, moving between fiat and stablecoins, without custodial escrow. The same rails, proofs, and incentives that make an honest ramp work at scale also enable the next layer: credibility-based liquidity, bridging the gap between fiat and crypto currencies, for all DeFi.
 
-In this model:
-
-- **Reputation** is earned on-chain through completed trades, clean dispute histories, and ZK-KYC tiers—not through centralized account vetting.
-- **Privacy** is preserved by default via zero-knowledge proofs for identity verification, revealing only that a user is verified and permitted—without exposing raw identities.
-- **Usefulness** beats theory: micro-payments, everyday off-ramps, wages, remittances, and merchant payouts come first—designed to feel as simple as sending a message.
+In this model, reputation is earned on-chain through completed trades, clean dispute histories, and ZK-KYC tiers, rather than through centralized account vetting. Privacy is preserved by default through zero-knowledge proofs for identity verification, which reveal only that a user is verified and permitted, without exposing raw identities. Usefulness comes first: micro-payments, everyday off-ramps, wages, remittances, and merchant payouts are designed to feel as simple as sending a message.
 
 ### 1.2 What "good" looks like by 2026+
 
-- A user in any supported country can buy, sell or pay via stablecoins in ~minutes—targeting sub-90-second completion on fast rails—without giving custody to anyone.
+- A user in any supported country can buy, sell or pay via stablecoins in minutes, targeting sub-90-second completion on fast rails, without giving custody to anyone. Median cost stays under $0.20 per $100.
 - Merchants are matched on-chain based on staked USDC, with spread set at the protocol level rather than through merchant competition. The Proof-of-Credibility system handles fraud prevention and transaction-limit tiering.
 - ZK-KYC unlocks higher limits and faster paths while keeping personal data off-chain.
-- Third-party apps and wallets integrate the protocol through open SDKs; [Coins.me](https://coins.me)
-is only a reference consumer front-end, not a privileged gateway.
-- As credibility compounds, new products (installment payouts, escrowless commerce, cross-border salaries, dispute insurance) can be built without re-KYCing the world.
+- More than 99% of disputes are resolved by proofs within the challenge window rather than by manual moderation.
+- Credibility is portable. Reputation and limits travel with a user across clients and countries without exposing personal identity.
+- Access is neutral. Multiple wallets and apps, including [Coins.me](https://coins.me) as a reference consumer front-end, all use the same permissionless SDKs atop the Protocol, with no privileged gateway.
+- As credibility compounds, new products (installment payouts, escrowless commerce, cross-border salaries, dispute insurance) can be built without re-KYCing the world. Wages, remittances, marketplace payouts, and checkout settle with no custody and no paper KYC forms.
 
 ### 1.3 First principles
 
 1. **Non-custodial by construction.** No fiat escrow. Crypto only held atomically for settlement where necessary.
-2. **Privacy-preserving.** Prove what's needed; reveal nothing else.
-3. **Credible neutrality.** Open rules, upgradeable by governance; no special routes for any client.
-4. **Useful and simple.** The experience should feel like one tap to "Buy USDC" or "Cash out," with the protocol handling the invisible complexity.
-5. **Protocol-agnostic.** The design does not hinge on any single L2, oracle, or proof vendor. Implementations can change without rewriting the whitepaper.
+2. **Privacy-preserving.** Prove what is needed and reveal nothing else. Privacy is treated as a user interface concern as much as a cryptographic one, and the best identity check is the one that proves what is required and nothing more.
+3. **Credible neutrality.** Open rules, upgradeable by governance, with no special routes for any client.
+4. **Useful and simple.** The interface targets non-expert users: a one-tap "Buy USDC" or "Cash out" flow, with the protocol handling the underlying complexity.
+5. **Earned and portable reputation.** Reputation is earned through on-chain activity, travels with the user across clients and countries, and can be revoked through explicit penalties. It is never bought or sold.
+6. **Protocol-agnostic.** The design does not hinge on any single L2, oracle, or proof vendor. Implementations can change without rewriting the whitepaper.
 
 ### 1.4 What P2P Protocol is (and is not)
 
-**Is:** an open, decentralized coordination layer that trustlessly matches a buyer with a merchant on-chain based on staked USDC; settles trades with on-chain coordination; and routes fees and parameters through governance.
+**Is:** an open, decentralized coordination layer that trustlessly matches a buyer with a merchant on-chain based on staked USDC, settles trades with on-chain coordination, and routes fees and parameters through governance.
 
 **Is not:** a custodian, a bank, or a data broker. P2P Protocol does not custody fiat, does not warehouse users' personal information, and does not promise fixed yields.
 
@@ -56,102 +53,67 @@ is only a reference consumer front-end, not a privileged gateway.
 
 Over the past decade, crypto solved programmatic finance but left the real world at the door. Today three curves finally cross:
 
-- Instant local rails (UPI/PIX/QRIS & peers) are mainstream.
-- Practical ZK can attest to real-world facts without exposing the data—already used for identity verification, with bank transaction proofs on the roadmap.
+- Instant local rails (UPI/PIX/QRIS/ALIAS/SPEI/Pago Movil) are mainstream.
+- Practical ZK can attest to real-world facts without exposing the data, already used for identity verification, with bank transaction proofs on the roadmap.
 - L2s and stablecoins have made small payments cheap and fast enough to care about.
 
-P2P Protocol sits exactly at that intersection. It turns *trust me* into *prove it*, and it does so without handing anyone your money or your identity.
+P2P Protocol sits exactly at that intersection. It coordinates fiat and stablecoin transfers and verifies user identity with proofs, without taking custody of funds or storing personal identity data.
 
-### 1.6 North-star outcomes (what "good" looks like to us)
+### 1.6 Credibility-based DeFi (beyond over-collateralization)
 
-By 2026+:
+Over-collateralization made early DeFi safe, but it makes everyday use costly and difficult to access. P2P Protocol proposes a second pillar: **credibility**. Earned limits and better prices come from clean history, completed trades, and ZK-KYC tiers, rather than from locking 200% collateral. Privacy holds by default, since users reveal proofs of action rather than identities. The same credibility graph is composable: it supports installment payouts, escrowless commerce, and lightweight credit primitives in the future.
 
-- Sub-90-second settlement on fast rails, median cost under $0.20 per $100.
-- \>99% disputes resolved by proofs within the window, not by moderators.
-- Portable credibility: your reputation and limits travel with you across clients and countries—without doxxing you.
-- Neutral access: multiple wallets and apps, including Coins.me as a reference, all using the same permissionless SDKs atop the Protocol.
-- Everyday usefulness: wages, remittances, marketplace payouts, and checkout—no custody, no paper KYC forms, no screenshots.
+### 1.7 A protocol for people, not just power users
 
-### 1.7 Credibility-based DeFi (beyond over-collateralization)
+The protocol is designed for a user with a phone and a paycheck rather than a professional trading desk. It must remain dependable at $15 as much as at $1,500. Verification follows a minimal-disclosure model: ZK-KYC verifications prove only the required predicate and reveal no personal identifiers.
 
-Over-collateralization made early DeFi safe, but it makes the everyday world feel gated and expensive. P2P Protocol proposes a second pillar: **credibility**.
+### 1.8 Protocol-agnostic by design
 
-- Earned limits and better prices come from clean history, completed trades, and ZK-KYC tiers, not from locking 200% collateral or gaming the system.
-- Privacy by default: you reveal proofs of action, not identities.
-- Composability: the same credibility graph supports installment payouts, escrowless commerce, and even lightweight credit primitives in the future.
-
-### 1.8 A protocol for people, not just power users
-
-We design for someone who has a phone and a paycheck, not a Bloomberg terminal.
-
-- **Micro-friendly:** The Protocol must feel safe at $15 as much as at $1,500.
-- **Dignity with Privacy:** ZK-KYC verifications prove what's necessary and nothing more, no Personal Identification revelation—protecting freelance workers, activists, and anyone who values privacy.
-
-### 1.9 Protocol-agnostic by design
-
-Vendors and chains will change; the principles cannot. The whitepaper commits to:
+Vendors and chains will change, but the principles cannot. The whitepaper commits to:
 
 - No single L2, oracle, or proof provider baked into the logic.
 - Clear interfaces (verifier registry, oracle adapter, rail registry) so parts can be swapped without rewriting the paper or the social contract.
 - Open-sourcing and decentralizing each part of the Protocol as public goods.
 
-### 1.10 Credibility but with Privacy
+### 1.9 Credibility but with Privacy
 
 Think of P2P Protocol's Proof-of-Credibility as a public good in itself:
 
-- It's earned, decays over time, and is hard to game.
+- It is earned, adjusted only by explicit penalties, and is hard to game.
 - It is portable across clients and countries via on-chain commitments, not PDFs in someone's inbox.
-- It's privacy-first: only commitments and verdicts are public; raw evidence stays with you or your chosen verifier.
+- It's privacy-first. Only commitments and verdicts are public, and raw evidence stays with you or your chosen verifier.
 
-### 1.11 Programmable compliance (policy without dossiers)
+### 1.10 Programmable compliance (policy without dossiers)
 
 Most people want two things at once: privacy and legality. P2P Protocol makes this practical:
 
 - **Policy-as-parameters:** rails, timeouts, and proof requirements are governed on-chain by region and risk class.
 - **ZK-KYC tiers** satisfy "permitted user" checks while keeping PII off-chain.
-- **Travel-Rule-style needs** can be met via selective disclosure circuits (planned) when a counterparty is a registered business—without turning the protocol into a data broker.
+- **Travel-Rule-style needs** can be met via selective disclosure circuits (planned) when a counterparty is a registered business, without turning the protocol into a data broker.
 
-### 1.12 What gets unlocked if we get this right
+### 1.11 What gets unlocked if we get this right
 
-- **Borderless income:** creators, contractors, and remote workers get paid where they live, without exchange custody.
-- **Merchant payouts:** marketplaces settle to sellers in local rails instantaneously, at fair spreads, with no CSV juggling.
-- **Community finance:** rotating savings, micro-loans, and escrowless marketplaces can build on a shared credibility and liquidity layer between the fiat and crypto currency domains.
-- **Civic resilience:** people can move value privately and lawfully when the world gets shaky.
+The same rails and proofs support borderless income, so creators, contractors, and remote workers get paid where they live without exchange custody. Marketplaces settle merchant payouts to sellers in local rails instantaneously, at fair spreads, without manual CSV reconciliation. A shared credibility and liquidity layer between the fiat and crypto currency domains supports community finance such as rotating savings, micro-loans, and escrowless marketplaces. Users retain the ability to transfer value privately and lawfully during periods of local banking disruption or capital-control stress.
 
-### 1.13 Stewardship & governance philosophy
+### 1.12 Stewardship & governance philosophy
 
 - Credible neutrality over convenience. Changes go through transparent governance with guardrails (timelocks, narrow pauses, audits).
 - Minimize governance where possible: parametrize, don't micromanage.
 - Public safety valves: oracle circuit breakers, verifier sunsets, and emergency pauses with automatic expiry.
-- Open bounty mindset: pay to find flaws early; publish fixes openly.
+- Open bounty mindset: pay to find flaws early and publish fixes openly.
 
-### 1.14 What we won't compromise on
+### 1.13 What we won't compromise on
 
-- Non-custody of fiat. Ever.
-- No honeypots of PII (Personally Identifiable Information) on-chain (ever).
-- No privileged clients (ever). Everyone uses the same pipes.
-- No "trust us" black boxes. If it can't be proven or audited, it doesn't make core.
+The protocol does not custody fiat under any circumstance. It stores no personally identifiable information (PII) on-chain. No client receives privileged routing, and every integrator uses the same interfaces. Components that cannot be independently proven or audited are not admitted to the protocol core.
 
-### 1.15 Milestones that matter 
+### 1.14 Milestones that matter 
 
 - **Ubiquity:** a credible merchant presence in every major region/rail pair.
 - **Geographic reach:** expansion to 20+ markets across Asia, Africa, Latin America, and MENA.
-- **Multi-chain presence:** Solana is the planned hub chain. The $P2P token launches on Solana first to build network effects; protocol deployment on Solana follows. Additional high-performance chains will be supported as spokes.
+- **Multi-chain presence:** protocol deployment expands beyond Base to Solana as the hub chain, with additional high-performance chains supported as spokes.
 - **Composability:** third-party apps shipping useful features on the SDK without asking permission.
-- **Self-serve legitimacy:** regulators and risk teams can read the spec, verify parameters on-chain, and understand how safety is achieved—without backdoors.
+- **Self-serve legitimacy:** regulators and risk teams can read the spec, verify parameters on-chain, and understand how safety is achieved, without backdoors.
 - **Roadmap features:** for current feature-track proposals (including remittance and currency expansion), see [`/for-builders`](/for-builders/start-here).
-
-### 1.16 A short manifesto
-
-``` bash
-# Privacy is a user interface problem as much as a math problem.
-
-# Reputation should be earned, portable, and revocable—never sold.
-
-# The best KYC is the one that proves what's needed and nothing else.
-
-# If only power users can use it, it isn't DeFi—it's a gated club.
-```
 
 ---
 
@@ -168,8 +130,8 @@ Most people want two things at once: privacy and legality. P2P Protocol makes th
 ### 2.2 Non-Goals
 
 - The Protocol does not hold customer fiat or crypto in custody.
-- The Protocol does not guarantee price or liquidity; it coordinates peers and market inputs.
-- The Protocol does not store personal data on behalf of users; it records necessary commitments and verdicts on-chain while raw evidence remains off-chain.
+- The Protocol does not guarantee price or liquidity. It coordinates peers and market inputs.
+- The Protocol does not store personal data on behalf of users. It records necessary commitments and verdicts on-chain while raw evidence remains off-chain.
 
 ---
 
@@ -192,14 +154,14 @@ The protocol involves several key participants working together to enable trustl
 ### 3.2 Components
 
 - **Base L2 smart contracts** (expanding to Solana) for order lifecycle, matching, dispute windows, parameter registry, and fee routing.
-- **Reputation registry** implementing Proof-of-Credibility (inputs, scoring, decay).
+- **Reputation registry** implementing Proof-of-Credibility (inputs, scoring, penalties).
 - **Oracle adapter** for reference pricing and safeguards (median/TWAP, fallbacks, circuit breakers).
 - **Client SDKs** and reference apps (e.g., Coins.me) that speak the protocol.
 
 ### 3.3 High-Level Flow
 
 1. **Placing Orders:** A user clicks "Buy USDC" (or "Sell USDC") and enters amount. The app provides an integrated wallet for the transaction.
-2. **Order Matching:** A merchant is assigned on-chain based on staked USDC. A fiat payment address is shared over the smart contract, encrypted with the user's keys; for off-ramps, a USDC address on Base (expanding to Solana) is presented.
+2. **Order Matching:** A merchant is assigned on-chain based on staked USDC. A fiat payment address is shared over the smart contract, encrypted with the user's keys. For off-ramps, a USDC address on Base (expanding to Solana) is presented.
 3. **Fiat/Stablecoin Transfer:** The payer performs the transfer on the designated rail.
 4. **Confirmation/Settlement:** Within minutes, settlement succeeds once the merchant confirms receipt. Wallet balances update accordingly.
 5. **Dispute Window:** If a party contests, they submit evidence that a payment or action occurred (or did not). In the live implementation, authorized admins settle disputed orders on-chain according to protocol fault rules and dispute windows.
@@ -240,7 +202,7 @@ flowchart LR
 │        │  (encrypted)         │                        │                │
 │        │                      │                        │                │
 │        │  4. Transfer fiat    │                        │                │
-│        │  via bank/UPI/PIX    │                        │                │
+│        │  via UPI/PIX/SPEI    │                        │                │
 │        │──────────────────────────────────────────────►│                │
 │        │                      │                        │                │
 │        │                      │  5. Merchant confirms  │                │
@@ -308,8 +270,8 @@ flowchart LR
 - The **merchant** serves the function of mediating liquidity for the transactions.
 - The **onus of confirming payment** rests on the merchant (for off-ramps) or can be provided by either party.
 - **ZK-KYC performs trustless identity verification** for the user without exposing personal data.
-- **Evidence is submitted and reviewed** in disputes. In the current system, outcomes are executed via on-chain admin settlement; broader verifier and governance-driven resolution remains roadmap (see [Section 4.2](/whitepaper/cryptographic-primitives-proof-integration#42-evidence-module-for-bank-transaction-verification-roadmap)).
-- **Reclaim Protocol** enables privacy-preserving identity verification via social accounts and government IDs.
+- **Evidence is submitted and reviewed** in disputes. In the current system, outcomes are executed via on-chain admin settlement. Broader verifier and governance-driven resolution remains roadmap (see [Section 4.2](/whitepaper/cryptographic-primitives-proof-integration#42-evidence-module-for-bank-transaction-verification-roadmap)).
+- **Reclaim Protocol** enables privacy-preserving verification of social accounts via zkTLS. Aadhaar is verified through Anon Aadhaar and passport or national ID through ZKPassport.
 
 ---
 
@@ -317,26 +279,26 @@ flowchart LR
 
 ### 4.1 Identity Verification (Live)
 
-P2P Protocol uses ZK proofs for privacy-preserving identity verification. A new member can perform trustless KYC by sharing a ZK proof of their identity—keeping their personal data private while building on-chain reputation and unlocking higher transaction limits without revealing raw PII on-chain.
+P2P Protocol uses ZK proofs for privacy-preserving identity verification. A new member can perform trustless KYC by sharing a ZK proof of their identity, keeping their personal data private while building on-chain reputation and unlocking higher transaction limits without revealing raw PII on-chain.
 
 The protocol currently supports identity verification through multiple ZK-based methods:
 
 - **Government ID verification** via on-chain ZK proof verifiers for supported identity documents.
-- **Social account verification** via **Reclaim Protocol** [1], which uses zkTLS proofs to verify ownership and standing of social accounts (e.g., professional networks, developer platforms, social media) without exposing account credentials or personal data.
+- **Social account verification** via **Reclaim Protocol** [1], which uses zkTLS proofs to verify ownership and standing of supported accounts (LinkedIn, GitHub, X, Instagram, Facebook) without exposing account credentials or personal data.
 - **Passport verification** via ZK proof systems that can verify age, nationality, and sanctions status without disclosing document contents.
 
 Each successful verification strengthens the user's on-chain reputation and expands their transaction capacity within the protocol.
 
 ### 4.2 Evidence Module for Bank Transaction Verification (Roadmap)
 
-A planned evidence module will extend the protocol's ZK capabilities to bank transaction verification for on-chain dispute resolution. This module will leverage TLS-backed proofs so that a user or merchant can produce a cryptographic witness that a specific statement about a bank transfer or payment receipt is true—without exposing credentials or transaction details.
+A planned evidence module will extend the protocol's ZK capabilities to bank transaction verification for on-chain dispute resolution. This module will use TLS-backed proofs so that a user or merchant can produce a cryptographic witness that a specific statement about a bank transfer or payment receipt is true, without exposing credentials or transaction details.
 
 The planned module will specify where proofs are verified:
 
 - **On-chain verifier** for compact claims and attestation hashes.
 - **Off-chain verifier/relayer** (open-source reference) for complex or rail-specific statements, posting a succinct attestation back on-chain.
 
-> Raw proofs will remain with users; the chain stores only minimal commitments and verdicts.
+> Raw proofs will remain with users, and the chain stores only minimal commitments and verdicts.
 
 ### 4.3 Privacy Properties
 
@@ -360,25 +322,25 @@ We formalize the order lifecycle as a state machine with timeouts:
 
 - `T_match` (max time to accept a match), `T_fiat` (max time to make fiat transfer), `T_confirm` (confirmation window), `T_dispute` (challenge window).
 - `B_bond_user`, `B_bond_merchant` (optional performance bonds/slashing weights by reputation tier and payment rail risk class).
-- `min_amount`, `max_amount` per rail/region; fee schedules; quote expiry windows.
+- `min_amount`, `max_amount` per rail/region, fee schedules, and quote expiry windows.
 
-### 5.1 On-Ramp (Fiat → USDC on Base; expanding to Solana)
+### 5.1 On-Ramp (Fiat → USDC on Base, expanding to Solana)
 
 1. **Open:** User opens BUY order with amount & rail.
 2. **Match:** Protocol assigns a merchant on-chain based on staked USDC. Refundable bonds may lock.
 3. **Fund Fiat:** User pays fiat to provided account within `T_fiat`.
 4. **Merchant Ack:** Merchant confirms receipt of fiat payment.
-5. **Settle:** Contract releases USDC to user; fees assessed; bonds unlocked.
-6. **Dispute:** If conflict, parties submit evidence; authorized admins issue on-chain verdict.
+5. **Settle:** Contract releases USDC to user. Fees are assessed and bonds unlocked.
+6. **Dispute:** If conflict, parties submit evidence and authorized admins issue an on-chain verdict.
 
-### 5.2 Off-Ramp (USDC on Base → Fiat; expanding to Solana)
+### 5.2 Off-Ramp (USDC on Base → Fiat, expanding to Solana)
 
-1. **Open:** User opens SELL order; transfers USDC to escrowless settlement adapter (contract holds or streams atomically per design).
+1. **Open:** User opens SELL order and transfers USDC to escrowless settlement adapter (contract holds or streams atomically per design).
 2. **Match:** Merchant accepts and posts quote/bond.
 3. **Fund Crypto:** User's USDC is locked for settlement.
-4. **Merchant Pays Fiat:** Merchant pays fiat and confirms completion; or user challenges.
-5. **Settle:** Contract releases USDC to merchant; fees assessed; bonds unlocked.
-6. **Dispute:** If conflict, parties submit evidence; authorized admins issue on-chain verdict.
+4. **Merchant Pays Fiat:** Merchant pays fiat and confirms completion, or the user challenges.
+5. **Settle:** Contract releases USDC to merchant. Fees are assessed and bonds unlocked.
+6. **Dispute:** If conflict, parties submit evidence and authorized admins issue an on-chain verdict.
 
 ### 5.3 Payment-Rail Risk Classes
 
@@ -388,7 +350,7 @@ Rails differ (instant/irreversible vs reversible/chargeback-prone). The protocol
 
 ## 6. Proof-of-Credibility (Reputation & Matching)
 
-P2P Protocol works using a unique on-chain reputation system which not only builds up user trust and privileges but actively helps prevent fraudulent activity within the P2P landscape.
+P2P Protocol works using a unique on-chain reputation system which not only builds up user trust and privileges but actively helps prevent fraudulent activity within the P2P market.
 
 ### 6.1 Building Trust Through Reputation
 
@@ -396,9 +358,9 @@ A user can increase their Reputation Points (RP) score via a series of on-chain 
 
 ### 6.2 Inputs (illustrative, governed)
 
-- Successful trades (size-weighted), age/decay, dispute history.
+- Successful trades (size-weighted), account age, dispute history.
 - KYC proof tier (ZK-KYC completed, source diversity).
-- Rail diversity & geography; referral attestations.
+- Rail diversity & geography, and referral attestations.
 - Slashed events (negative deltas), appeals outcomes.
 
 ### 6.3 Outputs
@@ -408,7 +370,7 @@ A user can increase their Reputation Points (RP) score via a series of on-chain 
 
 ### 6.4 Sybil & Gaming Resistance
 
-- Weighted decay, diminishing returns, rail-mix requirements, and anti-gaming and fraud detection engine checks.
+- Diminishing returns, rail-mix requirements, and off-chain fraud screening that informs admin-managed blacklist and transaction-limit controls on-chain.
 - Optional attested device/account fingerprints (privacy-respecting commitments).
 
 ---
@@ -419,7 +381,7 @@ A user can increase their Reputation Points (RP) score via a series of on-chain 
 
 Merely making the protocol fully anonymous would do little to preclude the possibility of users misusing the platform. However, combined with the strict reputation system for on-ramp transactions, the chances of a buyer committing impersonation fraud drop drastically, especially given the meager amounts they can transact with their expectedly suspicious on-chain reputation.
 
-It is worth noting that centralized exchanges routinely face difficulties in implementing a viable KYC procedure for their users. The Protocol's non-custodial KYC works just as effectively as a traditional KYC in preventing fraud, while retaining the benefit of anonymity for the user if no illicit activity surfaces over the course of their interaction with the platform.
+It is worth noting that centralized exchanges routinely face difficulties in implementing a viable KYC procedure for their users. The Protocol's non-custodial KYC prevents fraud while retaining the benefit of anonymity for the user if no illicit activity surfaces over the course of their interaction with the platform.
 
 ### 7.2 Anti-Money Laundering Through Transaction Limits
 
@@ -427,7 +389,7 @@ The underlying RP mechanism practically eliminates the risk of money laundering 
 
 ### 7.3 Merchant Accountability
 
-The selected nature of the merchants fulfilling individual orders—via the Proof-of-Credibility algorithm—means a serious disincentive and unlikelihood for any merchant to attempt a fraudulent transaction.
+The selected nature of the merchants fulfilling individual orders, via the Proof-of-Credibility algorithm, means a serious disincentive and unlikelihood for any merchant to attempt a fraudulent transaction.
 
 ---
 
@@ -441,7 +403,7 @@ Default onus: the party claiming completion provides evidence of completion. The
 
 ### 8.2 Penalty for False Claims
 
-In the event a buyer attempts to proceed without actually making the fiat transfer first, they risk losing Reputation Points—creating strong economic disincentives for fraudulent behavior.
+In the event a buyer attempts to proceed without actually making the fiat transfer first, they risk losing Reputation Points, creating strong economic disincentives for fraudulent behavior.
 
 ---
 
@@ -449,7 +411,7 @@ In the event a buyer attempts to proceed without actually making the fiat transf
 
 The Protocol determines indicative pricing using built-in oracle adapters that aggregate rates from selected exchanges and P2P venues into a median/TWAP with fallbacks. These oracles analyze price data from a variety of both centralized and P2P exchanges to determine the trading price for the stablecoin-fiat pair in question.
 
-**Parameters:** source set, staleness bounds, deviation thresholds, and circuit breakers. Quotes carry an expiry to limit exposure; if the oracle fails or exceeds deviation limits, orders pause or re-quote.
+**Parameters:** source set, staleness bounds, deviation thresholds, and circuit breakers. Quotes carry an expiry to limit exposure. If the oracle fails or exceeds deviation limits, orders pause or re-quote.
 
 ---
 
@@ -471,13 +433,13 @@ Quote commitment, minimum depth, and cancellation penalties are governed to redu
 
 ### 11.1 Assumptions & Adversaries
 
-- Network liveness on Base (multichain expansion to Solana planned); oracle availability; honest-majority assumptions not required for fiat rails.
+- Network liveness on Base (multichain expansion to Solana planned), and oracle availability. Honest-majority assumptions are not required for fiat rails.
 - Adversaries include chargeback fraudsters, proof forgers, oracle manipulators, griefers, and sybils.
 
 ### 11.2 Mitigations
 
-- Bonds/slashing; rail-class windows; proof verification requirements; oracle deviation guards; rate/limit throttles.
-- **Audits & Bounty:** Core contracts, verifiers, and circuits will undergo independent audits; a public bounty program will operate pre-TGE and post-TGE.
+- Bonds and slashing, rail-class windows, proof verification requirements, oracle deviation guards, and rate/limit throttles.
+- **Audits & Bounty:** Core contracts, verifiers, and circuits will undergo independent audits. A public bounty program will operate pre-TGE and post-TGE.
 
 ---
 
@@ -485,7 +447,7 @@ Quote commitment, minimum depth, and cancellation penalties are governed to redu
 
 - **Data minimization:** contracts store only commitments, verdicts, and reputation deltas.
 - **Selective disclosure:** ZK-KYC proofs reveal only predicates required for identity verification and compliance tiers. Bank transaction verification is planned (see [Section 4.2](/whitepaper/cryptographic-primitives-proof-integration#42-evidence-module-for-bank-transaction-verification-roadmap)).
-- **Retention & Access:** governance-set retention of attestations; no raw PII on-chain.
+- **Retention & Access:** governance-set retention of attestations, with no raw PII on-chain.
 - **Linkability:** user-facing guidance to avoid unintended linkage across sessions where feasible.
 
 ---
@@ -494,9 +456,9 @@ Quote commitment, minimum depth, and cancellation penalties are governed to redu
 
 P2P Protocol aims to remain in good standing with legal regulations. The user is responsible for legitimate usage and taxation in their jurisdiction.
 
-- **Non-custodial stance:** The Protocol coordinates peers and verifies evidence; it does not take custody of fiat.
+- **Non-custodial stance:** The Protocol coordinates peers and verifies evidence. It does not take custody of fiat.
 - **Risk controls:** transaction limits, reputation tiers, optional ZK-KYC, sanctions-screening interfaces for merchants, and governed regional parameter sets.
-- **Disclosures:** The Protocol does not advocate tax evasion or illegal activity; violations remain the user's liability.
+- **Disclosures:** The Protocol does not advocate tax evasion or illegal activity. Violations remain the user's liability.
 
 ### 13.1 User Responsibility in Taxation
 
@@ -506,11 +468,11 @@ Likewise, it must be noted that the Protocol in no way intends to advocate tax e
 
 ### 13.2 Micro-Transactions for Mass Adoption
 
-Blockchain transactions have been traditionally notorious for high transfer fees and slow processing times. Currently deployed on Base (expanding to Solana as the hub chain), the Protocol can afford to charge very nominal fees for its on- and off-ramps, thanks to the faster validation times and lower gas costs. The difference is especially pronounced for smaller transactions where newcomers routinely feel discouraged by the slow and expensive economics involved.
+Blockchain transactions have been traditionally notorious for high transfer fees and slow processing times. The Protocol is currently deployed on Base, expanding to Solana as the hub chain. It can afford to charge very nominal fees for its on- and off-ramps, thanks to faster validation times and lower gas costs. The difference is especially pronounced for smaller transactions where newcomers routinely feel discouraged by the slow and expensive economics involved.
 
-The Protocol's robust on-chain reputation management coupled with its transaction limits does more than just drive mass adoption of decentralized currencies and transactions. In fact, a sole emphasis on large transactions ironically coincides with the prospects of money laundering and other foul economic practices. P2P Protocol in the space particularly underscores the importance of micro-transactions instead, by making these both viable and useful for the community.
+The Protocol's on-chain reputation management, coupled with its transaction limits, also shapes the kind of activity it supports. A sole emphasis on large transactions ironically coincides with the prospects of money laundering and other foul economic practices. P2P Protocol underscores the importance of micro-transactions instead, by making these both viable and useful for the community.
 
-Besides mass consumer adoption of cryptocurrencies, microtransactions enable newfound financial access through web3 for underrepresented communities in today's banking system. Specifically, it has been noted that nearly **1.5 billion people have mobile phones but lack any reliable access to banks**. For them, being able to perform transactions in the neighborhood of $50-$500 in a way that is secure and egalitarian is paramount—a feat that P2P Protocol can readily help achieve.
+Microtransactions also enable newfound financial access through web3 for underrepresented communities in today's banking system. It has been noted that nearly **1.5 billion people have mobile phones but lack any reliable access to banks**. For them, being able to perform transactions in the neighborhood of $50-$500 in a way that is secure and egalitarian is paramount, a need that P2P Protocol can readily help meet.
 
 The adoption of crypto for consumer payments has implications for both the Web2 and Web3 economies. Existing consumer tech companies can finally start accepting payments online using cryptocurrency. Likewise, the market can explore newly enabled ways of spending and deploying capital, thanks to a microtransaction economy powering fully decentralized finance.
 
@@ -520,7 +482,7 @@ The adoption of crypto for consumer payments has implications for both the Web2 
 
 ### 14.1 Clients and Ease of Use
 
-The primary clients for accessing P2P Protocol are the [P2P.me](https://p2p.me) and [coins.me](https://coins.me) Progressive Web Apps (PWAs). These browser-based applications provide seamless access across devices with integrated wallet functionality powered by [Thirdweb](https://thirdweb.com/).
+The primary clients for accessing P2P Protocol are the [P2P.me](https://p2p.me) and [coins.me](https://coins.me) Progressive Web Apps (PWAs). These browser-based applications provide access across devices with integrated, multi-chain wallet functionality powered by Dynamic Labs and Thirdweb.
 
 Getting started with on-ramps is as simple as buying stablecoins via a fiat transfer. Off-ramps are just as reliable through a stablecoin deposit to the in-app wallet.
 
@@ -539,23 +501,23 @@ The P2P Protocol SDK lets developers integrate the protocol to on/off-ramp users
 ## 15. Governance & Upgradability
 
 - **Parameters:** fees, limits, rail risk weights, oracle sets, proof policies, bond schedules.
-- **Upgrades:** contracts behind timelocks with public proposals; emergency pause limited to narrow scopes, with automatic sunset.
-- **Pre-TGE:** multisig/council with published members and constraints.
-- **Post-TGE:** token-holder governance of parameters, treasury, and roadmap.
+- **Upgrades:** contracts behind timelocks with public proposals. Emergency pause is limited to narrow scopes, with automatic sunset.
+- **Today:** parameters, treasury actions, and upgrades are operated by an admin multisig with published members and constraints, and an on-chain Governor (Compound Bravo style, with snapshot quorum, proposal threshold, and integrated timelock) is deployed on Base. Some parameter setters, such as those on the protocol configuration facet, already accept either the Governance Diamond or a super-admin as caller, while the remaining setters are super-admin gated during the transition.
+- **Transition:** authority over parameters, treasury, and roadmap moves to $P2P holders through the on-chain Governor in staged phases. The phases progress from an admin veto, to the DAO acting as the primary path with an admin backup, to DAO-only control with a time-limited admin emergency backstop.
 
 ---
 
 ## 16. Token Economics
 
-The protocol token is an **ownership token**. The most important parts of the protocol—intellectual property, treasury funds, and the ability to mint new tokens—are controlled by token holders through [futarchy-based governance](https://en.wikipedia.org/wiki/Futarchy), not by any single team, foundation, or entity. This is real, unruggable ownership of revenue-generating infrastructure.
+The $P2P token is an **ownership token**. The most important parts of the protocol, namely protocol intellectual property, treasury funds, the ability to mint new tokens, and protocol parameters, are controlled by $P2P token holders through an on-chain Governor, not by any single team, foundation, or entity. Holders govern protocol financials, operational parameters, and treasury spending, and hold enforceable governance control over protocol IP. If protocol resources or IP were ever misappropriated, token-holder governance provides the mechanism to redirect control, so control over the protocol and its resources is distributed and enforced on-chain. This is protocol ownership exercised through governance, distinct from equity. The token is not equity, debt, or a security, and it carries no claim on the assets, revenue, or profit of any entity.
 
-On the ownership side, decisions that affect token supply must pass through a decision-market governance mechanism, where participants stake real capital on whether a proposal increases or decreases token value. Proposals the market predicts will harm value are automatically rejected. This replaces subjective voting with market-driven accountability.
+Total supply is fixed at 25,800,000 $P2P with no inflation. Any change affecting token supply would require a governance proposal to pass the on-chain Governor, where voting power is one staked $P2P to one vote and a proposal threshold and quorum apply. Proposals are decided by for, against, and abstain votes against a snapshot quorum, and passing proposals execute through an integrated timelock that gives holders an exit window before any change takes effect.
 
-On the governance side, holders vote on fee structures, transaction limits, risk weights, oracle configurations, treasury allocation, and protocol upgrades. Revenue direction, parameter changes, and IP stewardship belong to the token holder base rather than a centralized team.
+On the governance side, token holders vote on fee structures, transaction limits, risk weights, oracle configurations, treasury allocation, and protocol upgrades. Of protocol revenue, 20% is routed to the DAO-governed treasury and 80% to network operators (merchants, Circle Admins, delegators, and insurance pools). There are no automatic buybacks. The treasury may direct buy-and-burn or other uses only through a passed governance proposal.
 
 On the economic side, merchants and verifiers stake tokens as bonds, aligning their incentives with honest behavior. Fee routing provides rebates and discounts to active participants. The token enables participation in dispute insurance pools and community delegation for revenue sharing.
 
-A portion of protocol fees flows into a treasury governed on-chain. These funds support security audits, bug bounties, ecosystem grants, and liquidity. If protocol resources were ever misappropriated, token governance provides the mechanism for holders to redirect control.
+A portion of protocol revenue flows into a treasury governed on-chain. These funds support security audits, bug bounties, ecosystem grants, and liquidity. Allocation of treasury funds is decided by token-holder governance through the on-chain Governor.
 
 ---
 
@@ -563,7 +525,7 @@ A portion of protocol fees flows into a treasury governed on-chain. These funds 
 
 While the protocol is designed with safety and resilience in mind, users should understand the inherent risks of participating in decentralized finance.
 
-**Regulatory uncertainty** remains a factor in the evolving crypto landscape. Jurisdictional shifts in how regulators classify or restrict peer-to-peer transactions may limit protocol features or geographic coverage over time. The protocol aims to remain compliant through programmable policy parameters, but cannot guarantee future regulatory treatment.
+**Regulatory uncertainty** remains a factor in the evolving crypto market. Jurisdictional shifts in how regulators classify or restrict peer-to-peer transactions may limit protocol features or geographic coverage over time. The protocol aims to remain compliant through programmable policy parameters, but cannot guarantee future regulatory treatment.
 
 **Liquidity conditions** affect the user experience. During periods of low merchant activity or thin order books, spreads may widen and matching times may increase. The Proof-of-Credibility system incentivizes reliable liquidity provision, but market conditions remain outside the protocol's direct control.
 
@@ -577,7 +539,7 @@ While the protocol is designed with safety and resilience in mind, users should 
 
 ## 18. References
 
-1. **Reclaim Protocol** — https://www.reclaimprotocol.org/
+1. **Reclaim Protocol**, https://www.reclaimprotocol.org/
 
 
 ---
@@ -586,7 +548,7 @@ While the protocol is designed with safety and resilience in mind, users should 
 
 
 1. **State Machines & Sequence Diagrams** for on-/off-ramp and dispute flows.
-2. **Proof Interface Specs:** inputs/outputs for identity predicates; verifier APIs; planned evidence module interface.
+2. **Proof Interface Specs:** inputs/outputs for identity predicates, verifier APIs, and the planned evidence module interface.
 3. **Oracle Adapter Spec:** sources, aggregation, parameters.
 4. **Reputation Math:** scoring formulae, decay, thresholds, and examples.
 5. **Governance Parameters Registry** with safe ranges and change procedures.
