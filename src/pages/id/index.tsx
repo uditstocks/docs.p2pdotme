@@ -41,6 +41,14 @@ export default function Home(): JSX.Element {
               Lihat di GitHub
             </Link>
           </div>
+          <div className={styles.statsRow}>
+            <Link
+              className="button button--secondary button--lg"
+              to="/id/stats"
+            >
+              Statistik Protokol
+            </Link>
+          </div>
         </div>
       </header>
     </Layout>
