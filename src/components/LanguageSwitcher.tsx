@@ -10,7 +10,7 @@ interface Language {
 }
 
 
-const languages: Language[] = [
+export const languages: Language[] = [
   { code: 'en', label: 'English', flag: '🇺🇸' },
   { code: 'pt', label: 'Português', flag: '🇧🇷' },
   { code: 'es', label: 'Español', flag: '🇪🇸' },
