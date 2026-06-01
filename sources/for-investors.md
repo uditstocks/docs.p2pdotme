@@ -36,11 +36,11 @@ The growth record supports the thesis. The protocol has sustained an average mon
 
 P2P on/off ramping is critical infrastructure for emerging markets. Millions of people depend on it to move between fiat and stablecoins every day. Infrastructure this important cannot remain under the control of a single operator. The token exists to decentralize ownership of this utility so that no single team, company, or jurisdiction can shut it down, censor it, or extract from it unfairly.
 
-`$P2P` is an **ownership token**. Under the target governance model, protocol intellectual property, treasury funds, and the ability to mint new tokens are controlled by token-holder governance through an on-chain Governor rather than by any single team. Holders are designed to control protocol financials, govern operational parameters, direct treasury spending, and hold enforceable claim over protocol IP. If protocol resources or IP were ever misappropriated, token governance gives holders the mechanism to redirect control, making control over the protocol and its resources enforceable and distributed.
+`$P2P` is an **ownership token**. Under the target governance model, governance operates in two layers. Treasury allocation and the ability to mint new tokens are governed by MetaDAO futarchy on Solana, a decision-market where participants stake capital on whether a proposal increases or decreases value and the market's prediction decides the outcome. Protocol parameters and contract upgrades are governed by an on-chain Compound Bravo-style Governor on Base. Across both layers, control rests with token-holder governance rather than with any single team. Through these layers, holders govern protocol parameters, direct treasury allocation, and hold enforceable governance control over protocol IP. If protocol resources or IP were ever misappropriated, token-holder governance provides the mechanism to redirect control, so control over the protocol and its resources is distributed and enforced.
 
-The token enables four things. The first is decentralized governance: holders vote on fees, limits, merchant rules, and treasury allocation, so no single operator controls these decisions. The second is trust staking through Circles of Trust, where token holders stake $P2P on merchant liquidity pools to attest to their trustworthiness, earning stablecoin yield from the Circle's transaction revenue.
+The token enables four things. The first is decentralized governance: holders govern protocol parameters such as fees, limits, and merchant rules through the on-chain Governor, and they govern treasury allocation through MetaDAO futarchy, so no single operator controls these decisions. The second is trust staking through Circles of Trust, where token holders stake $P2P on merchant liquidity pools to attest to their trustworthiness, earning stablecoin yield from the Circle's transaction revenue.
 
-The third is revenue-linked ownership. 20% of protocol revenue flows to the DAO-governed treasury, and the treasury can fund buy-and-burn or other value-accruing actions only through a passed governance proposal. The fourth is censorship resistance: decentralized ownership means no single point of failure, so the protocol can survive regulatory pressure in any one jurisdiction because control is distributed globally among token holders.
+The third is a governed treasury. 20% of protocol revenue flows to the treasury, and the treasury can fund buy-and-burn or other uses only through a MetaDAO futarchy decision-market. The fourth is censorship resistance: decentralized ownership means no single point of failure, so the protocol can survive regulatory pressure in any one jurisdiction because control is distributed globally among token holders.
 
 ---
 
@@ -79,7 +79,7 @@ The third is revenue-linked ownership. 20% of protocol revenue flows to the DAO-
   </div>
   <div className="stat-card" style={{gridColumn: '1 / -1'}}>
     <div className="stat-label">Future Issuance</div>
-    <div className="stat-value">Only via governance-approved proposals</div>
+    <div className="stat-value">Only via MetaDAO futarchy on Solana</div>
   </div>
 </div>
 
@@ -87,9 +87,9 @@ The third is revenue-linked ownership. 20% of protocol revenue flows to the DAO-
 
 ## Token Utility
 
-**Ownership.** $P2P is an ownership token. Protocol IP, treasury funds, and mint authority are controlled by token holders through the on-chain Governor, not by any single team, foundation, or entity. This means the token carries enforceable governance rights, including the mechanism to redirect control described in "Why the Token Exists." Decisions that affect token supply (minting) must pass an on-chain vote, where one staked $P2P equals one vote and a proposal passes only with majority support and quorum.
+**Ownership.** $P2P is an ownership token. Treasury funds and mint authority are controlled by token holders through MetaDAO futarchy on Solana, and protocol IP, parameters, and upgrades are controlled by token holders through the on-chain Governor on Base, not by any single team, foundation, or entity. This means the token carries enforceable governance rights, including the mechanism to redirect control described in "Why the Token Exists." Decisions that affect token supply (minting) must pass through the MetaDAO futarchy decision-market, where participants stake capital on whether a proposal increases or decreases value and the market's prediction decides the outcome.
 
-**Governance.** Token holders vote on protocol parameters such as fees, limits, merchant rules, oracle configs, and treasury allocation. One staked $P2P = one vote, with delegation.
+**Governance.** Token holders vote on protocol parameters such as fees, limits, merchant rules, and oracle configs through the on-chain Governor, where one staked $P2P = one vote, with delegation. Treasury allocation is governed separately through MetaDAO futarchy on Solana.
 
 **Staking.** Circle Admins stake $P2P to operate merchant networks. Community members delegate $P2P to Circles to participate in revenue sharing. Merchants stake USDC as working capital. The staking design aligns incentives by requiring economic commitment at every layer.
 
@@ -98,11 +98,11 @@ The third is revenue-linked ownership. 20% of protocol revenue flows to the DAO-
 | Recipient              | Share of Revenue                                             |
 | ---------------------- | ------------------------------------------------------------ |
 | Merchants + Delegators | 53.33%                                                       |
-| Treasury               | 20%, roadmap toward 33% buy-and-burn share (governed via the on-chain Governor) |
+| Treasury               | 20%, roadmap toward 33% buy-and-burn share (governed via MetaDAO futarchy) |
 | Insurance Pools        | 17.78%                                                       |
 | Circle Admins          | 8.89%                                                        |
 
-No single party captures a majority of protocol revenue. Merchants earn the most because they provide working capital and operational labor. Treasury contributions tie protocol usage to the network treasury. Governance can direct these funds toward buy-and-burn or other uses through a passed on-chain proposal. Insurance pools exist so disputes don't become externalised costs.
+No single party captures a majority of protocol revenue. Merchants earn the most because they provide working capital and operational labor. Treasury contributions tie protocol usage to the network treasury. Governance can direct these funds toward buy-and-burn or other uses through a MetaDAO futarchy decision-market. Insurance pools exist so disputes don't become externalised costs.
 
 ---
 
@@ -116,7 +116,7 @@ No single party captures a majority of protocol revenue. Merchants earn the most
 | **Early Backers** | **5,160,000**  | **20%**     | 12-month cliff, then five equal tranches at months 12, 15, 18, 21, 24 |
 | **Total**        | **25,800,000** | **100%**    |                                            |
 
-No backer or team tokens unlock at TGE. At launch, 12.9M tokens circulate (10M sale + 2.9M liquidity). Future issuance is governance-gated.
+No backer or team tokens unlock at TGE. At launch, 12.9M tokens circulate (10M sale + 2.9M liquidity). Future issuance is gated by MetaDAO futarchy on Solana.
 
 ---
 
@@ -162,9 +162,9 @@ Vesting is enforced via on-chain vesting contracts. Locked tokens cannot be stak
 
 ## Treasury and Buy-and-Burn
 
-20% of protocol revenue is routed to the DAO-governed treasury, with a stated roadmap toward a 33% buy-and-burn share by 2027 via governance. Through the on-chain Governor, token holders decide how those funds are deployed, including buy-and-burn, ecosystem grants, liquidity incentives, or other uses.
+20% of protocol revenue is routed to the treasury, with a stated roadmap toward a 33% buy-and-burn share by 2027 via MetaDAO futarchy. The treasury is held in a Solana vault governed by MetaDAO futarchy, and through that decision-market token holders decide how those funds are deployed, including buy-and-burn, ecosystem grants, liquidity incentives, or other uses.
 
-There is no automatic buyback schedule. Every buy-and-burn requires a passed governance proposal, and the mechanism itself is one governance-approved option: tokens purchased on the open market via DEX and sent to the zero address. The first treasury contribution is expected from June 2026.
+There is no automatic buyback schedule. Every buy-and-burn requires a passed futarchy decision-market, and the mechanism itself is one governance-approved option: tokens purchased on the open market via DEX and sent to the zero address. The first treasury contribution is expected from June 2026.
 
 The mechanism gives token holders direct control over treasury deployment. Revenue comes in, governance decides deployment, and the treasury scales with volume.
 
@@ -180,7 +180,7 @@ The mechanism gives token holders direct control over treasury deployment. Reven
 
 ## Token-Holder Governance
 
-The target model gives token holders direct control over protocol parameters, treasury, and upgrades.
+The target model gives token holders direct control over the protocol across two layers. Protocol parameters and upgrades are governed by the on-chain Governor described below. Treasury allocation and token minting are governed by MetaDAO futarchy on Solana. The parameters below describe the on-chain Governor.
 
 | Parameter          | Value. Target or typical, with on-chain bounds in parentheses |
 | ------------------ | ------------------------------------ |
@@ -192,7 +192,7 @@ The target model gives token holders direct control over protocol parameters, tr
 | Proposal threshold | Capped at 10% of supply              |
 | Timelock           | 7 days typical (configurable, 1h to 30d) |
 
-Governable parameters include fee percentages, spread configuration, staking and slashing rules, transaction volume limits, treasury allocation, smart contract upgrades, and token whitelisting.
+Parameters governed by the on-chain Governor include fee percentages, spread configuration, staking and slashing rules, transaction volume limits, smart contract upgrades, and token whitelisting. Treasury allocation and token minting are governed separately by MetaDAO futarchy on Solana.
 
 For contract-level governance detail (roles, permissions, dispute mechanics), see [`/for-builders`](/for-builders/start-here).
 
@@ -252,11 +252,11 @@ Users commit USDC during a 4-day window. If oversubscribed, allocations are pro-
 
 ### How does the treasury work?
 
-The treasury is funded entirely by transaction revenue from a working product, and token holders decide how to deploy those funds through the on-chain Governor. There is no automatic buyback schedule. The [Treasury and Buy-and-Burn](/for-token-holders/treasury-and-buy-and-burn) section covers the full mechanics, including the revenue share and the buy-and-burn roadmap.
+The treasury is funded entirely by transaction revenue from a working product, and token holders decide how to deploy those funds through MetaDAO futarchy on Solana, a decision-market where participants stake capital on a proposal's expected effect on value. There is no automatic buyback schedule. The [Treasury and Buy-and-Burn](/for-token-holders/treasury-and-buy-and-burn) section covers the full mechanics, including the revenue share and the buy-and-burn roadmap.
 
 ### Is supply fixed?
 
-Yes, fixed at launch (25.8M $P2P). Future issuance requires governance approval through the on-chain Governor. The protocol runs on transaction revenue, not token emissions.
+Yes, fixed at launch (25.8M $P2P). Future issuance requires governance approval through MetaDAO futarchy on Solana, the decision-market that governs token minting. The protocol runs on transaction revenue, not token emissions.
 
 ### Why Base for the protocol, and where does the token live?
 
@@ -301,7 +301,7 @@ Always verify the contract address above before buying. Never click $P2P buy lin
   <li>Fund your wallet with SOL to cover the token purchase and transaction fees.</li>
   <li>Open <a href="https://jup.ag/tokens/P2PXup1ZvMpCDkJn3PQxtBYgxeCSfH39SFeurGSmeta" target="_blank">Jupiter</a> and connect your wallet.</li>
   <li>Swap SOL (or any supported token) for <strong>$P2P</strong>.</li>
-  <li>Confirm the transaction - your $P2P will appear in your wallet shortly.</li>
+  <li>Confirm the transaction. Your $P2P will appear in your wallet shortly.</li>
 </ol>
 
 ### After You Buy

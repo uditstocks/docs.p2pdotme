@@ -149,7 +149,7 @@ The protocol involves several key participants working together to enable trustl
 
 **Proof Verifiers** currently validate ZK-KYC proofs for identity verification (government IDs, social accounts, and passports via Reclaim Protocol and other ZK verifiers). Bank transaction verification is planned (see [Section 4.2](/whitepaper/cryptographic-primitives-proof-integration#42-evidence-module-for-bank-transaction-verification-roadmap)).
 
-**Governance** encompasses the mechanisms through which protocol parameters, upgrades, and treasury decisions are made. The current implementation is admin/multisig operated, with a planned transition to broader token-holder governance as the protocol matures.
+**Governance** is split across two layers. Protocol parameters and upgrades on Base are governed by $P2P holders through an on-chain Governor, while token minting, supply changes, and treasury allocation are governed on Solana through MetaDAO's on-chain decision-market. The current implementation is admin/multisig operated, with a transition to broader token-holder governance underway as the protocol matures.
 
 ### 3.2 Components
 
@@ -379,13 +379,13 @@ A user can increase their Reputation Points (RP) score via a series of on-chain 
 
 ### 7.1 How Reputation Prevents Fraud
 
-Merely making the protocol fully anonymous would do little to preclude the possibility of users misusing the platform. However, combined with the strict reputation system for on-ramp transactions, the chances of a buyer committing impersonation fraud drop drastically, especially given the meager amounts they can transact with their expectedly suspicious on-chain reputation.
+Merely making the protocol fully anonymous would do little to preclude the possibility of users misusing the platform. However, combined with the strict reputation system for on-ramp transactions, the opportunity for a buyer to commit impersonation fraud is sharply constrained, especially given the limited amounts they can transact with a new or low on-chain reputation.
 
 It is worth noting that centralized exchanges routinely face difficulties in implementing a viable KYC procedure for their users. The Protocol's non-custodial KYC prevents fraud while retaining the benefit of anonymity for the user if no illicit activity surfaces over the course of their interaction with the platform.
 
 ### 7.2 Anti-Money Laundering Through Transaction Limits
 
-The underlying RP mechanism practically eliminates the risk of money laundering and similar malevolent practices. The transaction limits imposed naturally take care of anti-money laundering compliance. There is simply less of a scope for any non-trivial amount of black money to be laundered given the lack of transactional scalability and the reputational banning risks involved.
+The reputation mechanism and the transaction limits tied to reputation tiers materially reduce money-laundering risk. Low per-tier limits and the threat of reputational banning constrain the scope for laundering non-trivial amounts. These controls are one layer of a broader compliance approach rather than a complete safeguard.
 
 ### 7.3 Merchant Accountability
 
@@ -502,22 +502,23 @@ The P2P Protocol SDK lets developers integrate the protocol to on/off-ramp users
 
 - **Parameters:** fees, limits, rail risk weights, oracle sets, proof policies, bond schedules.
 - **Upgrades:** contracts behind timelocks with public proposals. Emergency pause is limited to narrow scopes, with automatic sunset.
-- **Today:** parameters, treasury actions, and upgrades are operated by an admin multisig with published members and constraints, and an on-chain Governor (Compound Bravo style, with snapshot quorum, proposal threshold, and integrated timelock) is deployed on Base. Some parameter setters, such as those on the protocol configuration facet, already accept either the Governance Diamond or a super-admin as caller, while the remaining setters are super-admin gated during the transition.
-- **Transition:** authority over parameters, treasury, and roadmap moves to $P2P holders through the on-chain Governor in staged phases. The phases progress from an admin veto, to the DAO acting as the primary path with an admin backup, to DAO-only control with a time-limited admin emergency backstop.
+- **Two layers:** protocol parameters and upgrades on Base are governed by $P2P holders through an on-chain Governor (Compound Bravo style, with snapshot quorum, proposal threshold, and integrated timelock). Token minting, supply changes, and treasury allocation are governed on Solana through MetaDAO's on-chain decision-market, where the token is issued and the treasury is held.
+- **Today:** protocol parameters and upgrades are operated by an admin multisig with published members and constraints, and the on-chain Governor is deployed on Base. Some parameter setters, such as those on the protocol configuration facet, already accept either the Governance Diamond or a super-admin as caller, while the remaining setters are super-admin gated during the transition.
+- **Transition:** authority over protocol parameters, upgrades, and roadmap moves to $P2P holders through the on-chain Governor in staged phases. The phases progress from an admin veto, to the DAO acting as the primary path with an admin backup, to DAO-only control with a time-limited admin emergency backstop. Treasury allocation and any change to token supply are decided through MetaDAO's decision-market governance on Solana.
 
 ---
 
 ## 16. Token Economics
 
-The $P2P token is an **ownership token**. The most important parts of the protocol, namely protocol intellectual property, treasury funds, the ability to mint new tokens, and protocol parameters, are controlled by $P2P token holders through an on-chain Governor, not by any single team, foundation, or entity. Holders govern protocol financials, operational parameters, and treasury spending, and hold enforceable governance control over protocol IP. If protocol resources or IP were ever misappropriated, token-holder governance provides the mechanism to redirect control, so control over the protocol and its resources is distributed and enforced on-chain. This is protocol ownership exercised through governance, distinct from equity. The token is not equity, debt, or a security, and it carries no claim on the assets, revenue, or profit of any entity.
+The $P2P token is an **ownership token**. Control is split across two layers. Protocol parameters and upgrades on Base are governed by $P2P holders through an on-chain Governor (Compound Bravo style). Token minting, supply changes, and treasury allocation are governed on Solana through MetaDAO's on-chain decision-market, where the token is issued and the treasury is held. Together these place protocol intellectual property, treasury funds, mint authority, and operational parameters under token-holder control rather than any single team, foundation, or entity. If protocol resources or IP were ever misappropriated, token-holder governance provides the mechanism to redirect control, so control over the protocol and its resources is distributed and enforced on-chain. This is protocol ownership exercised through governance, distinct from equity. The token is not equity, debt, or a security, and it carries no claim on the assets, revenue, or profit of any entity.
 
-Total supply is fixed at 25,800,000 $P2P with no inflation. Any change affecting token supply would require a governance proposal to pass the on-chain Governor, where voting power is one staked $P2P to one vote and a proposal threshold and quorum apply. Proposals are decided by for, against, and abstain votes against a snapshot quorum, and passing proposals execute through an integrated timelock that gives holders an exit window before any change takes effect.
+Total supply is fixed at 25,800,000 $P2P with no inflation. The token is minted via MetaDAO on Solana, and any change affecting token supply is decided through MetaDAO's decision-market governance. Protocol-parameter governance is separate: the on-chain Governor on Base votes with $P2P bridged from Solana, one staked token to one vote, for, against, and abstain against a snapshot quorum, and passing proposals execute through an integrated timelock that gives holders an exit window before any change takes effect.
 
-On the governance side, token holders vote on fee structures, transaction limits, risk weights, oracle configurations, treasury allocation, and protocol upgrades. Of protocol revenue, 20% is routed to the DAO-governed treasury and 80% to network operators (merchants, Circle Admins, delegators, and insurance pools). There are no automatic buybacks. The treasury may direct buy-and-burn or other uses only through a passed governance proposal.
+On the protocol side, holders vote through the on-chain Governor on fee structures, transaction limits, risk weights, oracle configurations, and protocol upgrades. Treasury allocation is governed separately through MetaDAO's decision-market on Solana. Of protocol revenue, 20% is routed to the treasury and 80% to network operators (merchants, Circle Admins, delegators, and insurance pools). There are no automatic buybacks. The treasury may direct buy-and-burn or other uses only through a passed MetaDAO decision-market vote on Solana, since buy-and-burn is both a treasury allocation and a change to token supply.
 
-On the economic side, merchants and verifiers stake tokens as bonds, aligning their incentives with honest behavior. Fee routing provides rebates and discounts to active participants. The token enables participation in dispute insurance pools and community delegation for revenue sharing.
+On the economic side, merchants and verifiers stake tokens as bonds, aligning their incentives with honest behavior. Fee routing provides rebates and discounts to active participants. The token is also staked into dispute insurance pools and delegated to Circles of Trust, where participants are compensated for the capital they put at risk and the operational work they perform.
 
-A portion of protocol revenue flows into a treasury governed on-chain. These funds support security audits, bug bounties, ecosystem grants, and liquidity. Allocation of treasury funds is decided by token-holder governance through the on-chain Governor.
+A portion of protocol revenue flows into the treasury. These funds support security audits, bug bounties, ecosystem grants, and liquidity. Treasury allocation is decided through MetaDAO's decision-market governance.
 
 ---
 
