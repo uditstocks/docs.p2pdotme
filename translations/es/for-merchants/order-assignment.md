@@ -5,15 +5,15 @@ title: "Asignación de Órdenes"
 slug: order-assignment
 ---
 
-La asignación de órdenes está restringida por verificaciones del merchant y del canal de pago.
+La asignación de órdenes está condicionada por verificaciones del comerciante y del canal de pago.
 
-- Estado online/offline
-- Estado de blacklist, disputa y solicitud de unstake
+- Estado en línea/fuera de línea
+- Estado de lista negra, disputas y solicitudes de retiro de participación
 - Verificaciones de capacidad de órdenes en curso
 - Estado activo/aprobado del canal de pago
 - Verificaciones de volumen diario y mensual
-- Umbrales de liquidez fiat y respaldada por stake
+- Umbrales de liquidez respaldados por moneda fiat y participación
 
-La asignación es determinística y on-chain. Las verificaciones están escalonadas de manera que una sola condición fallida elimina a un merchant del pool de candidatos sin afectar a los demás.
+La asignación es determinista y ocurre en cadena. Las verificaciones se aplican en capas, de modo que una sola condición fallida excluye a un comerciante del grupo de candidatos sin afectar a los demás.
 
 ---

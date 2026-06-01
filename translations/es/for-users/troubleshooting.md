@@ -1,23 +1,23 @@
 ---
 id: troubleshooting
 sidebar_position: 7
-title: "Solución de Problemas"
+title: "Solución de problemas"
 slug: troubleshooting
 ---
 
-## La orden fue cancelada inesperadamente
+## El pedido fue cancelado inesperadamente
 
-- Verificá si la orden expiró o si falló un paso de transferencia.
-- Recreá la orden con los datos correctos y completá los pasos rápidamente.
+- Verifique si el pedido expiró o si algún paso de transferencia falló.
+- Vuelva a crear el pedido con los datos correctos y complete los pasos sin demora.
 
-## El merchant no responde
+## El comerciante no responde
 
-- Esperá el camino de reasignación/timeout del protocolo donde aplique.
-- Si se cumplen las condiciones, abrí una disputa con evidencia.
+- Espere la reasignación del protocolo o el camino de tiempo de espera cuando corresponda.
+- Si se cumplen las condiciones, abra una disputa con evidencia.
 
 ## La transferencia falló
 
-- Confirmá la aprobación/saldo del token para SELL/PAY.
-- Confirmá los detalles del riel y los pasos de confirmación de pago para BUY.
+- Confirme la aprobación del token y el saldo disponible para `SELL`/`PAY`.
+- Confirme los datos del canal de pago y los pasos de confirmación del pago para `BUY`.
 
 ---

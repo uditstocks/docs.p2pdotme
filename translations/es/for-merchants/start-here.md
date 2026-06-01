@@ -1,27 +1,26 @@
 ---
 id: start-here
 sidebar_position: 0
-title: "Comienza Aquí"
+title: "Comienza aquí"
 slug: start-here
 ---
 
-Esta guía cubre todo lo que los merchants necesitan para operar en P2P Protocol, desde el registro hasta el manejo de órdenes y los Círculos de Confianza.
+Esta guía cubre la operación como comerciante en P2P Protocol, desde el registro y el staking hasta la gestión de órdenes, disputas y Circles of Trust.
 
-**Enlaces rápidos a secciones clave.**
-
-- [Preparación del merchant](/es/for-merchants/merchant-readiness)
+- [Requisitos para comerciantes](/es/for-merchants/merchant-readiness)
 - [Flujo de configuración](/es/for-merchants/merchant-setup-flow)
-- [Manejo de órdenes](/es/for-merchants/handling-orders)
+- [Gestión de órdenes](/es/for-merchants/handling-orders)
 - [Controles operativos](/es/for-merchants/operational-controls)
-- [Círculos de Confianza](/es/for-merchants/circles-of-trust)
+- [Circles of Trust](/es/for-merchants/circles-of-trust)
 - [Canales de pago y controles por país](/es/for-merchants/payment-channels-and-country-controls)
 - [Asignación de órdenes](/es/for-merchants/order-assignment)
 - [Disputas](/es/for-merchants/disputes)
 - [Delegación y reparto de ingresos](/es/for-merchants/delegation-and-revenue-sharing)
 - [Seguro](/es/for-merchants/insurance)
+- [Prácticas de riesgo y fiabilidad](/es/for-merchants/risk-and-reliability-practices)
 - [Solución de problemas](/es/for-merchants/troubleshooting)
 - [Preguntas frecuentes](/es/for-merchants/faq)
 
-También consulta [`/for-users`](/es/for-users/start-here) para entender las expectativas del lado del usuario y [`/whitepaper`](/es/whitepaper/abstract) para contexto del protocolo.
+Consulta también [`/for-users`](/es/for-users/start-here) para entender las expectativas del lado del usuario, y [`/whitepaper`](/es/whitepaper/abstract) para el contexto del protocolo.
 
 ---

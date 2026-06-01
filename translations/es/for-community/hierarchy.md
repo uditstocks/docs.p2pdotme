@@ -5,17 +5,17 @@ title: "Jerarquía"
 slug: hierarchy
 ---
 
-| Nivel | Rol | Nombre Código |
-|-------|-----|---------------|
-| Core Team | Fundadores y líderes del protocolo | "Core Team" |
-| Country Lead | Gestiona todos los tracks en un país | "Country Lead" |
-| Coordinador | Coordinadores de track | "Keymaster" |
-| Contribuidor | Embajadores de la comunidad | "Cipher" |
+| Nivel        | Rol                                            | Nombre en clave |
+| ------------ | ---------------------------------------------- | --------------- |
+| Core Team    | Fundadores y líderes del protocolo             | "Core Team"     |
+| Country Lead | Gestiona todas las áreas en un país            | "Country Lead"  |
+| Coordinador  | Coordinadores de área                          | "Keymaster"     |
+| Contribuidor | Embajadores de la comunidad                    | "Cipher"        |
 
 ```mermaid
 flowchart TD
     CT["1. Core Team"]
-    
+
     subgraph india [India]
         CL_IN["2. Country Lead"]
         KM_IN_Relay["3. Keymaster - Relay Guild"]
@@ -27,19 +27,19 @@ flowchart TD
         CL_IN --> KM_IN_Signal
         CL_IN --> KM_IN_Forge
     end
-    
-    subgraph brazil [Brasil]
+
+    subgraph brazil [Brazil]
         CL_BR["2. Country Lead"]
         KM_BR["3. Keymasters..."]
         CL_BR --> KM_BR
     end
-    
-    subgraph other [Otros Países...]
+
+    subgraph other [Other Countries...]
         CL_X["2. Country Lead"]
         KM_X["3. Keymasters..."]
         CL_X --> KM_X
     end
-    
+
     CT --> CL_IN
     CT --> CL_BR
     CT --> CL_X
@@ -49,13 +49,13 @@ Cada "Keymaster" gestiona hasta 5 "Ciphers".
 
 ## Responsabilidades del Country Lead
 
-Cada "Country Lead" gestiona los cuatro tracks en su país.
+Cada "Country Lead" gestiona las cuatro áreas en su país.
 
-| Nombre Código | Alcance |
-|---------------|---------|
-| **Relay Guild** | Canales de Discord/Telegram del país |
-| **Node Guild** | Universidades y eventos locales |
-| **Signal Guild** | Redes sociales regionales (contenido en idioma local) |
-| **Forge Guild** | Traducciones, comunidad local de devs |
+| Nombre en clave  | Alcance                                                        |
+| ---------------- | -------------------------------------------------------------- |
+| **Relay Guild**  | Canales de Discord/Telegram del país                           |
+| **Node Guild**   | Universidades y eventos locales                                |
+| **Signal Guild** | Redes sociales regionales (contenido en idioma local)          |
+| **Forge Guild**  | Traducciones, comunidad local de desarrolladores               |
 
 ---

@@ -5,46 +5,32 @@ title: "FAQ"
 slug: faq
 ---
 
-### Em qual chain os contratos estão implantados?
+## Em qual blockchain os contratos estão implantados?
 
-Os contratos inteligentes do protocolo estão ativos na **Base (EVM)**. A implantação na **Solana** está planejada como parte da expansão multichain. O token **$P2P** é um token SPL na Solana. Veja **[Estratégia Multichain](/pt/for-token-holders/multichain-strategy)** para mais detalhes.
+Os contratos inteligentes do protocolo estão ativos na Base (EVM). A implantação na Solana está planejada como parte da expansão multicadeia. O token $P2P é um token SPL na Solana. Consulte o [FAQ de token e blockchain](/pt/for-token-holders/faq) para mais detalhes.
 
----
+## Onde estão as ABIs dos contratos?
 
-### Onde estão os ABIs dos contratos?
+As referências de contratos estão listadas na seção [Referências de Contratos](/pt/for-builders/contract-references). A superfície de integração já é de código aberto: o SDK ([`@p2pdotme/sdk`](https://github.com/p2pdotme/p2pdotme-sdk)), os widgets React ([`@p2pdotme/widgets`](https://github.com/p2pdotme/widgets)) e os contratos e interfaces do integrador B2B ([`payment-integrators`](https://github.com/p2pdotme/payment-integrators)). Os contratos Diamond do protocolo principal estão pendentes de auditoria e serão disponibilizados como código aberto após sua conclusão.
 
-As referências dos contratos estão listadas na seção **[Referências dos Contratos](/pt/for-builders/contract-references)**. O código-fonte ainda está passando por auditorias e será open-source até junho de 2026.
+## Posso adicionar um novo país ou moeda?
 
----
+O framework de expansão de moedas utiliza configurações YAML de código aberto. Qualquer pessoa com conhecimento de rails de pagamento locais pode propor uma nova moeda via PR.
 
-### Posso adicionar um novo país ou moeda?
+## Como funcionam as disputas no nível do contrato?
 
-O framework de expansão de moedas usa configurações YAML open-source. Qualquer pessoa com conhecimento sobre trilhos de pagamento locais pode propor uma nova moeda via PR.
+Os usuários chamam `raiseDispute` no `OrderProcessorFacet`. Os administradores resolvem via `adminSettleDispute` com um tipo de falha. A resolução aciona hooks de contabilidade e RP. Consulte [Disputas](/pt/for-builders/disputes) para o fluxo completo.
 
----
+## O que é a arquitetura Diamond?
 
-### Como funcionam as disputas no nível de contrato?
+O protocolo utiliza o Padrão Diamond EIP-2535. A funcionalidade é dividida em facets que compartilham armazenamento, permitindo atualizações modulares sem reimplantar o contrato completo.
 
-Usuários chamam `raiseDispute` no `OrderProcessorFacet`. Administradores resolvem via `adminSettleDispute`, definindo um tipo de falha. A resolução aciona a contabilização e hooks de RP. Veja **[Disputas](/pt/for-builders/disputes)** para o fluxo completo.
+## Como o RP se integra ao fluxo de pedidos?
 
----
+Os hooks de RP estão na lista de permissões do `ReputationManager`. Atualizações de volume de pedidos, penalidades por disputas e recompensas com verificação de acesso fluem por esses hooks. Consulte [Reputação](/pt/for-builders/reputation).
 
-### O que é a arquitetura Diamond?
+## Onde estão os detalhes de governança para os detentores de tokens?
 
-O protocolo utiliza o padrão **EIP-2535 Diamond**. A funcionalidade é dividida em *facets* que compartilham armazenamento, permitindo upgrades modulares sem precisar reimplantar o contrato completo.
-
----
-
-### Como o RP se integra ao fluxo de ordens?
-
-Os hooks de RP são whitelistados no `ReputationManager`. Volume das ordens são atualizados, penalidades por disputa e recompensas condicionadas à verificação passam por esses hooks. Veja **[Reputação](/pt/for-builders/reputation)**.
+A governança para detentores de tokens (modelo de votação, quórum, descentralização progressiva) está documentada em [`/for-token-holders`](/pt/for-token-holders/start-here).
 
 ---
-
-### Onde ficam os detalhes de governança para holders do token?
-
-A governança para detentores do token (modelo de votação, quórum, descentralização progressiva) está documentada em **[Para Detentores do Token](/pt/for-token-holders/start-here)**.
-
-
----
-

@@ -5,12 +5,12 @@ title: "Reputación"
 slug: reputation
 ---
 
-Los Puntos de Reputación (RP) controlan quién puede hacer qué en el protocolo. Los RP gobiernan directamente los límites de transacción, los resultados de disputas y la elegibilidad para recompensas.
+Los Puntos de Reputación (RP) controlan quién puede hacer qué en el protocolo. Los RP rigen directamente los límites de transacción, la elegibilidad para votar y la elegibilidad para recompensas, y habilitan la elegibilidad como jurado y la autoría de propuestas. Las pérdidas en disputas no determinan la liquidación. Imponen penalizaciones de RP después de que un titular de capacidad resuelve la disputa.
 
-- El crecimiento de RP basado en volumen recompensa la participación constante.
+- El crecimiento de RP impulsado por volumen recompensa la participación constante.
 - Las pérdidas en disputas imponen penalizaciones de RP que reducen la capacidad futura.
-- Las señales de verificación (Aadhaar, redes sociales, pasaporte) condicionan los reclamos de recompensas sin requerir PII en crudo on-chain.
+- Las señales de verificación (Aadhaar, redes sociales, pasaporte) habilitan las reclamaciones de recompensas sin requerir información personal identificable en la cadena.
 
-Cuando la gobernanza por token se active, los RP y la votación con tokens serán complementarios. Los tokens gobiernan las reglas y la reputación gobierna el acceso.
+Cuando se active la gobernanza por tokens, los RP y la votación por tokens se vuelven complementarios. Los tokens gobiernan las reglas y la reputación gobierna el acceso.
 
 ---

@@ -16,7 +16,10 @@
       "numberSections": true,
       "generateTocLinks": false,
       "sidebarStyle": "flat",
-      "skipSections": ["P2P Protocol Whitepaper Update", "P2P Protocol Whitepaper"]
+      "skipSections": [
+        "P2P Protocol Whitepaper Update",
+        "P2P Protocol Whitepaper"
+      ]
     },
     {
       "id": "for-token-holders",
@@ -31,7 +34,9 @@
       "numberSections": false,
       "generateTocLinks": false,
       "sidebarStyle": "flat",
-      "skipSections": ["For Token Holders"]
+      "skipSections": [
+        "For Token Holders"
+      ]
     },
     {
       "id": "for-builders",
@@ -46,7 +51,9 @@
       "numberSections": false,
       "generateTocLinks": false,
       "sidebarStyle": "flat",
-      "skipSections": ["For Builders"]
+      "skipSections": [
+        "For Builders"
+      ]
     },
     {
       "id": "for-merchants",
@@ -61,7 +68,9 @@
       "numberSections": false,
       "generateTocLinks": false,
       "sidebarStyle": "flat",
-      "skipSections": ["For Merchants"]
+      "skipSections": [
+        "For Merchants"
+      ]
     },
     {
       "id": "for-users",
@@ -76,7 +85,9 @@
       "numberSections": false,
       "generateTocLinks": false,
       "sidebarStyle": "flat",
-      "skipSections": ["For Users"]
+      "skipSections": [
+        "For Users"
+      ]
     },
     {
       "id": "for-community",
@@ -91,78 +102,15 @@
       "numberSections": false,
       "generateTocLinks": false,
       "sidebarStyle": "flat",
-      "skipSections": ["For Community"]
-    },
-    {
-      "id": "translations-pt",
-      "outputDir": "translations/pt",
-      "routeBasePath": "pt",
-      "navbarLabel": "Whitepaper",
-      "navbarPosition": "left",
-      "sidebarId": "ptSidebar",
-      "sidebarPath": "./translations/pt/sidebar.ts",
-      "skipGeneration": true,
-      "isTranslation": true,
-      "translationSections": [
-        {
-          "id": "whitepaper",
-          "outputDir": "translations/pt/whitepaper",
-          "routeBasePath": "pt/whitepaper",
-          "preGeneratedFiles": [
-            {"doc_id": "00-abstract", "title": "Abstract"},
-            {"doc_id": "01-1-the-vision", "title": "1. A Visão"},
-            {"doc_id": "02-2-design-goals-and-non-goals", "title": "2. Objetivos de Design e Não-Objetivos"},
-            {"doc_id": "03-3-system-overview", "title": "3. Visão Geral do Sistema"},
-            {"doc_id": "04-4-cryptographic-primitives-proof-integration", "title": "4. Primitivos Criptográficos e Integração de Provas"},
-            {"doc_id": "05-5-trade-protocol-on-and-off-ramp", "title": "5. Protocolo de Negociação (On-Ramp e Off-Ramp)"},
-            {"doc_id": "06-6-proof-of-credibility-reputation-matching", "title": "6. Proof-of-Credibility (Reputação e Correspondência)"},
-            {"doc_id": "07-7-fraud-prevention", "title": "7. Prevenção de Fraude"},
-            {"doc_id": "08-8-dispute-resolution", "title": "8. Resolução de Disputas"},
-            {"doc_id": "09-9-pricing-oracle-mechanics", "title": "9. Mecânica de Preços e Oráculos"},
-            {"doc_id": "10-10-liquidity-market-design", "title": "10. Liquidez e Design de Mercado"},
-            {"doc_id": "11-11-security-model", "title": "11. Modelo de Segurança"},
-            {"doc_id": "12-12-privacy-model", "title": "12. Modelo de Privacidade"},
-            {"doc_id": "13-13-compliance-policy-positioning", "title": "13. Conformidade e Posicionamento de Política"},
-            {"doc_id": "14-14-accessing-p2p-protocol-clients-sdks", "title": "14. Acessando o Protocolo P2P: Clientes e SDKs"},
-            {"doc_id": "15-15-governance-upgradability", "title": "15. Governança e Atualizabilidade"},
-            {"doc_id": "16-16-token-economics", "title": "16. Economia de Tokens"},
-            {"doc_id": "17-17-disclosures-risks", "title": "17. Divulgações e Riscos"},
-            {"doc_id": "18-18-references", "title": "18. Referências"},
-            {"doc_id": "19-appendices", "title": "19. Apêndices"}
-          ]
-        },
-        {
-          "id": "for-investors",
-          "outputDir": "translations/pt/for-investors",
-          "routeBasePath": "pt/for-investors",
-          "preGeneratedFiles": [
-            {"doc_id": "start-here", "title": "Comece Aqui"},
-            {"doc_id": "investor-thesis", "title": "Tese de Investidor"},
-            {"doc_id": "why-the-token-exists", "title": "Por Que o Token Existe"},
-            {"doc_id": "token-details", "title": "Detalhes do Token"},
-            {"doc_id": "token-utility", "title": "Utilidade do Token"},
-            {"doc_id": "token-allocation", "title": "Alocação de Tokens"},
-            {"doc_id": "past-investors", "title": "Investidores Anteriores"},
-            {"doc_id": "metadao-sale", "title": "Venda MetaDAO"},
-            {"doc_id": "vesting-schedules", "title": "Cronogramas de Vesting"},
-            {"doc_id": "treasury-and-token-value", "title": "Tesouro e Valor do Token"},
-            {"doc_id": "staking-mechanics", "title": "Mecânica de Staking"},
-            {"doc_id": "token-holder-governance", "title": "Governança de Detentores de Tokens"},
-            {"doc_id": "progressive-decentralization", "title": "Descentralização Progressiva"},
-            {"doc_id": "insurance", "title": "Seguro"},
-            {"doc_id": "financials-and-estimates", "title": "Finanças e Estimativas"},
-            {"doc_id": "multichain-strategy", "title": "Estratégia Multichain"},
-            {"doc_id": "disclosures", "title": "Divulgações"},
-            {"doc_id": "faq", "title": "FAQ"}
-          ]
-        }
+      "skipSections": [
+        "For Community"
       ]
     },
     {
       "id": "translations-es",
       "outputDir": "translations/es",
       "routeBasePath": "es",
-      "navbarLabel": "Whitepaper",
+      "navbarLabel": "Español",
       "navbarPosition": "left",
       "sidebarId": "esSidebar",
       "sidebarPath": "./translations/es/sidebar.ts",
@@ -174,35 +122,161 @@
           "outputDir": "translations/es/whitepaper",
           "routeBasePath": "es/whitepaper",
           "preGeneratedFiles": [
-            {"doc_id": "00-abstract", "title": "Resumen"},
-            {"doc_id": "01-1-the-vision", "title": "1. La Visión"},
-            {"doc_id": "02-2-design-goals-and-non-goals", "title": "2. Objetivos de Diseño y No-Objetivos"},
-            {"doc_id": "03-3-system-overview", "title": "3. Resumen del Sistema"},
-            {"doc_id": "04-4-cryptographic-primitives-proof-integration", "title": "4. Primitivas Criptográficas e Integración de Pruebas"},
-            {"doc_id": "05-5-trade-protocol-on-and-off-ramp", "title": "5. Protocolo de Operaciones (On-Ramp y Off-Ramp)"},
-            {"doc_id": "06-6-proof-of-credibility-reputation-matching", "title": "6. Prueba-de-Credibilidad (Reputación y Emparejamiento)"},
-            {"doc_id": "07-7-fraud-prevention", "title": "7. Prevención de Fraude"},
-            {"doc_id": "08-8-dispute-resolution", "title": "8. Resolución de Disputas"},
-            {"doc_id": "09-9-pricing-oracle-mechanics", "title": "9. Precios y Mecánica de Oráculos"},
-            {"doc_id": "10-10-liquidity-market-design", "title": "10. Liquidez y Diseño de Mercado"},
-            {"doc_id": "11-11-security-model", "title": "11. Modelo de Seguridad"},
-            {"doc_id": "12-12-privacy-model", "title": "12. Modelo de Privacidad"},
-            {"doc_id": "13-13-compliance-policy-positioning", "title": "13. Cumplimiento y Posicionamiento de Políticas"},
-            {"doc_id": "14-14-accessing-p2p-protocol-clients-sdks", "title": "14. Acceso al Protocolo P2P: Clientes y SDKs"},
-            {"doc_id": "15-15-governance-upgradability", "title": "15. Gobernanza y Actualizabilidad"},
-            {"doc_id": "16-16-token-economics", "title": "16. Economía del Token"},
-            {"doc_id": "17-17-disclosures-risks", "title": "17. Divulgaciones y Riesgos"},
-            {"doc_id": "18-18-references", "title": "18. Referencias"},
-            {"doc_id": "19-appendices", "title": "Apéndices"}
+            {
+              "doc_id": "00-abstract",
+              "title": "Resumen"
+            },
+            {
+              "doc_id": "01-1-overview",
+              "title": "1. Descripción general"
+            },
+            {
+              "doc_id": "02-2-design-goals-and-non-goals",
+              "title": "2. Objetivos de diseño y no-objetivos"
+            },
+            {
+              "doc_id": "03-3-system-overview",
+              "title": "“3. Descripción General del Sistema”"
+            },
+            {
+              "doc_id": "04-4-cryptographic-primitives-proof-integration",
+              "title": "4. Primitivas Criptográficas e Integración de Pruebas"
+            },
+            {
+              "doc_id": "05-5-trade-protocol-on-and-off-ramp",
+              "title": "5. Protocolo de Negociación (On-Ramp y Off-Ramp)"
+            },
+            {
+              "doc_id": "06-6-proof-of-credibility-reputation-matching",
+              "title": "6. Prueba de Credibilidad (Reputación y Emparejamiento)"
+            },
+            {
+              "doc_id": "07-7-fraud-prevention",
+              "title": "7. Prevención del Fraude"
+            },
+            {
+              "doc_id": "08-8-dispute-resolution",
+              "title": "8. Resolución de Disputas"
+            },
+            {
+              "doc_id": "09-9-pricing-oracle-mechanics",
+              "title": "9. Precios y Mecánica de Oráculos"
+            },
+            {
+              "doc_id": "10-10-liquidity-market-design",
+              "title": "10. Diseño de Liquidez y Mercado"
+            },
+            {
+              "doc_id": "11-11-security-model",
+              "title": "11. Modelo de Seguridad"
+            },
+            {
+              "doc_id": "12-12-privacy-model",
+              "title": "12. Modelo de Privacidad"
+            },
+            {
+              "doc_id": "13-13-compliance-policy-positioning",
+              "title": "13. Cumplimiento y Posicionamiento Regulatorio"
+            },
+            {
+              "doc_id": "14-14-accessing-p2p-protocol-clients-sdks",
+              "title": "14. Acceso al P2P Protocol: Clientes y SDKs"
+            },
+            {
+              "doc_id": "15-15-governance-upgradability",
+              "title": "15. Gobernanza y Actualizabilidad"
+            },
+            {
+              "doc_id": "16-16-token-economics",
+              "title": "16. Economía del Token"
+            },
+            {
+              "doc_id": "17-17-disclosures-risks",
+              "title": "17. Divulgaciones y Riesgos"
+            },
+            {
+              "doc_id": "18-18-references",
+              "title": "18. Referencias"
+            },
+            {
+              "doc_id": "19-appendices",
+              "title": "Apéndices"
+            }
           ]
         },
         {
-          "id": "for-investors",
-          "outputDir": "translations/es/for-investors",
-          "routeBasePath": "es/for-investors",
+          "id": "for-token-holders",
+          "outputDir": "translations/es/for-token-holders",
+          "routeBasePath": "es/for-token-holders",
           "preGeneratedFiles": [
-            {"doc_id": "start-here", "title": "Comienza Aquí"},
-            {"doc_id": "protocol-overview", "title": "Resumen del Protocolo"}
+            {
+              "doc_id": "start-here",
+              "title": "Empieza aquí"
+            },
+            {
+              "doc_id": "token-thesis",
+              "title": "Tesis del Token"
+            },
+            {
+              "doc_id": "why-the-token-exists",
+              "title": "“Por qué existe el token”"
+            },
+            {
+              "doc_id": "token-details",
+              "title": "Detalles del Token"
+            },
+            {
+              "doc_id": "token-utility",
+              "title": "“Utilidad del Token”"
+            },
+            {
+              "doc_id": "token-allocation",
+              "title": "Asignación de tokens"
+            },
+            {
+              "doc_id": "metadao-sale",
+              "title": "Venta MetaDAO"
+            },
+            {
+              "doc_id": "vesting-schedules",
+              "title": "Calendarios de Vesting"
+            },
+            {
+              "doc_id": "treasury-and-buy-and-burn",
+              "title": "Tesoro y compra-y-quema"
+            },
+            {
+              "doc_id": "staking-mechanics",
+              "title": "Mecánica de Staking"
+            },
+            {
+              "doc_id": "token-holder-governance",
+              "title": "Gobernanza de Titulares de Tokens"
+            },
+            {
+              "doc_id": "progressive-decentralization",
+              "title": "Descentralización Progresiva"
+            },
+            {
+              "doc_id": "insurance",
+              "title": "Seguro"
+            },
+            {
+              "doc_id": "protocol-metrics",
+              "title": "Métricas del Protocolo"
+            },
+            {
+              "doc_id": "faq",
+              "title": "Preguntas Frecuentes"
+            },
+            {
+              "doc_id": "get-p2p",
+              "title": "Obtener $P2P"
+            },
+            {
+              "doc_id": "disclosures",
+              "title": "Divulgaciones"
+            }
           ]
         },
         {
@@ -210,16 +284,50 @@
           "outputDir": "translations/es/for-builders",
           "routeBasePath": "es/for-builders",
           "preGeneratedFiles": [
-            {"doc_id": "start-here", "title": "Comienza Aquí"},
-            {"doc_id": "roles-and-permissions", "title": "Roles y Permisos"},
-            {"doc_id": "protocol-parameters", "title": "Parámetros del Protocolo"},
-            {"doc_id": "disputes", "title": "Disputas"},
-            {"doc_id": "reputation", "title": "Reputación"},
-            {"doc_id": "contract-references", "title": "Referencias de Contratos"},
-            {"doc_id": "fiat-to-fiat-remittance", "title": "Remesas Fiat a Fiat"},
-            {"doc_id": "global-currency-expansion", "title": "Expansión Global de Monedas"},
-            {"doc_id": "rollout-sequence", "title": "Secuencia de Lanzamiento"},
-            {"doc_id": "faq", "title": "Preguntas Frecuentes"}
+            {
+              "doc_id": "start-here",
+              "title": "Empieza aquí"
+            },
+            {
+              "doc_id": "roles-and-permissions",
+              "title": "Roles y Permisos"
+            },
+            {
+              "doc_id": "protocol-parameters",
+              "title": "Parámetros del Protocolo"
+            },
+            {
+              "doc_id": "disputes",
+              "title": "Disputas"
+            },
+            {
+              "doc_id": "reputation",
+              "title": "Reputación"
+            },
+            {
+              "doc_id": "contract-references",
+              "title": "Referencias de Contratos"
+            },
+            {
+              "doc_id": "fiat-to-fiat-remittance",
+              "title": "Remesa Fiat a Fiat"
+            },
+            {
+              "doc_id": "global-currency-expansion",
+              "title": "Expansión Global de Divisas"
+            },
+            {
+              "doc_id": "rollout-sequence",
+              "title": "Secuencia de lanzamiento"
+            },
+            {
+              "doc_id": "faq",
+              "title": "Preguntas frecuentes"
+            },
+            {
+              "doc_id": "sdk",
+              "title": "SDK"
+            }
           ]
         },
         {
@@ -227,20 +335,922 @@
           "outputDir": "translations/es/for-merchants",
           "routeBasePath": "es/for-merchants",
           "preGeneratedFiles": [
-            {"doc_id": "start-here", "title": "Comienza Aquí"},
-            {"doc_id": "merchant-readiness", "title": "Preparación del Merchant"},
-            {"doc_id": "merchant-setup-flow", "title": "Flujo de Configuración del Merchant"},
-            {"doc_id": "handling-orders", "title": "Manejo de Órdenes"},
-            {"doc_id": "operational-controls", "title": "Controles Operativos"},
-            {"doc_id": "circles-of-trust", "title": "Círculos de Confianza"},
-            {"doc_id": "payment-channels-and-country-controls", "title": "Canales de Pago y Controles por País"},
-            {"doc_id": "order-assignment", "title": "Asignación de Órdenes"},
-            {"doc_id": "disputes", "title": "Disputas"},
-            {"doc_id": "delegation-and-revenue-sharing", "title": "Delegación y Reparto de Ingresos"},
-            {"doc_id": "insurance", "title": "Seguro"},
-            {"doc_id": "risk-and-reliability-practices", "title": "Prácticas de Riesgo y Confiabilidad"},
-            {"doc_id": "troubleshooting", "title": "Solución de Problemas"},
-            {"doc_id": "faq", "title": "Preguntas Frecuentes"}
+            {
+              "doc_id": "start-here",
+              "title": "Comienza aquí"
+            },
+            {
+              "doc_id": "merchant-readiness",
+              "title": "Preparación del comerciante"
+            },
+            {
+              "doc_id": "merchant-setup-flow",
+              "title": "Flujo de Configuración del Comerciante"
+            },
+            {
+              "doc_id": "handling-orders",
+              "title": "Gestión de pedidos"
+            },
+            {
+              "doc_id": "operational-controls",
+              "title": "Controles Operativos"
+            },
+            {
+              "doc_id": "circles-of-trust",
+              "title": "Circles of Trust"
+            },
+            {
+              "doc_id": "payment-channels-and-country-controls",
+              "title": "Canales de Pago y Controles por País"
+            },
+            {
+              "doc_id": "order-assignment",
+              "title": "Asignación de Órdenes"
+            },
+            {
+              "doc_id": "disputes",
+              "title": "Disputas"
+            },
+            {
+              "doc_id": "delegation-and-revenue-sharing",
+              "title": "Delegación y Distribución de Ingresos"
+            },
+            {
+              "doc_id": "insurance",
+              "title": "Seguro"
+            },
+            {
+              "doc_id": "risk-and-reliability-practices",
+              "title": "Prácticas de Riesgo y Confiabilidad"
+            },
+            {
+              "doc_id": "troubleshooting",
+              "title": "Resolución de problemas"
+            },
+            {
+              "doc_id": "faq",
+              "title": "FAQ"
+            }
+          ]
+        },
+        {
+          "id": "for-users",
+          "outputDir": "translations/es/for-users",
+          "routeBasePath": "es/for-users",
+          "preGeneratedFiles": [
+            {
+              "doc_id": "start-here",
+              "title": "Empieza aquí"
+            },
+            {
+              "doc_id": "before-you-start",
+              "title": "Antes de empezar"
+            },
+            {
+              "doc_id": "order-types",
+              "title": "Tipos de Orden"
+            },
+            {
+              "doc_id": "how-to-place-an-order",
+              "title": "Cómo Realizar un Pedido"
+            },
+            {
+              "doc_id": "what-to-do-by-order-type",
+              "title": "Qué Hacer Según el Tipo de Orden"
+            },
+            {
+              "doc_id": "understanding-order-states",
+              "title": "Entendiendo los estados de una orden"
+            },
+            {
+              "doc_id": "disputes-and-evidence",
+              "title": "Disputas y evidencias"
+            },
+            {
+              "doc_id": "troubleshooting",
+              "title": "Solución de problemas"
+            },
+            {
+              "doc_id": "faq",
+              "title": "FAQ"
+            }
+          ]
+        },
+        {
+          "id": "for-community",
+          "outputDir": "translations/es/for-community",
+          "routeBasePath": "es/for-community",
+          "preGeneratedFiles": [
+            {
+              "doc_id": "start-here",
+              "title": "Empieza aquí"
+            },
+            {
+              "doc_id": "cypherpunk-20-manifesto",
+              "title": "Manifiesto Cypherpunk 2.0"
+            },
+            {
+              "doc_id": "hierarchy",
+              "title": "Jerarquía"
+            },
+            {
+              "doc_id": "four-tracks",
+              "title": "Cuatro Pistas"
+            },
+            {
+              "doc_id": "how-to-join",
+              "title": "Cómo unirse"
+            },
+            {
+              "doc_id": "weekly-updates-and-offboarding",
+              "title": "Actualizaciones semanales y proceso de salida"
+            },
+            {
+              "doc_id": "remuneration",
+              "title": "Remuneración"
+            },
+            {
+              "doc_id": "discord-structure",
+              "title": "Estructura de Discord"
+            },
+            {
+              "doc_id": "principles",
+              "title": "Principios"
+            },
+            {
+              "doc_id": "brand-kit",
+              "title": "Kit de Marca"
+            },
+            {
+              "doc_id": "faq",
+              "title": "Preguntas frecuentes"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "translations-pt",
+      "outputDir": "translations/pt",
+      "routeBasePath": "pt",
+      "navbarLabel": "Português",
+      "navbarPosition": "left",
+      "sidebarId": "ptSidebar",
+      "sidebarPath": "./translations/pt/sidebar.ts",
+      "skipGeneration": true,
+      "isTranslation": true,
+      "translationSections": [
+        {
+          "id": "whitepaper",
+          "outputDir": "translations/pt/whitepaper",
+          "routeBasePath": "pt/whitepaper",
+          "preGeneratedFiles": [
+            {
+              "doc_id": "00-abstract",
+              "title": "Resumo"
+            },
+            {
+              "doc_id": "01-1-overview",
+              "title": "1. Visão Geral"
+            },
+            {
+              "doc_id": "02-2-design-goals-and-non-goals",
+              "title": "2. Objetivos de Design e Não-Objetivos"
+            },
+            {
+              "doc_id": "03-3-system-overview",
+              "title": "3. Visão Geral do Sistema"
+            },
+            {
+              "doc_id": "04-4-cryptographic-primitives-proof-integration",
+              "title": "4. Primitivas Criptográficas e Integração de Provas"
+            },
+            {
+              "doc_id": "05-5-trade-protocol-on-and-off-ramp",
+              "title": "5. Protocolo de Negociação (On-Ramp e Off-Ramp)"
+            },
+            {
+              "doc_id": "06-6-proof-of-credibility-reputation-matching",
+              "title": "6. Prova de Credibilidade (Reputação e Correspondência)"
+            },
+            {
+              "doc_id": "07-7-fraud-prevention",
+              "title": "7. Prevenção de Fraudes"
+            },
+            {
+              "doc_id": "08-8-dispute-resolution",
+              "title": "8. Resolução de Disputas"
+            },
+            {
+              "doc_id": "09-9-pricing-oracle-mechanics",
+              "title": "9. Mecânica de Preços e Oráculos"
+            },
+            {
+              "doc_id": "10-10-liquidity-market-design",
+              "title": "10. Design de Liquidez e Mercado"
+            },
+            {
+              "doc_id": "11-11-security-model",
+              "title": "11. Modelo de Segurança"
+            },
+            {
+              "doc_id": "12-12-privacy-model",
+              "title": "12. Modelo de Privacidade"
+            },
+            {
+              "doc_id": "13-13-compliance-policy-positioning",
+              "title": "13. Conformidade e Posicionamento Regulatório"
+            },
+            {
+              "doc_id": "14-14-accessing-p2p-protocol-clients-sdks",
+              "title": "14. Acessando o P2P Protocol: Clientes e SDKs"
+            },
+            {
+              "doc_id": "15-15-governance-upgradability",
+              "title": "15. Governança e Atualizabilidade"
+            },
+            {
+              "doc_id": "16-16-token-economics",
+              "title": "16. Economia de Tokens"
+            },
+            {
+              "doc_id": "17-17-disclosures-risks",
+              "title": "17. Divulgações e Riscos"
+            },
+            {
+              "doc_id": "18-18-references",
+              "title": "18. Referências"
+            },
+            {
+              "doc_id": "19-appendices",
+              "title": "Apêndices"
+            }
+          ]
+        },
+        {
+          "id": "for-token-holders",
+          "outputDir": "translations/pt/for-token-holders",
+          "routeBasePath": "pt/for-token-holders",
+          "preGeneratedFiles": [
+            {
+              "doc_id": "start-here",
+              "title": "Comece Aqui"
+            },
+            {
+              "doc_id": "token-thesis",
+              "title": "Tese do Token"
+            },
+            {
+              "doc_id": "why-the-token-exists",
+              "title": "Por que o Token Existe"
+            },
+            {
+              "doc_id": "token-details",
+              "title": "Detalhes do Token"
+            },
+            {
+              "doc_id": "token-utility",
+              "title": "Utilidade do Token"
+            },
+            {
+              "doc_id": "token-allocation",
+              "title": "Alocação de Tokens"
+            },
+            {
+              "doc_id": "metadao-sale",
+              "title": "Venda MetaDAO"
+            },
+            {
+              "doc_id": "vesting-schedules",
+              "title": "Cronogramas de Vesting"
+            },
+            {
+              "doc_id": "treasury-and-buy-and-burn",
+              "title": "Tesouro e Compra e Queima"
+            },
+            {
+              "doc_id": "staking-mechanics",
+              "title": "Mecânica de Staking"
+            },
+            {
+              "doc_id": "token-holder-governance",
+              "title": "Governança para Detentores de Tokens"
+            },
+            {
+              "doc_id": "progressive-decentralization",
+              "title": "Descentralização Progressiva"
+            },
+            {
+              "doc_id": "insurance",
+              "title": "Seguro"
+            },
+            {
+              "doc_id": "protocol-metrics",
+              "title": "Métricas do Protocolo"
+            },
+            {
+              "doc_id": "faq",
+              "title": "FAQ"
+            },
+            {
+              "doc_id": "get-p2p",
+              "title": "Obtenha $P2P"
+            },
+            {
+              "doc_id": "disclosures",
+              "title": "Divulgações"
+            }
+          ]
+        },
+        {
+          "id": "for-builders",
+          "outputDir": "translations/pt/for-builders",
+          "routeBasePath": "pt/for-builders",
+          "preGeneratedFiles": [
+            {
+              "doc_id": "start-here",
+              "title": "Comece Aqui"
+            },
+            {
+              "doc_id": "roles-and-permissions",
+              "title": "Funções e Permissões"
+            },
+            {
+              "doc_id": "protocol-parameters",
+              "title": "Parâmetros do Protocolo"
+            },
+            {
+              "doc_id": "disputes",
+              "title": "Disputas"
+            },
+            {
+              "doc_id": "reputation",
+              "title": "Reputação"
+            },
+            {
+              "doc_id": "contract-references",
+              "title": "Referências de Contratos"
+            },
+            {
+              "doc_id": "fiat-to-fiat-remittance",
+              "title": "Remessas Fiat para Fiat"
+            },
+            {
+              "doc_id": "global-currency-expansion",
+              "title": "Expansão Global de Moedas"
+            },
+            {
+              "doc_id": "rollout-sequence",
+              "title": "Sequência de Lançamento"
+            },
+            {
+              "doc_id": "faq",
+              "title": "FAQ"
+            },
+            {
+              "doc_id": "sdk",
+              "title": "SDK"
+            }
+          ]
+        },
+        {
+          "id": "for-merchants",
+          "outputDir": "translations/pt/for-merchants",
+          "routeBasePath": "pt/for-merchants",
+          "preGeneratedFiles": [
+            {
+              "doc_id": "start-here",
+              "title": "Comece Aqui"
+            },
+            {
+              "doc_id": "merchant-readiness",
+              "title": "Prontidão do Comerciante"
+            },
+            {
+              "doc_id": "merchant-setup-flow",
+              "title": "Fluxo de Configuração do Comerciante"
+            },
+            {
+              "doc_id": "handling-orders",
+              "title": "Gerenciamento de Pedidos"
+            },
+            {
+              "doc_id": "operational-controls",
+              "title": "Controles Operacionais"
+            },
+            {
+              "doc_id": "circles-of-trust",
+              "title": "Circles of Trust"
+            },
+            {
+              "doc_id": "payment-channels-and-country-controls",
+              "title": "Canais de Pagamento e Controles por País"
+            },
+            {
+              "doc_id": "order-assignment",
+              "title": "Atribuição de Pedidos"
+            },
+            {
+              "doc_id": "disputes",
+              "title": "Disputas"
+            },
+            {
+              "doc_id": "delegation-and-revenue-sharing",
+              "title": "Delegação e Compartilhamento de Receita"
+            },
+            {
+              "doc_id": "insurance",
+              "title": "Seguro"
+            },
+            {
+              "doc_id": "risk-and-reliability-practices",
+              "title": "Práticas de Risco e Confiabilidade"
+            },
+            {
+              "doc_id": "troubleshooting",
+              "title": "Solução de Problemas"
+            },
+            {
+              "doc_id": "faq",
+              "title": "FAQ"
+            }
+          ]
+        },
+        {
+          "id": "for-users",
+          "outputDir": "translations/pt/for-users",
+          "routeBasePath": "pt/for-users",
+          "preGeneratedFiles": [
+            {
+              "doc_id": "start-here",
+              "title": "Comece Aqui"
+            },
+            {
+              "doc_id": "before-you-start",
+              "title": "Antes de Começar"
+            },
+            {
+              "doc_id": "order-types",
+              "title": "Tipos de Ordem"
+            },
+            {
+              "doc_id": "how-to-place-an-order",
+              "title": "Como Fazer um Pedido"
+            },
+            {
+              "doc_id": "what-to-do-by-order-type",
+              "title": "O Que Fazer por Tipo de Ordem"
+            },
+            {
+              "doc_id": "understanding-order-states",
+              "title": "Entendendo os Estados do Pedido"
+            },
+            {
+              "doc_id": "disputes-and-evidence",
+              "title": "Disputas e Evidências"
+            },
+            {
+              "doc_id": "troubleshooting",
+              "title": "Solução de Problemas"
+            },
+            {
+              "doc_id": "faq",
+              "title": "FAQ"
+            }
+          ]
+        },
+        {
+          "id": "for-community",
+          "outputDir": "translations/pt/for-community",
+          "routeBasePath": "pt/for-community",
+          "preGeneratedFiles": [
+            {
+              "doc_id": "start-here",
+              "title": "Comece Aqui"
+            },
+            {
+              "doc_id": "cypherpunk-20-manifesto",
+              "title": "Manifesto Cypherpunk 2.0"
+            },
+            {
+              "doc_id": "hierarchy",
+              "title": "Hierarquia"
+            },
+            {
+              "doc_id": "four-tracks",
+              "title": "Quatro Trilhas"
+            },
+            {
+              "doc_id": "how-to-join",
+              "title": "Como Participar"
+            },
+            {
+              "doc_id": "weekly-updates-and-offboarding",
+              "title": "Atualizações Semanais e Desligamento"
+            },
+            {
+              "doc_id": "remuneration",
+              "title": "Remuneração"
+            },
+            {
+              "doc_id": "discord-structure",
+              "title": "Estrutura do Discord"
+            },
+            {
+              "doc_id": "principles",
+              "title": "Princípios"
+            },
+            {
+              "doc_id": "brand-kit",
+              "title": "Kit de Marca"
+            },
+            {
+              "doc_id": "faq",
+              "title": "FAQ"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "translations-id",
+      "outputDir": "translations/id",
+      "routeBasePath": "id",
+      "navbarLabel": "Bahasa Indonesia",
+      "navbarPosition": "left",
+      "sidebarId": "idSidebar",
+      "sidebarPath": "./translations/id/sidebar.ts",
+      "skipGeneration": true,
+      "isTranslation": true,
+      "translationSections": [
+        {
+          "id": "whitepaper",
+          "outputDir": "translations/id/whitepaper",
+          "routeBasePath": "id/whitepaper",
+          "preGeneratedFiles": [
+            {
+              "doc_id": "00-abstract",
+              "title": "Abstrak"
+            },
+            {
+              "doc_id": "01-1-overview",
+              "title": "1. Ikhtisar"
+            },
+            {
+              "doc_id": "02-2-design-goals-and-non-goals",
+              "title": "2. Tujuan Desain dan Bukan-Tujuan"
+            },
+            {
+              "doc_id": "03-3-system-overview",
+              "title": "3. Gambaran Umum Sistem"
+            },
+            {
+              "doc_id": "04-4-cryptographic-primitives-proof-integration",
+              "title": "4. Primitif Kriptografi & Integrasi Bukti"
+            },
+            {
+              "doc_id": "05-5-trade-protocol-on-and-off-ramp",
+              "title": "5. Trade Protocol (On- dan Off-Ramp)"
+            },
+            {
+              "doc_id": "06-6-proof-of-credibility-reputation-matching",
+              "title": "6. Proof-of-Credibility (Reputasi & Pencocokan)"
+            },
+            {
+              "doc_id": "07-7-fraud-prevention",
+              "title": "7. Pencegahan Penipuan"
+            },
+            {
+              "doc_id": "08-8-dispute-resolution",
+              "title": "8. Penyelesaian Sengketa"
+            },
+            {
+              "doc_id": "09-9-pricing-oracle-mechanics",
+              "title": "9. Mekanisme Penetapan Harga & Oracle"
+            },
+            {
+              "doc_id": "10-10-liquidity-market-design",
+              "title": "10. Likuiditas & Desain Pasar"
+            },
+            {
+              "doc_id": "11-11-security-model",
+              "title": "11. Model Keamanan"
+            },
+            {
+              "doc_id": "12-12-privacy-model",
+              "title": "12. Model Privasi"
+            },
+            {
+              "doc_id": "13-13-compliance-policy-positioning",
+              "title": "13. Kepatuhan & Posisi Kebijakan"
+            },
+            {
+              "doc_id": "14-14-accessing-p2p-protocol-clients-sdks",
+              "title": "14. Mengakses P2P Protocol: Klien & SDK"
+            },
+            {
+              "doc_id": "15-15-governance-upgradability",
+              "title": "15. Tata Kelola & Kemampuan Peningkatan"
+            },
+            {
+              "doc_id": "16-16-token-economics",
+              "title": "16. Ekonomi Token"
+            },
+            {
+              "doc_id": "17-17-disclosures-risks",
+              "title": "17. Pengungkapan & Risiko"
+            },
+            {
+              "doc_id": "18-18-references",
+              "title": "18. Referensi"
+            },
+            {
+              "doc_id": "19-appendices",
+              "title": "Lampiran"
+            }
+          ]
+        },
+        {
+          "id": "for-token-holders",
+          "outputDir": "translations/id/for-token-holders",
+          "routeBasePath": "id/for-token-holders",
+          "preGeneratedFiles": [
+            {
+              "doc_id": "start-here",
+              "title": "Mulai di Sini"
+            },
+            {
+              "doc_id": "token-thesis",
+              "title": "Tesis Token"
+            },
+            {
+              "doc_id": "why-the-token-exists",
+              "title": "Mengapa Token Ini Ada"
+            },
+            {
+              "doc_id": "token-details",
+              "title": "Detail Token"
+            },
+            {
+              "doc_id": "token-utility",
+              "title": "Kegunaan Token"
+            },
+            {
+              "doc_id": "token-allocation",
+              "title": "Alokasi Token"
+            },
+            {
+              "doc_id": "metadao-sale",
+              "title": "Penjualan MetaDAO"
+            },
+            {
+              "doc_id": "vesting-schedules",
+              "title": "Jadwal Vesting"
+            },
+            {
+              "doc_id": "treasury-and-buy-and-burn",
+              "title": "Treasury dan Buy-and-Burn"
+            },
+            {
+              "doc_id": "staking-mechanics",
+              "title": "Mekanisme Staking"
+            },
+            {
+              "doc_id": "token-holder-governance",
+              "title": "Tata Kelola Pemegang Token"
+            },
+            {
+              "doc_id": "progressive-decentralization",
+              "title": "Desentralisasi Progresif"
+            },
+            {
+              "doc_id": "insurance",
+              "title": "Asuransi"
+            },
+            {
+              "doc_id": "protocol-metrics",
+              "title": "Metrik Protokol"
+            },
+            {
+              "doc_id": "faq",
+              "title": "FAQ"
+            },
+            {
+              "doc_id": "get-p2p",
+              "title": "Dapatkan $P2P"
+            },
+            {
+              "doc_id": "disclosures",
+              "title": "Pengungkapan"
+            }
+          ]
+        },
+        {
+          "id": "for-builders",
+          "outputDir": "translations/id/for-builders",
+          "routeBasePath": "id/for-builders",
+          "preGeneratedFiles": [
+            {
+              "doc_id": "start-here",
+              "title": "Mulai di Sini"
+            },
+            {
+              "doc_id": "roles-and-permissions",
+              "title": "Peran dan Izin"
+            },
+            {
+              "doc_id": "protocol-parameters",
+              "title": "Parameter Protokol"
+            },
+            {
+              "doc_id": "disputes",
+              "title": "Sengketa"
+            },
+            {
+              "doc_id": "reputation",
+              "title": "Reputasi"
+            },
+            {
+              "doc_id": "contract-references",
+              "title": "Referensi Kontrak"
+            },
+            {
+              "doc_id": "fiat-to-fiat-remittance",
+              "title": "Remitansi Fiat-ke-Fiat"
+            },
+            {
+              "doc_id": "global-currency-expansion",
+              "title": "Ekspansi Mata Uang Global"
+            },
+            {
+              "doc_id": "rollout-sequence",
+              "title": "Urutan Peluncuran"
+            },
+            {
+              "doc_id": "faq",
+              "title": "FAQ"
+            },
+            {
+              "doc_id": "sdk",
+              "title": "SDK"
+            }
+          ]
+        },
+        {
+          "id": "for-merchants",
+          "outputDir": "translations/id/for-merchants",
+          "routeBasePath": "id/for-merchants",
+          "preGeneratedFiles": [
+            {
+              "doc_id": "start-here",
+              "title": "Mulai di Sini"
+            },
+            {
+              "doc_id": "merchant-readiness",
+              "title": "Kesiapan Merchant"
+            },
+            {
+              "doc_id": "merchant-setup-flow",
+              "title": "Alur Pengaturan Merchant"
+            },
+            {
+              "doc_id": "handling-orders",
+              "title": "Menangani Pesanan"
+            },
+            {
+              "doc_id": "operational-controls",
+              "title": "Kontrol Operasional"
+            },
+            {
+              "doc_id": "circles-of-trust",
+              "title": "Circles of Trust"
+            },
+            {
+              "doc_id": "payment-channels-and-country-controls",
+              "title": "Saluran Pembayaran dan Kontrol Negara"
+            },
+            {
+              "doc_id": "order-assignment",
+              "title": "Penugasan Pesanan"
+            },
+            {
+              "doc_id": "disputes",
+              "title": "Disputes"
+            },
+            {
+              "doc_id": "delegation-and-revenue-sharing",
+              "title": "Delegasi dan Bagi Hasil"
+            },
+            {
+              "doc_id": "insurance",
+              "title": "Asuransi"
+            },
+            {
+              "doc_id": "risk-and-reliability-practices",
+              "title": "Praktik Manajemen Risiko dan Keandalan"
+            },
+            {
+              "doc_id": "troubleshooting",
+              "title": "Pemecahan Masalah"
+            },
+            {
+              "doc_id": "faq",
+              "title": "FAQ"
+            }
+          ]
+        },
+        {
+          "id": "for-users",
+          "outputDir": "translations/id/for-users",
+          "routeBasePath": "id/for-users",
+          "preGeneratedFiles": [
+            {
+              "doc_id": "start-here",
+              "title": "Mulai di Sini"
+            },
+            {
+              "doc_id": "before-you-start",
+              "title": "Sebelum Anda Mulai"
+            },
+            {
+              "doc_id": "order-types",
+              "title": "Jenis Order"
+            },
+            {
+              "doc_id": "how-to-place-an-order",
+              "title": "Cara Memasang Pesanan"
+            },
+            {
+              "doc_id": "what-to-do-by-order-type",
+              "title": "Apa yang Harus Dilakukan Berdasarkan Jenis Order"
+            },
+            {
+              "doc_id": "understanding-order-states",
+              "title": "Memahami Status Pesanan"
+            },
+            {
+              "doc_id": "disputes-and-evidence",
+              "title": "Sengketa dan Bukti"
+            },
+            {
+              "doc_id": "troubleshooting",
+              "title": "Pemecahan Masalah"
+            },
+            {
+              "doc_id": "faq",
+              "title": "FAQ"
+            }
+          ]
+        },
+        {
+          "id": "for-community",
+          "outputDir": "translations/id/for-community",
+          "routeBasePath": "id/for-community",
+          "preGeneratedFiles": [
+            {
+              "doc_id": "start-here",
+              "title": "Mulai di Sini"
+            },
+            {
+              "doc_id": "cypherpunk-20-manifesto",
+              "title": "Manifesto Cypherpunk 2.0"
+            },
+            {
+              "doc_id": "hierarchy",
+              "title": "Hierarki"
+            },
+            {
+              "doc_id": "four-tracks",
+              "title": "Empat Jalur"
+            },
+            {
+              "doc_id": "how-to-join",
+              "title": "Cara Bergabung"
+            },
+            {
+              "doc_id": "weekly-updates-and-offboarding",
+              "title": "Pembaruan Mingguan dan Pelepasan Jabatan"
+            },
+            {
+              "doc_id": "remuneration",
+              "title": "Remunerasi"
+            },
+            {
+              "doc_id": "discord-structure",
+              "title": "Struktur Discord"
+            },
+            {
+              "doc_id": "principles",
+              "title": "Prinsip"
+            },
+            {
+              "doc_id": "brand-kit",
+              "title": "Kit Merek"
+            },
+            {
+              "doc_id": "faq",
+              "title": "FAQ"
+            }
           ]
         }
       ]

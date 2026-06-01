@@ -1,36 +1,34 @@
 ---
 id: faq
 sidebar_position: 13
-title: "Preguntas Frecuentes"
+title: "FAQ"
 slug: faq
 ---
 
-## ¿Necesito conocer los criterios internos de scoring?
+## ¿Necesito conocer los criterios de puntuación internos?
 
-No. Opera basándote en el estado visible en la app, los requisitos de liquidez y los estados de aprobación de canales.
+No. Opere en función del estado visible en la aplicación, los requisitos de liquidez y los estados de aprobación de canales.
 
-## ¿Puedo tener múltiples canales de pago?
+## ¿Puedo gestionar varios canales de pago?
 
-Sí, cada uno sujeto a sus propios límites de aprobación y volumen.
+Sí, cada uno sujeto a su propia aprobación y límites de volumen.
 
-## ¿Qué pasa si un usuario disputa mi orden?
+## ¿Qué ocurre si un usuario disputa mi orden?
 
-Envía evidencia de forma oportuna. La disputa se resuelve on-chain basándose en la determinación de falta y la evidencia proporcionada.
+Envíe evidencia de forma oportuna. La disputa se resuelve en cadena según la determinación de responsabilidad y la evidencia presentada.
 
 ## ¿Puedo pausar la asignación de órdenes?
 
-Sí. Alterna el estado online/offline o desactiva canales cuando no puedas atender órdenes.
+Sí. Active o desactive el estado en línea/fuera de línea, o desactive canales cuando no pueda atender órdenes.
 
-## ¿Qué es un Círculo de Confianza y cómo me afecta?
+## ¿Qué es un Circles of Trust y cómo me afecta?
 
-Un Círculo es un grupo de merchants respaldado por la comunidad. Los Circle Admins supervisan las operaciones, y los miembros de la comunidad pueden delegar tokens a tu Círculo para ganar rendimiento. Como merchant, tu interacción principal es a través del registro de merchants y los canales de pago que los Círculos envuelven.
+Un Círculo es un grupo de comerciantes respaldado por la comunidad. Los administradores de Círculo supervisan las operaciones, y los miembros de la comunidad pueden delegar USDC en el pool de su Círculo para obtener una parte de las recompensas de los comerciantes. Como comerciante, su interacción principal se realiza a través del registro de comerciantes y los canales de pago que los Círculos encapsulan.
 
-## ¿Cómo obtengo ingresos?
+## ¿Cómo genero ingresos?
 
-Los merchants ganan una parte del volumen de transacciones a través del modelo de distribución de comisiones del protocolo. Puedes retirar las comisiones acumuladas a través del flujo de operaciones de merchant soportado. Consulta [`/for-token-holders`](/es/for-token-holders/start-here) para el desglose completo de distribución de comisiones.
+Los comerciantes obtienen una parte del volumen de transacciones a través del modelo de distribución de comisiones del protocolo. Puede retirar las comisiones acumuladas mediante el flujo de operaciones admitidas para comerciantes. Consulte [`/for-token-holders`](/es/for-token-holders/start-here) para ver el desglose completo de la distribución de comisiones.
 
 ## ¿Dónde están los umbrales numéricos exactos?
 
-Los umbrales visibles en tu despliegue/cliente son operativos. Los criterios internos de scoring no se documentan públicamente.
-
----
+Los umbrales visibles en su despliegue o cliente son operativos. Los criterios de puntuación internos no están documentados públicamente.

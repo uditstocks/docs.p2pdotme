@@ -5,10 +5,10 @@ title: "Principios"
 slug: principles
 ---
 
-- **Anónimo primero.** No se requiere doxxing en ningún nivel
-- **Liderado por país.** Cada país gestiona todos los tracks localmente
-- **Selección humana.** "Country Leads" y "Keymasters" evalúan, no algoritmos
-- **Ratio sostenible.** 1 "Keymaster" por cada 5 "Ciphers" máximo
+- **Anonimato primero.** No se requiere doxxing en ningún nivel
+- **Liderazgo por país.** Cada país gestiona todos los canales de forma local
+- **Selección humana.** Los "Country Leads" y "Keymasters" evalúan a los candidatos manualmente, no mediante puntuación automatizada
+- **Ratio sostenible.** 1 "Keymaster" por cada 5 "Ciphers" como máximo
 - **Ethos cypherpunk.** Privacidad, descentralización, soberanía financiera
 
 ---

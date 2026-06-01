@@ -5,15 +5,14 @@ title: "11. Modelo de Seguridad"
 slug: security-model
 ---
 
-## 11.1 Suposiciones y Adversarios
+## 11.1 Supuestos y Adversarios
 
-- Disponibilidad de red (liveness) en Base (expansión multichain a Solana planeada); disponibilidad de oráculos; no se requieren suposiciones de mayoría honesta para los rails fiat.
-- Los adversarios incluyen estafadores de chargeback, falsificadores de pruebas, manipuladores de oráculos, griefers y sybils.
+- Disponibilidad de la red en Base (la expansión multicadena a Solana está planificada) y disponibilidad de oráculos. Los supuestos de mayoría honesta no son necesarios para los canales fiat.
+- Los adversarios incluyen defraudadores por contracargo, falsificadores de pruebas, manipuladores de oráculos, atacantes maliciosos y sybils.
 
 ## 11.2 Mitigaciones
 
-- Bonos/slashing; ventanas por clase de rail; requisitos de verificación de pruebas; guards de desviación de oráculos; throttles de tasa/límite.
-- **Auditorías y Bounty:** Los contratos principales, verificadores y circuits serán sometidos a auditorías independientes; un programa de bounty público operará pre-TGE y post-TGE.
+- Bonos y penalizaciones (slashing), ventanas por clase de canal, requisitos de verificación de pruebas, protecciones contra desviaciones de oráculos y limitadores de tasa.
+- **Auditorías y Recompensas:** Los contratos principales, los verificadores y los circuitos serán sometidos a auditorías independientes. Un programa público de recompensas por vulnerabilidades operará antes y después del TGE.
 
 ---
-

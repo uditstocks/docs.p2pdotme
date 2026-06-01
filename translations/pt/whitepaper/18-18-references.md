@@ -5,8 +5,7 @@ title: "18. Referências"
 slug: references
 ---
 
-1. **Reclaim Protocol** — https://www.reclaimprotocol.org/
+1. **Reclaim Protocol**, https://www.reclaimprotocol.org/
 
 
 ---
-

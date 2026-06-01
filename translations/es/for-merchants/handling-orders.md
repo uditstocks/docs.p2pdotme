@@ -1,20 +1,20 @@
 ---
 id: handling-orders
 sidebar_position: 3
-title: "Manejo de Órdenes"
+title: "Gestión de pedidos"
 slug: handling-orders
 ---
 
-## Aceptar Órdenes
+## Aceptación de pedidos
 
-1. Monitorea las órdenes asignadas.
-2. Acepta órdenes de forma oportuna.
-3. Sigue los pasos de settlement según el tipo de orden.
+1. Supervisa los pedidos asignados.
+2. Acepta los pedidos con prontitud.
+3. Sigue los pasos de liquidación según el tipo de pedido.
 
-## Completar Órdenes
+## Finalización de pedidos
 
-- Confirma las acciones de pago requeridas por el flujo.
-- Asegúrate de que los pasos de finalización se completen en la app.
-- Conserva registros/evidencia para escenarios de disputa.
+- Confirma las acciones de pago que requiera el flujo.
+- Asegúrate de que los pasos de finalización se completen dentro de la aplicación.
+- Conserva registros y evidencia para posibles escenarios de disputa.
 
 ---

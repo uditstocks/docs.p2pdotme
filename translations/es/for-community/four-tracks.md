@@ -1,17 +1,17 @@
 ---
 id: four-tracks
 sidebar_position: 3
-title: "Cuatro Tracks"
+title: "Cuatro Pistas"
 slug: four-tracks
 ---
 
-| Nombre Código | Enfoque | Métrica SLA |
-|---------------|---------|-------------|
-| **Relay Guild** | Moderación de Discord/Telegram, soporte a usuarios | Usuarios/merchants incorporados |
-| **Node Guild** | Universidades, eventos locales, meetups | Usuarios/merchants incorporados |
-| **Signal Guild** | Contenido en redes sociales, cuentas regionales | Impresiones |
-| **Forge Guild** | Traducciones, docs, comunidad de devs | Commits/páginas |
+| Nombre en Clave      | Enfoque                                              | Métrica SLA                        |
+| -------------------- | ---------------------------------------------------- | ---------------------------------- |
+| **Relay Guild**      | Moderación en Discord/Telegram, soporte a usuarios   | Usuarios/comerciantes incorporados |
+| **Node Guild**       | Universidades, eventos locales, meetups              | Usuarios/comerciantes incorporados |
+| **Signal Guild**     | Contenido en redes sociales, cuentas regionales      | Impresiones                        |
+| **Forge Guild**      | Traducciones, documentación, comunidad de desarrollo | Commits/páginas                    |
 
-Todos los tracks operan a nivel país, gestionados por "Country Leads".
+Todas las pistas operan a nivel de país, gestionadas por "Country Leads".
 
 ---

@@ -1,28 +1,26 @@
 ---
 id: faq
 sidebar_position: 8
-title: "Preguntas Frecuentes"
+title: "FAQ"
 slug: faq
 ---
 
-## ¿Necesito entender la mecánica on-chain?
+## ¿Necesito entender los mecanismos on-chain?
 
-No. La app cliente maneja toda la interacción con contratos. Seguí las indicaciones de estado.
+No, no es necesario entender los mecanismos on-chain. La aplicación cliente gestiona toda la interacción con los contratos. Siga las indicaciones de estado para completar su acción.
 
-## ¿Por qué mi orden no fue emparejada al instante?
+## ¿Por qué mi orden no se emparejó de inmediato?
 
-La asignación de merchants depende de factores de elegibilidad en tiempo real, incluyendo liquidez, estado del canal, límites de volumen y disponibilidad operativa. Si ningún merchant califica, la orden espera o expira.
+La asignación de un comerciante depende de factores de elegibilidad en tiempo real, entre ellos la liquidez, el estado del canal, los límites de volumen y la disponibilidad operativa. Si ningún comerciante cumple los requisitos, la orden queda en espera y se cancela cuando expira el tiempo límite.
 
 ## ¿Puedo apelar una disputa?
 
-Usá el proceso de disputa dentro de la app. *Los niveles de escalamiento impulsados por gobernanza están planeados para una versión futura.*
+No. En la versión actual, una disputa solo puede abrirse una vez por orden y un administrador autorizado la resuelve on-chain asignando la responsabilidad. No existe una instancia de apelación separada. Los niveles de escalamiento basados en jurado y en gobernanza están planificados para una versión futura.
 
 ## ¿Mi identidad se almacena on-chain?
 
-No se almacena PII cruda on-chain. El protocolo usa pruebas ZK-KYC para la verificación de identidad y almacena solo commitments y veredictos on-chain.
+No se almacena ningún dato personal en bruto (Información de Identificación Personal) on-chain. El protocolo utiliza pruebas ZK-KYC para la verificación de identidad y almacena on-chain únicamente compromisos criptográficos y veredictos.
 
-## ¿Cómo sé qué hacer a continuación?
+## ¿Cómo sé cuál es el siguiente paso?
 
-El estado de tu orden (`PLACED`, `ACCEPTED`, `PAID`, `COMPLETED`, `CANCELLED`) te lo indica. Cada estado implica una acción específica siguiente. La app te guía a través del proceso.
-
----
+El estado de su orden (`PLACED`, `ACCEPTED`, `PAID`, `COMPLETED`, `CANCELLED`) se lo indica. Cada estado implica una acción específica a continuación. La aplicación le guía durante todo el proceso.

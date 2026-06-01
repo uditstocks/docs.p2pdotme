@@ -1,31 +1,31 @@
 ---
 id: 13-13-compliance-policy-positioning
 sidebar_position: 13
-title: "13. Conformidade e Posicionamento de Política"
+title: "13. Conformidade e Posicionamento Regulatório"
 slug: compliance-policy-positioning
 ---
 
-O Protocolo P2P visa permanecer em bom estado com regulações legais. O usuário é responsável pelo uso legítimo e tributação em sua jurisdição.
+O P2P Protocol busca manter-se em conformidade com as regulamentações legais vigentes. O usuário é responsável pelo uso legítimo da plataforma e pelo cumprimento das obrigações tributárias em sua jurisdição.
 
-- **Postura não-custodial:** O Protocolo coordena pares e verifica evidência; ele não toma custódia de fiduciário.
+- **Postura não-custodial:** O Protocol coordena pares e verifica evidências. Ele não detém custódia de recursos fiduciários.
 - **Controles de risco:** limites de transação, níveis de reputação, ZK-KYC opcional, interfaces de triagem de sanções para comerciantes e conjuntos de parâmetros regionais governados.
-- **Divulgações:** O Protocolo não defende evasão fiscal ou atividade ilegal; violações permanecem responsabilidade do usuário.
+- **Divulgações:** O Protocol não defende a evasão fiscal nem atividades ilegais. As violações permanecem sob responsabilidade do usuário.
 
-## 13.1 Responsabilidade do Usuário em Tributação
+## 13.1 Responsabilidade do Usuário em Matéria Tributária
 
-O Protocolo visa permanecer em bom estado completamente com regulações legais que cercam o uso da plataforma. Para este fim, o usuário é em última análise responsável pelo uso legítimo da exchange e é unicamente responsável pela conformidade tributária. Em resumo, o Protocolo não cobra impostos em nome de um usuário, mas o usuário é responsável por arquivá-los (ou retê-los) da mesma forma, sujeito à jurisdição em que reside.
+O Protocol tem como objetivo manter-se em plena conformidade com as regulamentações legais relacionadas ao uso da plataforma. Para esse fim, o usuário é o único e final responsável pelo uso legítimo da exchange e pelo cumprimento integral das obrigações fiscais. Em resumo, o Protocol não recolhe tributos em nome do usuário, mas o usuário continua sendo responsável por declará-los (ou retê-los), conforme a jurisdição em que reside.
 
-Da mesma forma, deve ser notado que o Protocolo de forma alguma pretende defender evasão fiscal ou práticas relacionadas. Como uma solução de KYC trustless para transações de on-ramp e off-ramp, o Protocolo meramente tenta preservar a privacidade e anonimato do usuário para transações justas. No evento de qualquer atividade ilegal incluindo mas não limitado a evasão fiscal ocorrer, o usuário será totalmente responsável pelas consequências legais dentro de sua jurisdição.
+Da mesma forma, é importante ressaltar que o Protocol não pretende, de forma alguma, incentivar a evasão fiscal ou práticas correlatas. Como solução de KYC sem custódia para transações de on-ramp e off-ramp, o Protocol busca apenas preservar a privacidade e o anonimato do usuário em transações justas. Caso ocorra qualquer atividade ilegal, incluindo, mas não se limitando a, evasão fiscal, o usuário será integralmente responsável pelas consequências legais em sua jurisdição.
 
-## 13.2 Micro-Transações para Adoção em Massa
+## 13.2 Microtransações para Adoção em Massa
 
-Transações blockchain têm sido tradicionalmente notórias por altas taxas de transferência e tempos de processamento lentos. Atualmente implantado em Base (Solana planejado), o Protocolo pode se permitir cobrar taxas muito nominais para seus on- e off-ramps, graças aos tempos de validação mais rápidos e custos de gas mais baixos. A diferença é especialmente pronunciada para transações menores onde novatos rotineiramente se sentem desencorajados pela economia lenta e cara envolvida.
+As transações em blockchain são historicamente conhecidas pelas elevadas taxas de transferência e pelos tempos de processamento lentos. O Protocol está atualmente implantado na Base, com expansão para Solana como cadeia principal. Graças aos tempos de validação mais rápidos e aos menores custos de gas, ele pode cobrar taxas muito reduzidas por seus serviços de on-ramp e off-ramp. Essa diferença é especialmente marcante em transações menores, nas quais os novos usuários costumam se sentir desestimulados pela lentidão e pelo alto custo envolvidos.
 
-O gerenciamento de reputação on-chain robusto do Protocolo acoplado com seus limites de transação faz mais do que apenas impulsionar adoção em massa de moedas descentralizadas e transações. De fato, uma ênfase única em transações grandes ironicamente coincide com as perspectivas de lavagem de dinheiro e outras práticas econômicas foul. O Protocolo P2P no espaço particularmente sublinha a importância de micro-transações em vez disso, tornando estas viáveis e úteis para a comunidade.
+O gerenciamento de reputação on-chain do Protocol, associado aos seus limites de transação, também molda o tipo de atividade que ele suporta. Uma ênfase exclusiva em grandes transações coincide ironicamente com os riscos de lavagem de dinheiro e outras práticas econômicas ilícitas. O P2P Protocol reforça, ao contrário, a importância das microtransações, tornando-as viáveis e úteis para a comunidade.
 
-Além da adoção em massa de criptomoedas por consumidores, micro-transações habilitam acesso financeiro recém-encontrado através de web3 para comunidades sub-representadas no sistema bancário de hoje. Especificamente, foi notado que quase **1,5 bilhão de pessoas têm telefones celulares mas carecem de qualquer acesso confiável a bancos**. Para eles, ser capaz de realizar transações na vizinhança de $50-$500 de uma forma que é segura e igualitária é primordial — um feito que o Protocolo P2P pode prontamente ajudar a alcançar.
+As microtransações também ampliam o acesso financeiro por meio da web3 para comunidades sub-representadas no sistema bancário atual. Estima-se que cerca de **1,5 bilhão de pessoas possuem telefones celulares, mas não têm acesso confiável a bancos**. Para essas pessoas, poder realizar transações na faixa de $50-$500 de forma segura e igualitária é essencial, uma necessidade que o P2P Protocol está bem posicionado para atender.
 
-A adoção de cripto para pagamentos de consumidor tem implicações para as economias Web2 e Web3. Empresas de tecnologia de consumidor existentes podem finalmente começar a aceitar pagamentos online usando criptomoeda. Da mesma forma, o mercado pode explorar maneiras recém-habilitadas de gastar e implantar capital, graças a uma economia de micro-transação alimentando finanças totalmente descentralizadas.
+A adoção de criptomoedas para pagamentos de consumidores tem implicações tanto para a economia Web2 quanto para a Web3. Empresas de tecnologia voltadas ao consumidor já existentes podem, finalmente, começar a aceitar pagamentos online utilizando criptomoedas. Da mesma forma, o mercado pode explorar novas formas de gastar e alocar capital, impulsionado por uma economia de microtransações que alimenta as finanças totalmente descentralizadas.
 
 ---
 

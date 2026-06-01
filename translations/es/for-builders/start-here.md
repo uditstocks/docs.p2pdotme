@@ -1,13 +1,13 @@
 ---
 id: start-here
 sidebar_position: 0
-title: "Comienza Aquí"
+title: "Empieza aquí"
 slug: start-here
 ---
 
-Esta página cubre lo que los builders necesitan para integrarse, ampliar o contribuir al Protocolo P2P. Incluye el modelo de gobernanza técnica del protocolo, la arquitectura de contratos y las vías de expansión de producto de mayor prioridad.
+Esta página cubre lo que los desarrolladores necesitan para integrarse, extender o contribuir al P2P Protocol. Incluye el modelo de gobernanza técnica del protocolo, la arquitectura de contratos y las líneas de expansión de producto de mayor prioridad.
 
-**Enlaces rápidos a las secciones principales.**
+**Enlaces rápidos a las secciones clave.**
 
 - [Roles y permisos](/es/for-builders/roles-and-permissions)
 - [Parámetros del protocolo](/es/for-builders/protocol-parameters)
@@ -15,9 +15,10 @@ Esta página cubre lo que los builders necesitan para integrarse, ampliar o cont
 - [Reputación](/es/for-builders/reputation)
 - [Referencias de contratos](/es/for-builders/contract-references)
 - [Expansión de remesas](/es/for-builders/fiat-to-fiat-remittance)
-- [Expansión de monedas](/es/for-builders/global-currency-expansion)
+- [Expansión de divisas](/es/for-builders/global-currency-expansion)
 - [Preguntas frecuentes](/es/for-builders/faq)
+- [SDK](/es/for-builders/sdk)
 
-Consulta también [`/whitepaper`](/es/whitepaper/abstract) para el diseño del protocolo y [`/for-token-holders`](/es/for-token-holders/start-here) para la gobernanza y economía del token.
+Consulta también [`/whitepaper`](/es/whitepaper/abstract) para el diseño del protocolo y [`/for-token-holders`](/es/for-token-holders/start-here) para la gobernanza del token y la economía.
 
 ---

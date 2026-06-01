@@ -1,30 +1,30 @@
 ---
 id: faq
 sidebar_position: 10
-title: "FAQ"
+title: "Preguntas frecuentes"
 slug: faq
 ---
 
 ## ¿Por qué el token está en Solana si el protocolo está en Base?
 
-El token se lanza en Solana para construir comunidad y efectos de red antes de desplegar el protocolo allí. Solana es la chain hub planificada. El protocolo está activo en Base hoy y se expandirá a Solana a continuación.
+El token se lanza en Solana para construir comunidad y generar efectos de red antes de desplegar el protocolo allí. El protocolo está activo en Base hoy en día, y un despliegue en Solana está en la hoja de ruta.
 
 ## ¿Necesito revelar mi identidad para participar?
 
-No. El programa es anónimo primero en todos los niveles.
+No. El programa es anónimo por defecto en todos los niveles.
 
-## ¿Qué es XP y cómo lo gano?
+## ¿Qué es XP y cómo se gana?
 
-XP se gana mediante el uso de apps del Protocolo (ej. P2P.me y Coins.me) y actividad social. Necesitás 500 XP para ser elegible para el rol de "Cipher".
+XP se obtiene a través del uso de las aplicaciones del protocolo (por ejemplo, P2P.me y Coins.me) y de la actividad social. Necesitas 500 XP para ser elegible para el rol "Cipher".
 
-## ¿Qué pasa si me pierdo una actualización semanal?
+## ¿Qué sucede si me pierdo una actualización semanal?
 
-Una actualización perdida genera una advertencia. Dos actualizaciones consecutivas perdidas resultan en la remoción automática del rol. Podés re-postularte a través del proceso normal.
+Una actualización perdida genera una advertencia. Dos actualizaciones consecutivas perdidas resultan en la eliminación automática del rol. Puedes volver a postularte a través del proceso normal.
 
 ## ¿Puedo participar desde cualquier país?
 
-Podés unirte a Discord desde cualquier lugar. Los tracks activos dependen de qué países tienen Country Leads designados.
+Puedes unirte a Discord desde cualquier lugar. Las pistas activas dependen de qué países hayan designado Country Leads.
 
 ## ¿Cómo se realizan los pagos?
 
-Todos los pagos van directamente a tu wallet P2P.
+Todos los pagos van directamente a tu billetera P2P.
