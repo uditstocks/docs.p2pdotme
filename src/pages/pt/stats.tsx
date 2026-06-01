@@ -1,7 +1,7 @@
 import type { JSX } from "react";
 import { useState, useEffect } from "react";
 import Layout from "@theme/Layout";
-import styles from "./stats.module.css";
+import styles from "../../../src/pages/stats.module.css";
 
 // ── Types ──────────────────────────────────────────────────────────────────
 
@@ -60,17 +60,14 @@ const GRAPH_QUERY = `
   }
 `;
 
-// Country/currency metadata for display
 const CIRCLE_META: Record<string, { flag: string; country: string; color: string }> = {
-    INR: { country: "India", color: "#FF9933", flag: "https://flagpedia.net/data/flags/icon/36x27/in.webp" },
-    BRL: { country: "Brazil", color: "#009C3B", flag: "https://flagpedia.net/data/flags/icon/36x27/br.webp" },
-    ARS: { country: "Argentina", color: "#74ACDF", flag: "https://flagpedia.net/data/flags/icon/36x27/ar.webp" },
-    IDR: { country: "Indonesia", color: "#CE1126", flag: "https://flagpedia.net/data/flags/icon/36x27/id.webp" },
-    VEN: { country: "Venezuela", color: "#C6C914", flag: "https://flagpedia.net/data/flags/icon/36x27/ve.webp" },
-    MEX: { country: "Mexico", color: "#006847", flag: "https://flagpedia.net/data/flags/icon/36x27/mx.webp" },
-    NGN: { country: "Nigeria", color: "#008751", flag: "https://flagpedia.net/data/flags/icon/36x27/ng.webp" },
-    USD: { country: "USA", color: "#F72754", flag: "https://flagpedia.net/data/flags/icon/36x27/us.webp" },
-    EUR: { country: "Europe", color: "#0044CE", flag: "https://images.emojiterra.com/google/noto-emoji/unicode-17.0/color/svg/1f1ea-1f1fa.svg" },
+    INR: { flag: "🇮🇳", country: "Índia", color: "#FF9933" },
+    BRL: { flag: "🇧🇷", country: "Brasil", color: "#009C3B" },
+    ARS: { flag: "🇦🇷", country: "Argentina", color: "#74ACDF" },
+    IDR: { flag: "🇮🇩", country: "Indonésia", color: "#CE1126" },
+    VES: { flag: "🇻🇪", country: "Venezuela", color: "#CF142B" },
+    MXN: { flag: "🇲🇽", country: "México", color: "#006847" },
+    USD: { flag: "🇺🇸", country: "EUA", color: "#3C3B6E" },
 };
 
 // ── Helpers ───────────────────────────────────────────────────────────────
@@ -82,14 +79,12 @@ function formatNumber(n: number): string {
 }
 
 function formatUSDC(raw: string): string {
-    // raw is a big-int string in wei (18 decimals for USDC on The Graph)
-    const n = Number(raw) / 1e6; // USDC uses 6 decimals
+    const n = Number(raw) / 1e6;
     if (n >= 1_000_000) return "$" + (n / 1_000_000).toFixed(2) + "M";
     if (n >= 1_000) return "$" + (n / 1_000).toFixed(1) + "K";
     return "$" + n.toFixed(2);
 }
 
-// Decode hex-encoded strings (The Graph sometimes returns hex names)
 function decodeHexName(s: string): string {
     if (!s || !s.startsWith('0x')) return s;
     try {
@@ -106,7 +101,6 @@ function decodeHexName(s: string): string {
     }
 }
 
-// Animated counter hook
 function useCounter(target: number, duration = 1200): number {
     const [count, setCount] = useState(0);
     useEffect(() => {
@@ -146,7 +140,7 @@ function ErrorState({ message }: { message: string }) {
             <span className={styles.errorIcon}>⚠️</span>
             <p>{message}</p>
             <p className={styles.errorSub}>
-                Data sourced from{" "}
+                Dados provenientes de{" "}
                 <a href="https://ops.p2p.lol" target="_blank" rel="noopener noreferrer">
                     ops.p2p.lol
                 </a>
@@ -186,7 +180,7 @@ function RegionCard({ circle, maxOrders }: RegionCardProps) {
     const decodedCurrency = decodeHexName(circle.currency);
     const meta = CIRCLE_META[decodedCurrency] ?? {
         flag: "🌐",
-        country: decodedCurrency || "Unknown",
+        country: decodedCurrency || "Desconhecido",
         color: "#493fee",
     };
     const orders = parseInt(circle.metrics.totalPlacedOrdersCount, 10) || 0;
@@ -198,7 +192,7 @@ function RegionCard({ circle, maxOrders }: RegionCardProps) {
     return (
         <div className={styles.regionCard}>
             <div className={styles.regionHeader}>
-                <img className={styles.regionFlag} src={meta.flag} alt={meta.country} />
+                <span className={styles.regionFlag}>{meta.flag}</span>
                 <div>
                     <div className={styles.regionCountry}>{meta.country}</div>
                     <div className={styles.regionCurrency}>{decodedCurrency} · {circle.name}</div>
@@ -211,22 +205,21 @@ function RegionCard({ circle, maxOrders }: RegionCardProps) {
             <div className={styles.regionMetrics}>
                 <div className={styles.regionMetric}>
                     <span className={styles.regionMetricValue}>{disputes}</span>
-                    <span className={styles.regionMetricLabel}>Disputes Raised</span>
+                    <span className={styles.regionMetricLabel}>Disputas Levantadas</span>
                 </div>
                 <div className={styles.regionMetric}>
                     <span className={styles.regionMetricValue}>{formatUSDC(circle.metrics.totalVolume)}</span>
-                    <span className={styles.regionMetricLabel}>Monthly Volume</span>
+                    <span className={styles.regionMetricLabel}>Volume Mensal</span>
                 </div>
                 <div className={styles.regionMetric}>
                     <span className={styles.regionMetricValue}>{resolutionRate}%</span>
-                    <span className={styles.regionMetricLabel}>Dispute Resolution</span>
+                    <span className={styles.regionMetricLabel}>Resolução de Disputas</span>
                 </div>
             </div>
 
-            {/* Progress bar relative to highest-volume region */}
             <div className={styles.progressBar}>
                 <div className={styles.progressLabel}>
-                    <span>Volume Share</span>
+                    <span>Participação de Volume</span>
                     <span>{progressPct}%</span>
                 </div>
                 <div className={styles.progressTrack}>
@@ -242,7 +235,7 @@ function RegionCard({ circle, maxOrders }: RegionCardProps) {
 
 // ── Main Page ─────────────────────────────────────────────────────────────
 
-export default function StatsPage(): JSX.Element {
+export default function StatsPtPage(): JSX.Element {
     const [data, setData] = useState<StatsData | null>(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
@@ -252,7 +245,6 @@ export default function StatsPage(): JSX.Element {
         async function fetchStats() {
             try {
                 const now = new Date();
-                // Fall back to previous month if it's the 1st or 2nd day to avoid an empty stats page
                 if (now.getDate() <= 2) {
                     now.setMonth(now.getMonth() - 1);
                 }
@@ -273,7 +265,7 @@ export default function StatsPage(): JSX.Element {
                 setLastUpdated(new Date().toLocaleTimeString());
             } catch (err) {
                 setError(
-                    "Could not load live stats. The network may be temporarily unavailable."
+                    "Não foi possível carregar as estatísticas ao vivo. A rede pode estar temporariamente indisponível."
                 );
             } finally {
                 setLoading(false);
@@ -282,17 +274,15 @@ export default function StatsPage(): JSX.Element {
         fetchStats();
     }, []);
 
-    // ── Monthly Consolidation ──
     const circles = data?.circles ?? [];
     const monthlyMetrics = data?.currencyMetricsByMonths ?? [];
 
-    // 1. Group by currency and get all-time totals (for merchants/disputes)
     const currencyMap = circles.reduce((acc, circle) => {
         const currency = decodeHexName(circle.currency);
         if (!acc[currency]) {
             acc[currency] = {
                 name: CIRCLE_META[currency]?.country || currency,
-                currency: circle.currency, // storing raw hex here
+                currency: circle.currency,
                 metrics: {
                     totalPlacedOrdersCount: "0",
                     totalMerchantsCount: "0",
@@ -312,7 +302,6 @@ export default function StatsPage(): JSX.Element {
         return acc;
     }, {} as Record<string, Circle>);
 
-    // 2. Overlay monthly data (matching Ops Dashboard logic)
     Object.keys(currencyMap).forEach(currency => {
         const monthly = monthlyMetrics.find(m => decodeHexName(m.currency) === currency);
         if (monthly) {
@@ -326,11 +315,9 @@ export default function StatsPage(): JSX.Element {
 
             m.totalPlacedOrdersCount = ordersCount.toString();
 
-            // Volume from The Graph is single-sided; multiply x2 for full 2-sided economic volume
             const rawVol = parseInt(monthly.totalVolume || "0", 10) * 2;
             m.totalVolume = rawVol.toString();
         } else {
-            // If no monthly data found for this currency, set orders to 0
             currencyMap[currency].metrics.totalPlacedOrdersCount = "0";
             currencyMap[currency].metrics.totalVolume = "0";
         }
@@ -338,11 +325,9 @@ export default function StatsPage(): JSX.Element {
 
     const consolidatedCircles: Circle[] = Object.values(currencyMap);
 
-    // Aggregated Globals (Based on Monthly)
     const totalOrders = consolidatedCircles.reduce((s: number, c: Circle) => s + (parseInt(c.metrics.totalPlacedOrdersCount, 10) || 0), 0);
     const totalMerchants = consolidatedCircles.reduce((s: number, c: Circle) => s + (parseInt(c.metrics.totalMerchantsCount, 10) || 0), 0);
 
-    // Total volume aggregation
     const totalVolumeUSDC = consolidatedCircles.reduce((s: number, c: Circle) => s + (parseInt(c.metrics.totalVolume, 10) / 1e6), 0);
 
     const maxOrders = Math.max(...consolidatedCircles.map((c: Circle) => parseInt(c.metrics.totalPlacedOrdersCount, 10) || 0), 1);
@@ -353,18 +338,17 @@ export default function StatsPage(): JSX.Element {
 
     return (
         <Layout
-            title="Protocol Stats"
-            description="Live on-chain statistics for the P2P Protocol — total trades, active merchants, countries, and network health."
+            title="Estatísticas do Protocolo"
+            description="Estatísticas ao vivo na blockchain do Protocolo P2P — total de negociações, comerciantes ativos, países e saúde da rede."
         >
             <div className={styles.page}>
-                {/* ── Hero ── */}
                 <section className={styles.hero}>
                     <div className={styles.heroInner}>
-                        <div className={styles.heroTag}>Live On-Chain Data</div>
-                        <h1 className={styles.heroTitle}>Protocol Stats</h1>
+                        <div className={styles.heroTag}>Dados Ao Vivo na Blockchain</div>
+                        <h1 className={styles.heroTitle}>Estatísticas do Protocolo</h1>
                         <p className={styles.heroSubtitle}>
-                            Real-time transparency into the P2P Protocol's global reach, volume
-                            and network health. All data matches the live Ops Dashboard.
+                            Transparência em tempo real sobre o alcance global do Protocolo P2P, volume
+                            e saúde da rede. Todos os dados correspondem ao Painel de Operações ao vivo.
                         </p>
                         {lastUpdated && (
                             <div className={styles.lastUpdated}>
@@ -374,7 +358,7 @@ export default function StatsPage(): JSX.Element {
                                     target="_blank"
                                     rel="noopener noreferrer"
                                 >
-                                    View full Ops Dashboard →
+                                    Ver Painel de Operações Completo →
                                 </a>
                             </div>
                         )}
@@ -382,11 +366,10 @@ export default function StatsPage(): JSX.Element {
                 </section>
 
                 <div className={styles.content}>
-                    {/* ── Global Metrics ── */}
                     <section className={styles.section}>
-                        <h2 className={styles.sectionTitle}>Global Overview</h2>
+                        <h2 className={styles.sectionTitle}>Visão Geral Global</h2>
                         <p className={styles.sectionSubtitle}>
-                            Aggregated metrics across all active protocol regions.
+                            Métricas agregadas em todas as regiões ativas do protocolo.
                         </p>
 
                         {loading ? (
@@ -397,87 +380,74 @@ export default function StatsPage(): JSX.Element {
                             <div className={styles.statsGrid}>
                                 <StatCard
                                     icon="🔄"
-                                    label="Monthly Orders"
+                                    label="Pedidos Mensais"
                                     value={totalOrders}
-                                    description="Completed orders across all regions (Current Month)"
+                                    description="Pedidos completados em todas as regiões (Mês Atual)"
                                 />
                                 <StatCard
                                     icon="🏪"
-                                    label="Active Merchants"
+                                    label="Comerciantes Ativos"
                                     value={totalMerchants}
-                                    description="Verified merchants providing liquidity"
+                                    description="Comerciantes verificados fornecendo liquidez"
                                 />
                                 <StatCard
                                     icon="💰"
-                                    label="Monthly Volume"
+                                    label="Volume Mensal"
                                     value={totalVolumeUSDC}
                                     displayValue={formatUSDC((totalVolumeUSDC * 1e6).toString())}
-                                    description="Total volume across all regions this month"
+                                    description="Volume total em todas as regiões este mês"
                                 />
                                 <StatCard
                                     icon="🌍"
-                                    label="Countries Active"
+                                    label="Países Ativos"
                                     value={consolidatedCircles.length}
-                                    description="Distinct regional currency circles"
+                                    description="Círculos distintos de moeda regional"
                                 />
                             </div>
                         )}
                     </section>
 
-                    {/* ── What These Numbers Mean ── */}
                     {!loading && !error && (
                         <section className={styles.section}>
-                            <h2 className={styles.sectionTitle}>What This Means</h2>
+                            <h2 className={styles.sectionTitle}>O Que Isto Significa</h2>
                             <div className={styles.explainerGrid}>
                                 <div className={styles.explainerCard}>
                                     <div className={styles.explainerIcon}>🔄</div>
-                                    <h3 className={styles.explainerTitle}>Monthly Orders</h3>
+                                    <h3 className={styles.explainerTitle}>Pedidos Mensais</h3>
                                     <p className={styles.explainerText}>
-                                        Every order represents a real person trading fiat currency for
-                                        crypto (or vice versa) through the protocol. These numbers show
-                                        active usage for the current calendar month.
+                                        Cada pedido representa uma pessoa real negociando moeda fiduciária por criptografia (ou vice-versa) através do protocolo.
                                     </p>
                                 </div>
                                 <div className={styles.explainerCard}>
                                     <div className={styles.explainerIcon}>🏪</div>
-                                    <h3 className={styles.explainerTitle}>Merchants</h3>
+                                    <h3 className={styles.explainerTitle}>Comerciantes</h3>
                                     <p className={styles.explainerText}>
-                                        Merchants are the "liquidity providers" of the protocol — they
-                                        hold USDC and exchange it for local currency on both sides of a
-                                        trade. More merchants means faster settlement and better rates
-                                        for users.
+                                        Comerciantes são os "provedores de liquidez" do protocolo — eles mantêm USDC e o trocam por moeda local em ambos os lados.
                                     </p>
                                 </div>
                                 <div className={styles.explainerCard}>
                                     <div className={styles.explainerIcon}>🌍</div>
-                                    <h3 className={styles.explainerTitle}>Country Circles</h3>
+                                    <h3 className={styles.explainerTitle}>Círculos de País</h3>
                                     <p className={styles.explainerText}>
-                                        Each country operates in its own "Circle" — an isolated market
-                                        with local currency rules, merchant sets, and pricing. This
-                                        design allows P2P to expand to new countries without disrupting
-                                        existing markets.
+                                        Cada país opera em seu próprio "Círculo" — um mercado isolado com regras de moeda local, conjuntos de comerciantes e preços.
                                     </p>
                                 </div>
                                 <div className={styles.explainerCard}>
                                     <div className={styles.explainerIcon}>🛡️</div>
-                                    <h3 className={styles.explainerTitle}>Total Disputes</h3>
+                                    <h3 className={styles.explainerTitle}>Total de Disputas</h3>
                                     <p className={styles.explainerText}>
-                                        The absolute number of trades that required protocol arbitration.
-                                        Given the thousands of orders placed monthly, maintaining a near-zero
-                                        dispute count is a testament to the safety of the protocol flow.
+                                        O número absoluto de negociações que exigiram arbitragem do protocolo. Manter uma contagem de disputas praticamente nula é importante.
                                     </p>
                                 </div>
                             </div>
                         </section>
                     )}
 
-                    {/* ── Regional Breakdown ── */}
                     {!loading && !error && sortedRegions.length > 0 && (
                         <section className={styles.section}>
-                            <h2 className={styles.sectionTitle}>Regional Breakdown</h2>
+                            <h2 className={styles.sectionTitle}>Detalhamento Regional</h2>
                             <p className={styles.sectionSubtitle}>
-                                Each card shows a live snapshot of one country's protocol activity for the current month.
-                                The progress bar shows its share of total global volume.
+                                Cada card mostra um snapshot ao vivo da atividade do protocolo de um país para o mês atual.
                             </p>
                             <div className={styles.regionsGrid}>
                                 {sortedRegions.map((circle) => (
@@ -491,15 +461,12 @@ export default function StatsPage(): JSX.Element {
                         </section>
                     )}
 
-                    {/* ── Data Source ── */}
                     <section className={styles.sourceSection}>
                         <div className={styles.sourceCard}>
                             <div className={styles.sourceLeft}>
-                                <div className={styles.sourceTitle}>Data Source & Transparency</div>
+                                <div className={styles.sourceTitle}>Fonte de Dados e Transparência</div>
                                 <p className={styles.sourceText}>
-                                    All statistics on this page are fetched live from on-chain smart
-                                    contracts indexed by The Graph Protocol. This means the data
-                                    cannot be manipulated. It is a direct read of the blockchain.
+                                    Todas as estatísticas nesta página são buscadas ao vivo de contratos inteligentes na blockchain indexados pelo The Graph Protocol.
                                 </p>
                             </div>
                             <div className={styles.sourceLinks}>
@@ -509,7 +476,7 @@ export default function StatsPage(): JSX.Element {
                                     rel="noopener noreferrer"
                                     className={styles.sourceLink}
                                 >
-                                    View Ops Dashboard →
+                                    Ver Painel de Operações →
                                 </a>
                             </div>
                         </div>
