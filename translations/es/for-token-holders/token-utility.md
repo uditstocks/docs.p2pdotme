@@ -5,24 +5,21 @@ title: "Utilidad del Token"
 slug: token-utility
 ---
 
-> *Esta página se proporciona con fines informativos para explicar la mecánica del protocolo. No constituye una oferta de valores ni un consejo de inversión. $P2P no está disponible para personas de EE.UU. Nada de lo aquí expuesto debe interpretarse como una promesa de rendimiento financiero. Por favor, lea las [Divulgaciones](/es/for-token-holders/disclosures) completas antes de continuar.*
+**Propiedad.** $P2P es un token de propiedad. Los fondos del tesoro y la autoridad de acuñación están controlados por los titulares del token a través de la futarquía de MetaDAO en Solana, y la propiedad intelectual del protocolo, sus parámetros y las actualizaciones están controlados por los titulares del token a través del Governor en cadena en Base, no por ningún equipo, fundación o entidad individual. Esto significa que el token confiere derechos de gobernanza ejecutables, incluido el mecanismo para redirigir el control descrito en "Por qué existe el token". Las decisiones que afectan la oferta del token (acuñación) deben pasar por el mercado de decisiones de futarquía de MetaDAO, donde los participantes apuestan capital sobre si una propuesta aumenta o disminuye el valor, y la predicción del mercado determina el resultado.
 
-**Gobernanza.** $P2P es un token de gobernanza. Los parámetros del protocolo, el despliegue del tesoro y la capacidad de acuñar nuevos tokens están controlados por los tenedores de tokens a través de una gobernanza basada en futarchy, no por ningún equipo, fundación o entidad en particular. La gobernanza proporciona un mecanismo para redirigir el control del protocolo si los recursos alguna vez se gestionan de forma inadecuada. Las decisiones que afectan el suministro de tokens (acuñación) deben pasar por un mecanismo de gobernanza de mercado de decisiones, donde los participantes apuestan capital real sobre si una propuesta beneficia al protocolo. Las propuestas que el mercado predice que dañarán al protocolo se rechazan automáticamente.
+**Gobernanza.** Los titulares del token votan sobre parámetros del protocolo, como comisiones, límites, reglas para comerciantes y configuraciones de oracle, a través del Governor en cadena, donde un $P2P en staking equivale a un voto, con delegación. La asignación del tesoro se gobierna por separado a través de la futarquía de MetaDAO en Solana.
 
-**Votación.** Los tenedores de tokens votan sobre parámetros del protocolo tales como tarifas, límites, reglas para merchants, configuraciones de oráculos y asignación del tesoro. Un $P2P en staking = un voto, con delegación.
+**Staking.** Los Circle Admins hacen staking de $P2P para operar redes de comerciantes. Los miembros de la comunidad delegan USDC al fondo de un Circle para participar en las recompensas de los comerciantes. Los comerciantes hacen staking de USDC como capital de trabajo. El diseño de staking alinea los incentivos al requerir un compromiso económico en cada nivel.
 
-**Staking.** Los Administradores de Círculo hacen staking de $P2P para operar redes de merchants. Los delegadores hacen staking de $P2P en los Círculos para participar en las operaciones del protocolo: monitorear el rendimiento del Círculo, evaluar la conducta de los merchants y participar en la supervisión de disputas. Los delegadores que cumplen estas funciones operativas pueden recibir asignaciones de incentivos de los contratos de distribución de tarifas, condicionado al rendimiento del Círculo. Los merchants hacen staking de USDC como capital de trabajo. El diseño de staking crea “skin-in-the-game” en cada capa.
+**Distribución de comisiones.** Los ingresos del protocolo se distribuyen entre los participantes.
 
-**Enrutamiento de tarifas.** Las tarifas del protocolo se distribuyen entre los participantes según sus roles operativos.
+| Destinatario                  | Participación en los ingresos                                                                    |
+| ----------------------------- | ------------------------------------------------------------------------------------------------ |
+| Comerciantes + Delegadores    | 53,33%                                                                                           |
+| Tesoro                        | 20%, con hoja de ruta hacia un 33% destinado a compra y quema (gobernado a través de la futarquía de MetaDAO) |
+| Fondos de seguro              | 17,78%                                                                                           |
+| Circle Admins                 | 8,89%                                                                                            |
 
-| Destinatario                  | Parte de las tarifas                          |
-|-------------------------------|-----------------------------------------------|
-| Merchants + Delegadores       | 53,33%                                        |
-| Tesoro                        | 20%, con aumento planificado al 35% (gobernado vía futarchy de MetaDAO) |
-| Pools de Seguros              | 17,78%                                        |
-| Administradores de Círculo    | 8,89%                                         |
-
-Ninguna parte captura la mayoría de las tarifas del protocolo. Los merchants reciben la mayor parte porque aportan capital de trabajo y labor operativa. Las contribuciones al tesoro son gobernadas por los tenedores de tokens vía futarchy de MetaDAO. La gobernanza puede dirigir estos fondos hacia desarrollo del ecosistema, operaciones de liquidez u otras medidas que sirvan al protocolo. Los pools de seguros existen para que las disputas no se conviertan en costos externalizados.
+Ninguna parte concentra la mayoría de los ingresos del protocolo. Los comerciantes obtienen la mayor participación porque aportan capital de trabajo y labor operativa. Las contribuciones al tesoro vinculan el uso del protocolo con el tesoro de la red. La gobernanza puede destinar estos fondos a compra y quema u otros usos a través de un mercado de decisiones de futarquía de MetaDAO. Los fondos de seguro existen para que las disputas no se conviertan en costos externalizados.
 
 ---
-

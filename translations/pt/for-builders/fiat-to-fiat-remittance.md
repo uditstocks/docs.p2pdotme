@@ -1,27 +1,27 @@
 ---
 id: fiat-to-fiat-remittance
 sidebar_position: 6
-title: "Remessa entre Fiats"
+title: "Remessas Fiat para Fiat"
 slug: fiat-to-fiat-remittance
 ---
 
-O protocolo já realiza liquidação de fiat para stablecoin e de stablecoin para fiat de forma independente. A remessa encadeia essas duas etapas de forma atômica. O remetente paga em moeda fiduciária no País A, o destinatário recebe em moeda fiduciária no País B, e o salto em stablecoin no meio é invisível para ambos.
+O protocolo já liquida fiat para stablecoin e stablecoin para fiat de forma independente. As remessas encadeiam essas duas etapas de forma atômica. O remetente paga em moeda fiduciária no País A, o destinatário recebe em moeda fiduciária no País B, e a passagem pela stablecoin no meio é invisível para ambos.
 
 ```mermaid
 flowchart LR
-    sender[FiatRemetente] --> onramp[EtapaDeOnramp]
-    onramp --> settlement[LiquidacaoInternacional]
-    settlement --> offramp[EtapaDeOfframp]
-    offramp --> receiver[FiatDestinatario]
+    sender[SenderFiatIn] --> onramp[OnrampLeg]
+    onramp --> settlement[CrossBorderSettlement]
+    settlement --> offramp[OfframpLeg]
+    offramp --> receiver[ReceiverFiatOut]
 ```
 
-Onramp, offramp, disputas e trilhos de matching já existem. A principal ideia é que remessas são puramente um problema de composição construído a partir de primitivas existentes. Não são necessárias novas suposições de confiança.
+As trilhas de onramp, offramp, disputa e correspondência já existem. O ponto central é que a remessa é puramente um problema de composição construído a partir de primitivas existentes. Nenhuma nova premissa de confiança é necessária.
 
 **O que há de novo para desenvolvedores.**
 
-* Um tipo de ordem vinculada que conecta de forma atômica as etapas de onramp e offramp
-* Um contrato de escrow que mantém a stablecoin entre as etapas (falha em um lado reembolsa o outro)
-* Um fluxo de resgate para destinatários que ainda não possuem contas
-* Exibição de cotações entre moedas e detalhamento transparente das taxas
+- Um tipo de ordem vinculada que conecta atomicamente as etapas de onramp e offramp
+- Um contrato de escrow que retém a stablecoin entre as etapas (falha em um lado reembolsa o outro)
+- Um fluxo de reivindicação para destinatários que ainda não possuem contas
+- Exibição de cotação entre moedas e detalhamento transparente de tarifas
 
 ---

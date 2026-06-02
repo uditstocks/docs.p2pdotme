@@ -1,22 +1,27 @@
 ---
 id: how-to-place-an-order
 sidebar_position: 3
-title: "Cómo Crear una Orden"
+title: "Cómo Realizar un Pedido"
 slug: how-to-place-an-order
 ---
 
-1. Abrí la app y seleccioná `BUY`, `SELL` o `PAY`.
-2. Ingresá el monto y los datos requeridos del destinatario/pago.
-3. Enviá la orden y esperá la asignación de un merchant.
-4. Seguí las instrucciones de la app para la transferencia y confirmación.
+1. Abre la aplicación y selecciona `BUY`, `SELL` o `PAY`.
+2. Ingresa el monto y los datos del destinatario o del pago requeridos.
+3. Envía el pedido y espera la asignación de un comerciante.
+4. Sigue las instrucciones de la aplicación para completar la transferencia y la confirmación.
 
 ```mermaid
-flowchart LR
-    start[Iniciar en la app] --> choose[Elegir tipo de orden]
-    choose --> submit[Enviar orden]
-    submit --> assign[Merchant asignado]
-    assign --> transfer[Completar paso de transferencia]
-    transfer --> finish[Estado final de la orden]
+flowchart TD
+    start[Start the app] --> choose[Choose order type]
+    choose --> buy[BUY]
+    choose --> sell[SELL]
+    choose --> pay[PAY]
+    buy --> submit[Submit order]
+    sell --> submit[Submit order]
+    pay --> submit[Submit order]
+    submit --> assign[Merchant assigned]
+    assign --> transfer[Complete transfer step]
+    transfer --> finish[Order final state]
 ```
 
 ---

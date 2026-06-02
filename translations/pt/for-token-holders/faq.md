@@ -1,37 +1,40 @@
 ---
 id: faq
-sidebar_position: 19
-title: "Perguntas Frequentes"
+sidebar_position: 14
+title: "FAQ"
 slug: faq
 ---
 
-## Por que o token é lançado em Solana se o protocolo está em Base?
+## Por que o P2P precisa de um token?
 
-O protocolo está ativo em Base hoje. O token é lançado em Solana para construir efeitos de rede antes de implantar o protocolo lá. Solana é o hub planejado de uma arquitetura multichain. Veja [Estratégia Multichain](/pt/for-token-holders/multichain-strategy) para o roteiro completo.
+O on/off ramping de P2P é uma infraestrutura financeira essencial em mercados emergentes. Sem um token, o controle sobre essa infraestrutura permanece com um único operador que pode alterar taxas, censurar usuários ou encerrá-la. O token transfere esse controle para a comunidade.
 
-## Por que P2P precisa de um token?
+## Isto é um token de propriedade?
 
-O P2P on/off ramping é uma infraestrutura financeira essencial em mercados emergentes. Sem um token, o controle sobre essa infraestrutura permanece com um único operador que pode alterar taxas, censurar usuários ou desligá-la. O token transfere esse controle para a comunidade.
+Sim. Trata-se de propriedade do protocolo, distinta de participação acionária em uma empresa tradicional. A seção "Por Que o Token Existe" acima cobre a tese completa de propriedade.
 
-## Isto é um token de governança?
+## Como funciona a venda no estilo MetaDAO?
 
-Sim. $P2P confere direitos de governança sobre parâmetros de protocolo, implantação de tesouro e atualizações de protocolo. É distinto de patrimônio em uma empresa tradicional. A seção "Por Que o Token Existe" acima cobre a tese completa de governança.
-
-## Como funciona a venda estilo MetaDAO?
-
-Os usuários comprometem USDC durante uma janela de 4 dias. **Não há parede de lances**, a compensação é pro-rata contra o limite aceito, com reembolsos para qualquer USDC não alocado. O pedido é **$6M**; se os compromissos excederem isso, o excesso é reembolsado. Se os compromissos totais forem **acima de $80M** (e até **$150M**), até **$8M** é aceito em **$20,64M** FDV; se forem **acima de $150M**, até **$10M** é aceito em **$25,8M** FDV. Se superfaturado no limite ativo, as alocações seguem as regras de pro-rata e preferência de XP na página de [venda MetaDAO](/pt/for-token-holders/metadao-sale). Os usuários de protocolo existentes recebem uma alocação preferencial com a mesma avaliação de todos os participantes da venda pública, com base em seu XP em [p2p.foundation](https://p2p.foundation/). Nenhuma rodada privada acontece na TGE. A venda é o evento de distribuição primária.
+Os usuários comprometem USDC durante uma janela de 4 dias. Se houver excesso de demanda, as alocações são pro-rata. Usuários existentes do protocolo com XP têm prioridade. Nenhuma rodada privada ocorre na TGE. A venda é o evento primário de distribuição.
 
 ## O que é desbloqueado na TGE?
 
-10M tokens de venda + 2,9M tokens de liquidez (12,9M total, 50% da oferta). Zero tokens de apoiador ou equipe são desbloqueados no lançamento.
+10M tokens de venda + 2,9M tokens de liquidez (12,9M no total, 50% da oferta). Zero tokens de apoiadores ou da equipe são desbloqueados no lançamento.
 
 ## Como funciona o tesouro?
 
-20% das taxas do protocolo fluem para o tesouro on-chain, planejado para aumentar para 35% conforme o protocolo amadurece, sujeito à governança de futarquia MetaDAO. Os detentores de tokens decidem como implantar esses fundos. Toda implantação de tesouro requer aprovação de governança. O tesouro é financiado por taxas de protocolo de um produto em funcionamento. Nenhum detentor individual de tokens tem uma reivindicação sobre os fundos do tesouro. Todas as decisões de implantação são feitas através de governança.
+O tesouro é financiado inteiramente pela receita de transações de um produto em funcionamento, e os detentores de tokens decidem como alocar esses fundos por meio da futarquia MetaDAO no Solana, um mercado de decisões onde os participantes apostam capital no efeito esperado de uma proposta sobre o valor. Não há cronograma automático de recompra. A seção [Tesouro e Compra e Queima](/pt/for-token-holders/treasury-and-buy-and-burn) cobre a mecânica completa, incluindo a divisão de receita e o roteiro de compra e queima.
 
 ## A oferta é fixa?
 
-Sim, fixa no lançamento (25,8M). A emissão futura requer aprovação de governança via futarquia. O protocolo funciona com taxas de transação, não emissões de tokens.
+Sim, fixada no lançamento (25,8M $P2P). A emissão futura requer aprovação de governança por meio da futarquia MetaDAO no Solana, o mercado de decisões que governa a cunhagem de tokens. O protocolo opera com receita de transações, não com emissões de tokens.
+
+## Por que Base para o protocolo, e onde o token vive?
+
+Os contratos do protocolo rodam em Base por suas taxas baixas, finalidade rápida e ferramental Ethereum, que tornam as transações pequenas e frequentes viáveis. O token $P2P é um token SPL já ativo no Solana. A implantação mais ampla do protocolo no Solana está no roteiro. A escolha da chain não limita o design do token.
+
+## Como diferenciar o que está ativo do que está planejado?
+
+Notas ao longo da documentação marcam funcionalidades previstas para versões futuras. Para detalhes em nível de contrato sobre o que está implantado, veja [`/for-builders`](/pt/for-builders/start-here).
 
 ---
-

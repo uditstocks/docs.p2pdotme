@@ -1,153 +1,144 @@
 ---
 id: 03-3-system-overview
 sidebar_position: 3
-title: "3. Resumen del Sistema"
+title: “3. Descripción General del Sistema”
 slug: system-overview
 ---
 
 ## 3.1 Actores
 
-El protocolo involucra a varios participantes clave que trabajan juntos para habilitar transacciones peer-to-peer sin confianza.
+El protocolo involucra a varios participantes clave que trabajan en conjunto para habilitar transacciones entre pares sin necesidad de confianza mutua.
 
-**Compradores y Vendedores** son usuarios cotidianos que inician órdenes de on-ramp u off-ramp. Interactúan con el protocolo a través de aplicaciones cliente utilizando wallets integradas y transaccionando sin ceder la custodia de sus fondos.
+**Los compradores y vendedores** son usuarios cotidianos que inician órdenes de entrada o salida de fondos (on-ramp u off-ramp). Interactúan con el protocolo a través de aplicaciones cliente que utilizan billeteras integradas, realizando transacciones sin ceder la custodia de sus fondos.
 
-**Merchants**, también conocidos como pares de liquidez, actúan como contrapartes que median la liquidez entre stablecoins y monedas fiat. Estos son participantes cuidadosamente vetados que mantienen liquidez suficiente y han establecido fuertes reputaciones a través del sistema Proof-of-Credibility.
+**Los comerciantes**, también conocidos como pares de liquidez, actúan como contrapartes que median la liquidez entre stablecoins y monedas fiduciarias. Son participantes cuidadosamente verificados que mantienen liquidez suficiente y han construido sólidas reputaciones a través del sistema Proof-of-Credibility.
 
-**Contratos del Protocolo** son los smart contracts on-chain que orquestan todo el ciclo de vida de las órdenes. Manejan el encolamiento de órdenes, el emparejamiento basado en puntajes de credibilidad, la verificación de estado y los resultados finales de liquidación. Estos contratos operan actualmente en Base L2 (con expansión multichain a Solana planeada).
+**Los contratos del protocolo** son los contratos inteligentes en cadena que orquestan todo el ciclo de vida de las órdenes. Se encargan de la gestión de colas, el emparejamiento basado en puntuaciones de credibilidad, la verificación de estado y los resultados de liquidación final. Estos contratos operan actualmente en Base L2 (con expansión multicadena a Solana planificada).
 
-**Verificadores de Pruebas** validan actualmente las pruebas ZK-KYC para la verificación de identidad (IDs gubernamentales, cuentas sociales y pasaportes a través de Reclaim Protocol y otros verificadores ZK). La verificación de transacciones bancarias está planificada (ver [Sección 4.2](/es/whitepaper/cryptographic-primitives-proof-integration#42-módulo-de-evidencia-para-verificación-de-transacciones-bancarias-roadmap)).
+**Los verificadores de pruebas** validan actualmente las pruebas ZK-KYC para la verificación de identidad (documentos de identidad gubernamentales, cuentas sociales y pasaportes mediante Reclaim Protocol y otros verificadores ZK). La verificación de transacciones bancarias está planificada (véase la [Sección 4.2](/es/whitepaper/cryptographic-primitives-proof-integration)).
 
-**Gobernanza** abarca los mecanismos a través de los cuales se toman decisiones sobre parámetros del protocolo, actualizaciones y la tesorería. La implementación actual es operada por admin/multisig, con una transición planificada hacia una gobernanza más amplia por parte de los poseedores del token a medida que el protocolo madure.
+**La gobernanza** está distribuida en dos capas. Los parámetros del protocolo y las actualizaciones en Base son gobernados por los titulares de $P2P a través de un Governor en cadena, mientras que la emisión de tokens, los cambios en el suministro y la asignación del tesoro son gobernados en Solana a través del mercado de decisiones en cadena de MetaDAO. La implementación actual opera bajo administración/multifirma, con una transición hacia una gobernanza más amplia de los titulares de tokens en curso a medida que el protocolo madura.
 
 ## 3.2 Componentes
 
-- **Smart contracts de Base L2** (en expansión a Solana) para el ciclo de vida de las órdenes, emparejamiento, ventanas de disputa, registro de parámetros y enrutamiento de comisiones.
-- **Registro de reputación** que implementa Proof-of-Credibility (entradas, puntuación, decaimiento).
-- **Adaptador de oráculos** para precios de referencia y salvaguardas (mediana/TWAP, fallbacks, circuit breakers).
-- **SDKs de cliente** y aplicaciones de referencia (ej. Coins.me) que se comunican con el protocolo.
+- **Contratos inteligentes en Base L2** (con expansión a Solana) para el ciclo de vida de las órdenes, emparejamiento, ventanas de disputas, registro de parámetros y enrutamiento de comisiones.
+- **Registro de reputación** que implementa Proof-of-Credibility (entradas, puntuación, penalizaciones).
+- **Adaptador de oráculo** para precios de referencia y salvaguardas (mediana/TWAP, respaldos, disyuntores).
+- **SDKs de cliente** y aplicaciones de referencia (p. ej., Coins.me) que interactúan con el protocolo.
 
 ## 3.3 Flujo de Alto Nivel
 
-1. **Colocación de Órdenes:** Un usuario hace clic en “Comprar USDC” (o “Vender USDC”) e ingresa el monto. La app proporciona una wallet integrada para la transacción.
-2. **Emparejamiento de Órdenes:** Se asigna un merchant on-chain basado en USDC stakeado. Se comparte una dirección de pago fiat a través del smart contract, cifrada con las claves del usuario; para off-ramps, se presenta una dirección de USDC en Base (en expansión a Solana).
-3. **Transferencia Fiat/Stablecoin:** El pagador realiza la transferencia en la vía designada.
-4. **Confirmación/Liquidación:** En minutos, la liquidación se completa una vez que el merchant confirma la recepción. Los saldos de las wallets se actualizan en consecuencia.
-5. **Ventana de Disputa:** Si alguna parte impugna, presenta evidencia de que un pago o acción ocurrió (o no ocurrió). En la implementación actual, administradores autorizados resuelven las órdenes en disputa on-chain según las reglas de falla del protocolo y las ventanas de disputa.
+1. **Colocación de órdenes:** Un usuario hace clic en “Comprar USDC” (o “Vender USDC”) e ingresa el monto. La aplicación proporciona una billetera integrada para la transacción.
+2. **Emparejamiento de órdenes:** Se asigna un comerciante en cadena en función del USDC bloqueado en garantía. Una dirección de pago fiduciario se comparte a través del contrato inteligente, cifrada con las claves del usuario. Para los off-ramps, se presenta una dirección USDC en Base (con expansión a Solana).
+3. **Transferencia de fondos fiduciarios o stablecoins:** El pagador realiza la transferencia por el canal designado.
+4. **Confirmación y liquidación:** En cuestión de minutos, la liquidación se completa una vez que el comerciante confirma la recepción. Los saldos de las billeteras se actualizan en consecuencia.
+5. **Ventana de disputa:** Si una de las partes impugna, presenta evidencia de que un pago o acción ocurrió (o no ocurrió). En la implementación actual, administradores autorizados resuelven las órdenes disputadas en cadena conforme a las reglas de falta del protocolo y las ventanas de disputa.
 
 ```mermaid
 flowchart LR
-    place[Colocar orden] --> match[Emparejamiento con merchant]
-    match --> transfer[Transferencia de fiat o stablecoin]
-    transfer --> confirm[Confirmar y liquidar]
-    confirm --> done[Completado]
-    confirm --> dispute[Disputa planteada]
-    dispute --> adminSettle[Liquidación por admin on-chain]
-    adminSettle --> resolved[Resuelto]
+    place[Place order] --> match[Merchant match]
+    match --> transfer[Fiat or stablecoin transfer]
+    transfer --> confirm[Confirm and settle]
+    confirm --> done[Completed]
+    confirm --> dispute[Dispute raised]
+    dispute --> adminSettle[Admin settlement on-chain]
+    adminSettle --> resolved[Resolved]
 ```
 
-## 3.4 Flujo del On-Ramp
+## 3.4 Flujo de On-Ramp
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────┐
-│                     FLUJO ON-RAMP (Fiat → USDC)                         │
+│                         ON-RAMP FLOW (Fiat → USDC)                      │
 ├─────────────────────────────────────────────────────────────────────────┤
 │                                                                         │
 │   ┌──────────┐         ┌──────────────┐         ┌──────────────┐        │
-│   │ USUARIO  │         │  PROTOCOLO   │         │   MERCHANT   │        │
+│   │   USER   │         │   PROTOCOL   │         │   MERCHANT   │        │
 │   └────┬─────┘         └──────┬───────┘         └──────┬───────┘        │
 │        │                      │                        │                │
-│        │ 1. Abre orden de     │                        │                │
-│        │ BUY (compra)         │                        │                │
-│        │ (monto + vía)        │                        │                │
+│        │  1. Open BUY order   │                        │                │
+│        │  (amount + rail)     │                        │                │
 │        │─────────────────────►│                        │                │
 │        │                      │                        │                │
-│        │                      │  2. Emparejamiento     │                │
-│        │                      │  vía PoC               │                │
-│        │                      │  (puntaje de           │                │
-│        │                      │  credibilidad)         │                │
+│        │                      │  2. Match via PoC      │                │
+│        │                      │  (credibility score)   │                │
 │        │                      │───────────────────────►│                │
 │        │                      │                        │                │
-│        │  3. Recibe dirección │                        │                │
-│        │  de pago fiat        │                        │                │
+│        │  3. Receive fiat     │                        │                │
+│        │  payment address     │                        │                │
 │        │◄─────────────────────│                        │                │
-│        │  (encriptado)        │                        │                │
+│        │  (encrypted)         │                        │                │
 │        │                      │                        │                │
-│        │  4. Transfiere fiat  │                        │                │
-│        │  vía banco/UPI/PIX   │                        │                │
+│        │  4. Transfer fiat    │                        │                │
+│        │  via UPI/PIX/SPEI    │                        │                │
 │        │──────────────────────────────────────────────►│                │
 │        │                      │                        │                │
-│        │                      │  5. Merchant           │                │
-│        │                      │  confirma la recepción │                │
+│        │                      │  5. Merchant confirms  │                │
+│        │                      │  receipt               │                │
 │        │                      │◄───────────────────────│                │
 │        │                      │                        │                │
-│        │  6. USDC liberado    │                        │                │
-│        │  a la wallet del     │                        │                │
-│        │  usuario             │                        │                │
+│        │  6. USDC released    │                        │                │
+│        │  to user wallet      │                        │                │
 │        │◄─────────────────────│                        │                │
 │        │                      │                        │                │
 │   ┌────▼─────┐         ┌──────▼───────┐         ┌──────▼───────┐        │
-│   │   USDC   │         │  COMISIONES  │         │    BONOS     │        │
-│   │ RECIBIDO │         │   COBRADAS   │         │ DESBLOQUEADOS│        │
+│   │  USDC    │         │    FEES      │         │   BONDS      │        │
+│   │ RECEIVED │         │  COLLECTED   │         │  UNLOCKED    │        │
 │   └──────────┘         └──────────────┘         └──────────────┘        │
 │                                                                         │
 └─────────────────────────────────────────────────────────────────────────┘
 ```
 
-## 3.5 Flujo del Off-Ramp
+## 3.5 Flujo de Off-Ramp
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────┐
-│                    FLUJO OFF-RAMP (USDC → Fiat)                         │
+│                        OFF-RAMP FLOW (USDC → Fiat)                      │
 ├─────────────────────────────────────────────────────────────────────────┤
 │                                                                         │
 │   ┌──────────┐         ┌──────────────┐         ┌──────────────┐        │
-│   │ USUARIO  │         │  PROTOCOLO   │         │   MERCHANT   │        │
+│   │   USER   │         │   PROTOCOL   │         │   MERCHANT   │        │
 │   └────┬─────┘         └──────┬───────┘         └──────┬───────┘        │
 │        │                      │                        │                │
-│        │ 1. Abre orden de     │                        │                │
-│        │ SELL (venta)         │                        │                │
-│        │  + bloquea USDC      │                        │                │
+│        │  1. Open SELL order  │                        │                │
+│        │  + lock USDC         │                        │                │
 │        │─────────────────────►│                        │                │
 │        │                      │                        │                │
-│        │                      │  2. Emparejamiento     │                │
-│        │                      │  vía PoC               │                │
-│        │                      │  + merchant publica    │                │
-│        │                      │    garantía            │                │
+│        │                      │  2. Match via PoC      │                │
+│        │                      │  + merchant posts bond │                │
 │        │                      │───────────────────────►│                │
 │        │                      │                        │                │
-│        │  3. Comparte         │                        │                │
-│        │  dirección para      │                        │                │
-│        │  recibir fiat        │                        │                │
+│        │  3. Share fiat       │                        │                │
+│        │  receiving address   │                        │                │
 │        │─────────────────────►│                        │                │
-│        │  (encriptado)        │                        │                │
+│        │  (encrypted)         │                        │                │
 │        │                      │                        │                │
-│        │                      │  4. Merchant envía     │                │
-│        │  Recibe fiat         │  pago fiat             │                │
+│        │                      │  4. Merchant sends     │                │
+│        │  Fiat received       │  fiat payment          │                │
 │        │◄──────────────────────────────────────────────│                │
 │        │                      │                        │                │
-│        │                      │  5. Merchant sube      │                │
-│        │                      │  confirmación de pago  │                │
+│        │                      │  5. Merchant submits   │                │
+│        │                      │  payment confirmation  │                │
 │        │                      │◄───────────────────────│                │
 │        │                      │                        │                │
-│        │                      │  6. USDC liberado      │                │
-│        │                      │  al merchant           │                │
+│        │                      │  6. USDC released      │                │
+│        │                      │  to merchant           │                │
 │        │                      │───────────────────────►│                │
 │        │                      │                        │                │
 │   ┌────▼─────┐         ┌──────▼───────┐         ┌──────▼───────┐        │
-│   │   FIAT   │         │  COMISIONES  │         │     USDC     │        │
-│   │ RECIBIDO │         │   COBRADAS   │         │   RECIBIDO   │        │
+│   │  FIAT    │         │    FEES      │         │    USDC      │        │
+│   │ RECEIVED │         │  COLLECTED   │         │  RECEIVED    │        │
 │   └──────────┘         └──────────────┘         └──────────────┘        │
 │                                                                         │
 └─────────────────────────────────────────────────────────────────────────┘
 ```
 
-## 3.6 Consideraciones clave
+## 3.6 Consideraciones Clave
 
-- El **merchant** cumple la función de mediar la liquidez para las transacciones.
-- La **responsabilidad de confirmar el pago** recae en el merchant (para off-ramps) o puede ser proporcionada por cualquiera de las partes.
-- **ZK-KYC realiza verificación de identidad sin confianza** para el usuario sin exponer datos personales.
-- **La evidencia se envía y revisa** en las disputas. En el sistema actual, los resultados se ejecutan mediante liquidación por admin on-chain; la resolución más amplia impulsada por verificadores y gobernanza permanece en el roadmap (ver [Sección 4.2](/es/whitepaper/cryptographic-primitives-proof-integration#42-módulo-de-evidencia-para-verificación-de-transacciones-bancarias-roadmap)).
-- **Reclaim Protocol** habilita la verificación de identidad que preserva la privacidad mediante cuentas sociales e IDs gubernamentales.
+- El **comerciante** cumple la función de mediar la liquidez para las transacciones.
+- La **responsabilidad de confirmar el pago** recae en el comerciante (para los off-ramps) o puede ser proporcionada por cualquiera de las partes.
+- **ZK-KYC realiza la verificación de identidad sin necesidad de confianza** para el usuario sin exponer datos personales.
+- **Las evidencias se presentan y revisan** en las disputas. En el sistema actual, los resultados se ejecutan mediante liquidación administrativa en cadena. La resolución más amplia impulsada por verificadores y gobernanza permanece en la hoja de ruta (véase la [Sección 4.2](/es/whitepaper/cryptographic-primitives-proof-integration)).
+- **Reclaim Protocol** habilita la verificación que preserva la privacidad de cuentas sociales mediante zkTLS. Aadhaar se verifica a través de Anon Aadhaar, y los pasaportes o documentos de identidad nacionales a través de ZKPassport.
 
 ---
-

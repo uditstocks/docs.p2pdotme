@@ -5,22 +5,20 @@ title: "Remuneración"
 slug: remuneration
 ---
 
-| Rol | Salario Mensual |
-|-----|-----------------|
-| "Keymaster" | $200 |
-| "Cipher" | Hasta $100 (según tarea asignada) |
+| Rol         | Salario mensual                         |
+| ----------- | --------------------------------------- |
+| "Keymaster" | Hasta $200                              |
+| "Cipher"    | Hasta $100 (según el trabajo asignado)  |
 
-**Spotlight Mensual.** $500 x 3 = $1,500 de pool de premios mensuales.
+El Premio Mensual Destacado otorga $500 a cada uno de tres destinatarios, con un fondo de premios mensual de $1,500. Todos los pagos se realizan directamente a tu billetera P2P.
 
-Todos los pagos se realizan directamente a tu wallet P2P.
+| Concepto                                 | Cantidad | Tarifa      | Total              |
+| ---------------------------------------- | -------- | ----------- | ------------------ |
+| Keymasters (4 países x 4 categorías)     | 16       | Hasta $200  | $3,200 (máx.)      |
+| Ciphers (16 x 5)                         | 80       | Hasta $100  | $8,000 (máx.)      |
+| Premio Mensual Destacado                 | 3        | $500        | $1,500             |
+| **Gasto mensual total**                  |          |             | **$12,700 (máx.)** |
 
-| Concepto | Cantidad | Tarifa | Total |
-|----------|----------|--------|-------|
-| Keymasters (4 países x 4 tracks) | 16 | $200 | $3,200 |
-| Ciphers (16 x 5) | 80 | Hasta $100 | $8,000 (máx) |
-| Spotlight Mensual | 3 | $500 | $1,500 |
-| **Gasto mensual total** | | | **$12,700 (máx)** |
-
-**Flujo de aprobación de fondos.** "Keymaster" genera solicitud, "Country Lead" revisa, "Core Team" aprueba, desembolso.
+**Flujo de aprobación de fondos.** El "Keymaster" presenta la solicitud antes del día 5 del mes, el "Country Lead" la revisa y el "Core Team" la aprueba antes del día 10; el desembolso se realiza antes del día 15.
 
 ---

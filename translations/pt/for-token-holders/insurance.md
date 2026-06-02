@@ -1,19 +1,18 @@
 ---
 id: insurance
-sidebar_position: 13
+sidebar_position: 12
 title: "Seguro"
 slug: insurance
 ---
 
-O design do protocolo inclui uma pilha de seguro de três níveis.
+O design do protocolo inclui uma pilha de seguro de três camadas.
 
-**CAIP (Círculo Pool de Seguro do Administrador).** Cobertura de primeira linha financiada por uma porcentagem do volume do Círculo mais stakes cortados.
+**CAIP (Circle Admin Insurance Pool).** Cobertura de primeira linha financiada por uma porcentagem do volume do Círculo mais stakes cortados.
 
-**CALR (Recompensas Bloqueadas do Administrador de Círculo).** Uma porção das alocações do administrador bloqueada em um amortecedor contínuo.
+**CALR (Circle Admin Locked Rewards).** Uma parcela dos ganhos do administrador bloqueada em uma reserva rotativa.
 
-**PIP (Pool de Seguro do Protocolo).** Suporte para falhas sistêmicas ou pools de nível inferior esgotados.
+**PIP (Protocol Insurance Pool).** Proteção de última instância para falhas sistêmicas ou pools de camadas inferiores esgotados.
 
-*A pilha completa de pool de seguro com lógica de slash/recompensa programável e pagamentos vinculados a disputas está planejada para um lançamento futuro.*
+_A pilha completa de pools de seguro com lógica de corte/recompensa programável e pagamentos vinculados a disputas está planejada para uma versão futura._
 
 ---
-

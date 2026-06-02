@@ -5,19 +5,19 @@ title: "Qué Hacer Según el Tipo de Orden"
 slug: what-to-do-by-order-type
 ---
 
-## BUY (Fiat a Stablecoin)
+## COMPRA (Fiat a Stablecoin)
 
-1. Creá una orden BUY.
-2. Recibí los datos de pago del merchant asignado.
-3. Enviá el fiat usando el riel indicado.
-4. Completá la confirmación requerida en la app.
-5. Seguí el estado de la orden hasta su finalización.
+1. Crea una orden `BUY`.
+2. Recibe los datos de pago del comerciante asignado.
+3. Envía el fiat utilizando el canal de pago indicado.
+4. Completa la confirmación requerida en la aplicación.
+5. Sigue el estado de la orden hasta su finalización.
 
-## SELL / PAY (Stablecoin a Fiat o Riel de Pago)
+## VENTA / PAGO (Stablecoin a Fiat o Canal de Pago)
 
-1. Creá una orden SELL o PAY.
-2. Aprobá/transferí stablecoin cuando se te solicite.
-3. Esperá las acciones de liquidación de la contraparte.
-4. Confirmá y seguí el estado hasta su finalización.
+1. Crea una orden `SELL` o `PAY`.
+2. Aprueba y transfiere la stablecoin cuando se te solicite.
+3. Espera a que la contraparte liquide en tu destino.
+4. Confirma la finalización en la aplicación una vez que la contraparte haya liquidado y luego sigue la orden hasta el estado `COMPLETED`.
 
 ---

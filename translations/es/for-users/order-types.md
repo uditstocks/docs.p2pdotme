@@ -5,8 +5,10 @@ title: "Tipos de Orden"
 slug: order-types
 ---
 
-- **BUY.** Pagás fiat y recibís stablecoin.
-- **SELL.** Transferís stablecoin y recibís fiat.
-- **PAY.** Transferís stablecoin para casos de pago donde los rieles de liquidación fiat están involucrados.
+Se admiten 3 tipos de órdenes:
+
+- **COMPRA**: pagas en fiat y recibes stablecoin.
+- **VENTA**: transfieres stablecoin y recibes fiat.
+- **PAGO**: transfieres stablecoin para liquidar un pago a través de los rieles fiat compatibles.
 
 ---

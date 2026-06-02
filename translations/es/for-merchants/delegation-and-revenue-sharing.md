@@ -1,12 +1,12 @@
 ---
 id: delegation-and-revenue-sharing
 sidebar_position: 9
-title: "Delegación y Reparto de Ingresos"
+title: "Delegación y Distribución de Ingresos"
 slug: delegation-and-revenue-sharing
 ---
 
-Los holders de tokens hacen stake de $P2P en Círculos para atestiguar la confiabilidad de los merchants y ganar una parte de los ingresos por transacciones del Círculo. Los ingresos se dividen según el ratio de capital de trabajo con una prima para el merchant. Solo la delegación a Círculos denominados en $P2P otorga derechos de voto en gobernanza.
+Los delegadores depositan USDC en el pool de delegación de un Círculo para respaldar a sus comerciantes y obtener una parte de las recompensas del comerciante proporcional a su participación delegada. Los Administradores de Círculo depositan $P2P por separado para crear y operar un Círculo. Los ingresos se dividen en puntos base configurados por moneda. El comerciante y el Administrador de Círculo reciben cada uno una participación base del volumen de transacciones. La participación del comerciante se distribuye luego según la proporción entre el depósito propio y el depósito delegado, y la porción del depósito delegado se divide a su vez entre el comerciante, el Administrador de Círculo y el pool de delegación mediante parámetros configurables por moneda.
 
-*La UI completa de delegación y las mecánicas de enrutamiento de recompensas a nivel de Círculo están planificadas para una versión futura.*
+*La interfaz completa de delegación y la mecánica de distribución de recompensas a nivel de Círculo están planificadas para una versión futura.*
 
 ---

@@ -1,14 +1,14 @@
 ---
 id: rollout-sequence
 sidebar_position: 8
-title: "Secuencia de Lanzamiento"
+title: "Secuencia de lanzamiento"
 slug: rollout-sequence
 ---
 
-**Fase A.** Publicar estándares de configuración, ciclo de vida alpha y dashboards operativos.
+**Fase A.** Publicar estándares de configuración, ciclo de vida alfa y paneles operativos.
 
-**Fase B.** Lanzar un único corredor de remesas de alta prioridad con la ruta de orden vinculada + escrow.
+**Fase B.** Lanzar un único corredor de remesas de alta prioridad con ruta de órdenes enlazadas y custodia.
 
-**Fase C.** Expandir corredores y monedas utilizando puertas de SLA medidas. Mejorar la UX de reclamo del receptor y las capas de automatización.
+**Fase C.** Ampliar corredores y monedas mediante umbrales de SLA medidos. Mejorar la experiencia del receptor para reclamar fondos y las capas de automatización.
 
 ---

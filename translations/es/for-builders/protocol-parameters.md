@@ -5,14 +5,14 @@ title: "Parámetros del Protocolo"
 slug: protocol-parameters
 ---
 
-El comportamiento del protocolo está altamente parametrizado en lugar de hardcodeado, porque los mercados difieren. Un spread que funciona para INR/USDC en rieles UPI sería incorrecto para BRL/USDC en PIX. La parametrización permite que el protocolo se adapte por moneda sin redesplegar contratos.
+El comportamiento del protocolo está fuertemente parametrizado en lugar de estar codificado de forma fija, porque los mercados son distintos. Un spread adecuado para INR/USDC en los rieles de UPI sería incorrecto para BRL/USDC en PIX. La parametrización permite que el protocolo se adapte por moneda sin necesidad de volver a desplegar contratos.
 
-**Precios y spread.** Spread base y price bump por moneda, ajustados según las condiciones de liquidez locales.
+- **Precios y spread.** Spread base e incremento de precio por moneda, ajustados según las condiciones de liquidez local.
 
-**Límites de riesgo.** Stake mínimo, topes de volumen, límites de RP-por-USDT y límites máximos por transacción. Estos controlan cuánto riesgo asume el protocolo por merchant y por usuario.
+- **Límites de riesgo.** Stake mínimo, límites de volumen, límites de RP por USDC y límites máximos por transacción. Estos controlan el nivel de riesgo que el protocolo asume por comerciante y por usuario.
 
-**Controles de tarifas.** Porcentaje de comisión al merchant y tarifas fijas para órdenes pequeñas, ajustadas para hacer viables las microtransacciones sin subsidiarlas.
+- **Controles de comisiones.** Porcentaje de comisión para comerciantes y comisiones fijas para órdenes pequeñas, calibrados para que las microtransacciones sean viables sin subsidiarlas.
 
-**Controles operativos.** Ciclos de activación de monedas y canales de pago.
+- **Controles operativos.** Ciclos de vida de activación de monedas y canales de pago.
 
 ---

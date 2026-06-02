@@ -1,23 +1,22 @@
 ---
 id: 07-7-fraud-prevention
 sidebar_position: 7
-title: "7. Prevención de Fraude"
+title: "7. Prevención del Fraude"
 slug: fraud-prevention
 ---
 
 ## 7.1 Cómo la Reputación Previene el Fraude
 
-Simplemente hacer que el protocolo sea completamente anónimo haría poco para impedir la posibilidad de que los usuarios hagan mal uso de la plataforma. Sin embargo, combinado con el estricto sistema de reputación para las transacciones de on-ramp, las probabilidades de que un comprador cometa fraude de suplantación de identidad caen drásticamente, especialmente dada la cantidad limitada con la que pueden operar considerando su previsiblemente sospechosa reputación on-chain.
+El hecho de que el protocolo sea completamente anónimo haría poco por sí solo para descartar la posibilidad de que los usuarios hagan un uso indebido de la plataforma. Sin embargo, combinado con el estricto sistema de reputación para las transacciones de incorporación de fondos (on-ramp), la oportunidad de que un comprador cometa fraude por suplantación de identidad queda considerablemente limitada, especialmente dada la cantidad reducida con la que puede operar alguien con una reputación on-chain nueva o baja.
 
-Es importante destacar que los exchanges centralizados enfrentan dificultades constantes a la hora de implementar un procedimiento KYC viable para sus usuarios. El KYC no custodial del Protocolo funciona tan efectivamente como un KYC tradicional para prevenir fraude, mientras conserva el beneficio del anonimato para el usuario si no surge ninguna actividad ilícita a lo largo de su interacción con la plataforma.
+Vale la pena señalar que los exchanges centralizados enfrentan habitualmente dificultades para implementar un procedimiento de KYC viable para sus usuarios. El KYC no custodial del Protocolo previene el fraude al tiempo que conserva el beneficio del anonimato para el usuario, siempre que no surja ninguna actividad ilícita a lo largo de su interacción con la plataforma.
 
-## 7.2 Anti-Lavado de Dinero mediante Límites de Transacción
+## 7.2 Prevención del Lavado de Dinero Mediante Límites de Transacción
 
-El mecanismo subyacente de RP prácticamente elimina el riesgo de lavado de dinero y prácticas maliciosas similares. Los límites de transacción impuestos se encargan de manera natural del cumplimiento de las normas anti-lavado de dinero. Simplemente hay mucho menos margen para lavar cualquier cantidad no trivial de dinero negro, dada la falta de escalabilidad transaccional y los riesgos de suspensión por reputación involucrados.
+El mecanismo de reputación y los límites de transacción vinculados a los niveles de reputación reducen materialmente el riesgo de lavado de dinero. Los límites bajos por nivel y la amenaza de una prohibición reputacional restringen el alcance para lavar cantidades no triviales. Estos controles constituyen una capa dentro de un enfoque de cumplimiento más amplio y no representan una salvaguarda completa.
 
 ## 7.3 Responsabilidad de los Merchants
 
-La naturaleza selectiva de los merchants que cumplen órdenes individuales —a través del algoritmo de Prueba-de-Credibilidad— supone un fuerte desincentivo y hace muy poco probable que cualquier merchant intente realizar una transacción fraudulenta.
+La naturaleza selectiva de los merchants que atienden órdenes individuales, a través del algoritmo Proof-of-Credibility, supone un desincentivo serio y hace muy poco probable que cualquier merchant intente realizar una transacción fraudulenta.
 
 ---
-

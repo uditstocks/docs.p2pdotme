@@ -5,25 +5,29 @@ title: "Funções e Permissões"
 slug: roles-and-permissions
 ---
 
-O protocolo define três escopos de governança.
+O protocolo utiliza controle de acesso baseado em capacidades (RBAC), aplicado por meio de `CapabilityFacet` e `LibCapability`.
 
-**Superadministrador (Super admin)** lança moedas, define parâmetros centrais de risco/limite e gerencia configurações críticas do protocolo.
+- **Super admin** lança moedas, define parâmetros centrais de risco/limite, gerencia configurações críticas do protocolo e nomeia administradores globais.
 
-**Administrador (Admin)** gerencia parâmetros operacionais, incluindo spread, porcentagens de taxas de comerciantes, disputas e ações relacionadas a comerciantes/canais de pagamento.
+- **Global admin** detém permissões em todos os círculos, cobrindo parâmetros operacionais como spread, percentuais de taxa de comerciante e ações de comerciante/canal de pagamento.
 
-**Comerciante e usuário** abrangem o ciclo de vida dos pedidos, fluxos de staking/registro e a abertura de disputas de acordo com as regras do contrato.
+- **Circle admin** concede e revoga capacidades com escopo de círculo dentro de seu próprio círculo (super admins também podem fazê-lo), controlando ações como a resolução de disputas de pedidos naquele círculo.
+
+- **Comerciantes e usuários** conduzem o ciclo de vida dos pedidos, os fluxos de staking e registro, e a abertura de disputas de acordo com as regras do contrato.
 
 ```mermaid
 flowchart TD
     superAdmin[SuperAdmin]
-    admin[Admin]
-    users[UsuariosEComerciantes]
+    globalAdmin[GlobalAdmin]
+    circleAdmin[CircleAdmin]
+    users[UsersAndMerchants]
     facets[DiamondFacets]
-    state[EstadosDoProtocolo]
+    state[ProtocolState]
 
-    superAdmin -->|lancarMoedaEParametrosCentrais| facets
-    admin -->|parametrosOperacionaisTaxasDisputas| facets
-    users -->|pedidosStakingAberturaDeDisputa| facets
+    superAdmin -->|launchCurrencyCoreParamsAppointAdmins| facets
+    globalAdmin -->|opsParamsFeesChannels| facets
+    circleAdmin -->|circleScopedCapabilitiesDisputeSettlement| facets
+    users -->|ordersStakingDisputeRaise| facets
     facets --> state
 ```
 

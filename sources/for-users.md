@@ -4,7 +4,7 @@
 
 This guide covers everything you need to buy, sell, or pay with stablecoins using P2P Protocol.
 
-**Quick links to key sections.**
+Jump to a section:
 
 - [Before you start](/for-users/before-you-start)
 - [Order types](/for-users/order-types)
@@ -23,7 +23,7 @@ Also see [`/for-merchants`](/for-merchants/start-here) to understand counterpart
 
 **What you need.**
 
-- An account on a P2P Protocol client app (wallet is provided in-app via thirdweb integration).
+- An account on a P2P Protocol client app. A wallet is provided in-app during sign-in, so you do not need to bring your own.
 - Access to supported payment rails in your region.
 - Stablecoin balance for `SELL`/`PAY` flows.
 
@@ -39,9 +39,9 @@ Also see [`/for-merchants`](/for-merchants/start-here) to understand counterpart
 
 There are 3 types of orders supported, namely:
 
-- **BUY** -  You pay fiat and receive stablecoin.
-- **SELL** - You transfer stablecoin and receive fiat.
-- **PAY** - You transfer stablecoin for payment use cases where fiat settlement rails are involved.
+- **BUY**: you pay fiat and receive stablecoin.
+- **SELL**: you transfer stablecoin and receive fiat.
+- **PAY**: you transfer stablecoin to settle a payment over supported fiat rails.
 
 ---
 
@@ -80,10 +80,10 @@ flowchart TD
 
 ### SELL / PAY (Stablecoin to Fiat or Payment Rail)
 
-1. Place `SELL` or `PAY` order.
-2. Approve/transfer stablecoin when prompted.
-3. Wait for counterparty settlement actions.
-4. Confirm and track until completion.
+1. Place a `SELL` or `PAY` order.
+2. Approve and transfer the stablecoin when prompted.
+3. Wait for the counterparty to settle to your destination.
+4. Confirm completion in-app once the counterparty has settled, then track the order to the `COMPLETED` state.
 
 ---
 
@@ -93,7 +93,7 @@ flowchart TD
 |--------|---------|
 | `PLACED` | Order created and pending active handling |
 | `ACCEPTED` | A merchant accepted the order |
-| `PAID` | Payment leg was marked paid in protocol flow |
+| `PAID` | You marked that you sent the fiat payment (BUY orders). The merchant then releases the stablecoin. |
 | `COMPLETED` | Settlement path finished successfully |
 | `CANCELLED` | Order was cancelled or expired |
 
@@ -103,13 +103,20 @@ If your order remains in a state longer than expected, use in-app support/escala
 
 ## Disputes and Evidence
 
-If the counterparty doesn't fulfill their obligation, take the following steps.
+If the counterparty does not fulfill their obligation, you can raise a dispute on-chain. Eligibility depends on the order type and status.
 
-1. Open a dispute within the allowed time window.
-2. Submit evidence in-app.
-3. Monitor dispute status.
+- BUY orders: a dispute can be raised between 15 minutes and 24 hours after the order was placed, and only if you marked the order as paid before it was cancelled.
+- SELL and PAY orders: a dispute can be raised between 30 minutes and 7 days after the order was placed, and only after the order reaches the COMPLETED state.
 
-Disputes are resolved on-chain by authorized admins under protocol fault rules. *Jury-based escalation tiers are planned for a future release.*
+To raise a dispute:
+
+1. Open the order and select the dispute option once the window is open.
+2. Submit the requested evidence in-app. The protocol records a redacted reference to your payment as on-chain evidence.
+3. Monitor the dispute status until it is settled.
+
+A dispute can be raised only once per order.
+
+Disputes are settled on-chain by an authorized admin who assigns fault. If the merchant is at fault, the order completes and the stablecoin settles to the recipient. If you are found at fault, the order stays cancelled and a reputation penalty applies, which an admin can reverse if you later show the claim was honest. Jury-based escalation tiers are planned for a future release.
 
 ---
 
@@ -140,11 +147,11 @@ No, you are not forced to understand on-chain mechanics. The client app handles 
 
 ### Why wasn't my order matched instantly?
 
-Merchant assignment depends on real-time eligibility factors, including liquidity, channel status, volume limits, and operational availability. If no merchant qualifies, the order waits or times out and the order gets cancelled.
+Merchant assignment depends on real-time eligibility factors, including liquidity, channel status, volume limits, and operational availability. If no merchant qualifies, the order waits and is cancelled when it times out.
 
 ### Can I appeal a dispute?
 
-Use the in-app dispute process to appeal for a dispute. *Governance-driven escalation tiers are planned for a future release.*
+No. In the current release a dispute can be raised only once per order, and an authorised admin settles it on-chain by assigning fault. There is no separate appeal step. Jury-based and governance-driven escalation tiers are planned for a future release.
 
 ### Is my identity stored on-chain?
 

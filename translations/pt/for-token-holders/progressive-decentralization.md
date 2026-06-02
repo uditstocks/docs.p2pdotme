@@ -1,17 +1,17 @@
 ---
 id: progressive-decentralization
-sidebar_position: 12
+sidebar_position: 11
 title: "Descentralização Progressiva"
 slug: progressive-decentralization
 ---
 
-A descentralização é faseada porque a qualidade da governança é mais importante que a velocidade da governança.
+A descentralização é feita em fases porque a qualidade da governança importa mais do que a velocidade da governança.
 
-**Fase 1 (meses 4-6 pós-TGE).** Pools de seguro, disputas e reivindicações entram em operação on-chain. Multisig da Fundação controla atualizações. Capacidade de pausa de emergência existe.
+**Fase 1 (meses 0-6 após o TGE).** O multisig da Fundação controla as atualizações. Existe capacidade de pausar em emergência.
 
-**Fase 2 (meses 7-9 pós-TGE).** Votação do detentor de token ativa para parâmetros não críticos. A comunidade pode enviar propostas de governança.
+**Fase 2 (meses 6-18 após o TGE).** A votação pelos detentores de tokens é ativada para parâmetros não críticos. A comunidade pode submeter propostas de governança.
 
-**Fase 3 (meses 10-12 pós-TGE).** Planejamento de encerramento da autoridade de veto da Fundação começa. Controle total do DAO é o estado final alvo, com todos os parâmetros do protocolo governados pelos detentores de tokens.
+**Fase 3 (mês 18+ após o TGE).** Controle primário pelo DAO sobre todos os parâmetros do protocolo. O direito de veto da Fundação expira, com uma capacidade administrativa de emergência restrita mantida por segurança.
 
 ---
 

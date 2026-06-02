@@ -1,19 +1,18 @@
 ---
 id: token-allocation
 sidebar_position: 5
-title: "Asignación del Token"
+title: "Asignación de tokens"
 slug: token-allocation
 ---
 
-| Categoría              | Tokens         | % del Suministro | Vesting                                      |
-|------------------------|----------------|------------------|----------------------------------------------|
-| **Venta MetaDAO**      | **10.000.000** | **38,8%**        | Desbloqueado en el lanzamiento               |
-| **Liquidez**           | **2.900.000**  | **11,2%**        | Proporcionado por el tesoro a pools DEX en el lanzamiento |
-| **Equipo**             | **7.740.000**  | **30%**          | Basado en desempeño (ver vesting)            |
-| **Backers**            | **5.160.000**  | **20%**          | Cliff de 1 año, luego trimestral (ver vesting) |
-| **Total**              | **25.800.000** | **100%**         |                                              |
+| Categoría                | Tokens         | % del suministro | Vesting                                                                                          |
+| ------------------------ | -------------- | ---------------- | ------------------------------------------------------------------------------------------------ |
+| **Venta MetaDAO**        | **10,000,000** | **38.8%**        | Desbloqueados en el lanzamiento                                                                  |
+| **Liquidez**             | **2,900,000**  | **11.2%**        | Aportados por el tesoro a los pools DEX en el lanzamiento                                        |
+| **Equipo**               | **7,740,000**  | **30%**          | Basado en rendimiento (ver calendario de vesting)                                                |
+| **Inversores iniciales** | **5,160,000**  | **20%**          | Bloqueo de 12 meses, luego cinco tramos iguales en los meses 12, 15, 18, 21 y 24                |
+| **Total**                | **25,800,000** | **100%**         |                                                                                                  |
 
-Ningún token de Backers ni del equipo se desbloquea en el TGE. En el lanzamiento circulan 12,9M tokens (10M venta + 2,9M liquidez). La emisión futura está controlada por la gobernanza.
+Ningún token de inversores iniciales ni del equipo se desbloquea en el TGE. En el lanzamiento, 12.9M de tokens entran en circulación (10M de la venta + 2.9M de liquidez). La emisión futura está sujeta a la futarquía de MetaDAO en Solana.
 
 ---
-
