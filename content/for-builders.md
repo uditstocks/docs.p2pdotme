@@ -166,41 +166,9 @@ The bottleneck for geographic expansion is local knowledge. Open-source configs 
 
 ---
 
-## FAQ
-
-### What chain are the contracts deployed on?
-
-The protocol's smart contracts are live on Base (EVM). Solana deployment is planned as part of the multichain expansion. The $P2P token is an SPL token on Solana. See the [token and chain FAQ](/for-token-holders/faq) for details.
-
-### Where are the contract ABIs?
-
-Contract references are listed in the [Contract References](/for-builders/contract-references) section. The integration surface is already open source: the SDK ([`@p2pdotme/sdk`](https://github.com/p2pdotme/p2pdotme-sdk)), the React widgets ([`@p2pdotme/widgets`](https://github.com/p2pdotme/widgets)), and the B2B integrator contracts and interfaces ([`payment-integrators`](https://github.com/p2pdotme/payment-integrators)). The core protocol Diamond contracts are pending audit and will be open-sourced thereafter.
-
-### Can I add a new country or currency?
-
-The currency expansion framework uses open-source YAML configs. Anyone with local payment-rail knowledge can propose a new currency via PR.
-
-### How do disputes work at the contract level?
-
-Users call `raiseDispute` on `OrderProcessorFacet`. Admins settle via `adminSettleDispute` with a fault type. Settlement triggers accounting and RP hooks. See [Disputes](/for-builders/disputes) for the full flow.
-
-### What is the Diamond architecture?
-
-The protocol uses EIP-2535 Diamond Standard. Functionality is split across facets that share storage, enabling modular upgrades without redeploying the full contract.
-
-### How does RP integrate with order flow?
-
-RP hooks are whitelisted in the `ReputationManager`. Order volume updates, dispute penalties, and verification-gated rewards all flow through these hooks. See [Reputation](/for-builders/reputation).
-
-### Where does governance detail live for token holders?
-
-Token-holder governance (voting model, quorum, progressive decentralization) is documented in [`/for-token-holders`](/for-token-holders/start-here).
-
----
-
 ## SDK
 
-<a class="button button--primary" href="https://discord.com/channels/1443615331783545004/1496425860008509571" target="_blank" style={{ display: 'inline-block', marginBottom: '16px' }}>💬 Get SDK Support on Discord</a>
+<a class="button button--primary" href="https://discord.com/channels/1443615331783545004/1496425860008509571" target="_blank" style={{ display: 'inline-block', marginBottom: '16px' }}>Get SDK Support on Discord</a>
 
 The easiest way to integrate P2P Protocol into your application is via the TypeScript SDK (`@p2pdotme/sdk`). It provides pre-built modules for orders, user profiles, pricing, currency config, ZK-KYC, fraud detection, and QR parsing, plus an optional React provider and hooks.
 
@@ -921,3 +889,36 @@ function useOrderStatus(orderId) {
   return order;
 }
 ```
+
+
+## FAQ
+
+### What chain are the contracts deployed on?
+
+The protocol's smart contracts are live on Base (EVM). Solana deployment is planned as part of the multichain expansion. The $P2P token is an SPL token on Solana. See the [token and chain FAQ](/for-token-holders/faq) for details.
+
+### Where are the contract ABIs?
+
+Contract references are listed in the [Contract References](/for-builders/contract-references) section. The integration surface is already open source: the SDK ([`@p2pdotme/sdk`](https://github.com/p2pdotme/p2pdotme-sdk)), the React widgets ([`@p2pdotme/widgets`](https://github.com/p2pdotme/widgets)), and the B2B integrator contracts and interfaces ([`payment-integrators`](https://github.com/p2pdotme/payment-integrators)). The core protocol Diamond contracts are pending audit and will be open-sourced thereafter.
+
+### Can I add a new country or currency?
+
+The currency expansion framework uses open-source YAML configs. Anyone with local payment-rail knowledge can propose a new currency via PR.
+
+### How do disputes work at the contract level?
+
+Users call `raiseDispute` on `OrderProcessorFacet`. Admins settle via `adminSettleDispute` with a fault type. Settlement triggers accounting and RP hooks. See [Disputes](/for-builders/disputes) for the full flow.
+
+### What is the Diamond architecture?
+
+The protocol uses EIP-2535 Diamond Standard. Functionality is split across facets that share storage, enabling modular upgrades without redeploying the full contract.
+
+### How does RP integrate with order flow?
+
+RP hooks are whitelisted in the `ReputationManager`. Order volume updates, dispute penalties, and verification-gated rewards all flow through these hooks. See [Reputation](/for-builders/reputation).
+
+### Where does governance detail live for token holders?
+
+Token-holder governance (voting model, quorum, progressive decentralization) is documented in [`/for-token-holders`](/for-token-holders/start-here).
+
+---

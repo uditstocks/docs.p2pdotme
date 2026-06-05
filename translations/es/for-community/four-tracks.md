@@ -14,4 +14,6 @@ slug: four-tracks
 
 Todas las pistas operan a nivel de país, gestionadas por "Country Leads".
 
+La función de "community manager" descrita en materiales anteriores de P2P.me corresponde a la pista Relay Guild. La moderación de Discord y Telegram, la participación de miembros y el soporte inicial a usuarios son responsabilidades de Relay Guild, no un rol separado.
+
 ---

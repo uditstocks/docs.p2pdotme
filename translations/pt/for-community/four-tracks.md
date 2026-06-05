@@ -12,6 +12,8 @@ slug: four-tracks
 | **Signal Guild**     | Conteúdo para redes sociais, contas regionais          | Impressões                  |
 | **Forge Guild**      | Traduções, documentação, comunidade de desenvolvedores | Commits/páginas             |
 
-Todas as trilhas operam no nível do país, gerenciadas por "Líderes de País".
+Todas as trilhas operam no nível do país, gerenciadas pelos "Country Leads".
+
+A função de "community manager" mencionada em materiais anteriores do P2P.me corresponde à trilha Relay Guild. Moderação no Discord e Telegram, engajamento de membros e suporte de primeiro nível aos usuários são atribuições da Relay Guild, e não de uma função separada.
 
 ---

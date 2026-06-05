@@ -9,12 +9,12 @@ Setiap Circle menyertakan pool asuransi untuk melindungi para peserta.
 
 **CAIP (Circle Admin Insurance Pool).** Perlindungan lini pertama yang didanai oleh persentase volume Circle ditambah dana dari stake yang dipotong.
 
-**CALR (Circle Admin Locked Rewards).** Sebagian penghasilan admin yang dikunci sebagai buffer bergulir.
+**CALR (Circle Admin Loss Reserve).** Sebagian penghasilan admin yang dikunci sebagai buffer bergulir.
 
-**PIP (Protocol Insurance Pool).** Jaring pengaman untuk kegagalan sistemik atau pool tingkat bawah yang habis.
+**PIP (Pool Insurance Pool).** Jaring pengaman di seluruh protokol untuk kegagalan sistemik atau pool tingkat bawah yang habis.
 
-Klaim diambil dari pool sesuai urutan prioritas yang ketat. CAIP terlebih dahulu, kemudian CALR, lalu PIP.
+Pool-pool tersebut beserta pendanaan on-chain-nya telah tersedia. Ketika alur klaim sudah berjalan, klaim diambil pertama dari CAIP per Circle, kemudian dari CALR admin yang bertanggung jawab, dengan PIP sebagai jaring pengaman di seluruh protokol yang mengisi kembali pool yang telah habis.
 
-*Pool asuransi native Circle dengan logika slash/reward yang dapat diprogram dan alur kerja klaim direncanakan untuk rilis mendatang.*
+Alur klaim lengkap, mulai dari pengajuan, persetujuan, hingga penyelesaian, sedang dalam tahap finalisasi dan belum aktif.
 
 ---

@@ -101,6 +101,8 @@ Each "Country Lead" manages all four tracks in their country.
 
 All tracks operate at the country level, managed by "Country Leads".
 
+The "community manager" function described in older P2P.me material maps to the Relay Guild track. Discord and Telegram moderation, member engagement, and first-line user support are Relay Guild work, not a separate role.
+
 ---
 
 ## How to Join
@@ -268,6 +270,20 @@ For use on light backgrounds.
 - Prefer **SVG** for web and digital use. Use **PNG** when SVG is not supported.
 - Do not stretch, rotate, recolor, or add effects to the logo.
 - Maintain clear space around the logo equal to at least the height of the logomark.
+
+---
+
+## Community Resources
+
+The P2P.me community maintains a set of public properties for tracking activity, campaigns, and protocol metrics. The links below point to the live sites.
+
+| Resource | Link |
+| -------- | ---- |
+| Live Dashboard | [live.p2pme.wiki](https://live.p2pme.wiki) |
+| Campaigns | [campaigns.p2pme.wiki](https://campaigns.p2pme.wiki) |
+| Roadmap | [roadmap.p2pme.wiki](https://roadmap.p2pme.wiki) |
+| Community FAQ | [faq.p2pme.wiki](https://faq.p2pme.wiki) |
+| Dune Analytics | [dune.com/p2pme/latest](https://dune.com/p2pme/latest) |
 
 ---
 

@@ -207,8 +207,8 @@ class DocBuilder:
     
     def _generate_doc_files(self, sections: List[Dict], doc_config: Dict) -> List[str]:
         """Generate individual markdown files for each section."""
-        # Output into content/{doc_id}/ for unified docs structure
-        output_dir = Path(self.root_dir / "content" / doc_config['id'])
+        # Output into generated/{doc_id}/ for unified docs structure
+        output_dir = Path(self.root_dir / "generated" / doc_config['id'])
         output_dir.mkdir(parents=True, exist_ok=True)
         
         generated_files = []
@@ -338,7 +338,7 @@ export default sidebars;
         """Generate the main Docusaurus configuration file.
 
         Uses a unified single-docs architecture: all content lives under
-        content/ and is served from routeBasePath '/' with a single sidebar.
+        generated/ and is served from routeBasePath '/' with a single sidebar.
         """
         navbar_config = self.config.get('navbar', {})
         footer_config = self.config.get('footer', {})
@@ -417,8 +417,9 @@ const config: Config = {{
   url: '{site_url}',
   baseUrl: '/',
 
-  onBrokenLinks: 'warn',
-  onBrokenMarkdownLinks: 'warn',
+  onBrokenLinks: 'throw',
+  onBrokenAnchors: 'throw',
+  onBrokenMarkdownLinks: 'throw',
 
   headTags: [
     // Favicons - dark icon for light mode, light icon for dark mode
@@ -533,7 +534,7 @@ const config: Config = {{
       'classic',
       {{
         docs: {{
-          path: 'content',
+          path: 'generated',
           routeBasePath: '/',
           sidebarPath: './sidebars/main.ts',
         }},
@@ -556,7 +557,7 @@ const config: Config = {{
         indexBlog: false,
         indexPages: false,
         docsRouteBasePath: ["/"],
-        docsDir: ["content"],
+        docsDir: ["generated"],
         searchResultLimits: 10,
         searchResultContextMaxLength: 50,
       }},
@@ -733,7 +734,7 @@ export default config;
         """Clean generated files."""
         print("Cleaning generated files...")
 
-        content_dir = self.root_dir / "content"
+        content_dir = self.root_dir / "generated"
         if content_dir.exists():
             shutil.rmtree(content_dir)
             print(f"  Removed {content_dir}")
@@ -815,7 +816,7 @@ export default config;
 
             print(f"  Found {len(sections)} sections")
 
-            # Generate doc files into content/{doc_id}/
+            # Generate doc files into generated/{doc_id}/
             files = self._generate_doc_files(sections, doc_config)
             self._all_generated_files[doc_config['id']] = files
 

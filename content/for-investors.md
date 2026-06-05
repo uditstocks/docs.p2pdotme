@@ -232,42 +232,6 @@ The protocol earns revenue entirely from transaction fees on a working product, 
 
 ---
 
-## FAQ
-
-### Why does P2P need a token?
-
-P2P on/off ramping is essential financial infrastructure in emerging markets. Without a token, control over this infrastructure stays with a single operator who can change fees, censor users, or shut it down. The token transfers that control to the community.
-
-### Is this an ownership token?
-
-Yes. This is protocol ownership, distinct from equity in a traditional company. The "Why the Token Exists" section above covers the full ownership thesis.
-
-### How does the MetaDAO-style sale work?
-
-Users commit USDC during a 4-day window. If oversubscribed, allocations are pro-rata. Existing protocol users with XP get priority. No new private round happens at TGE. The sale is the primary distribution event.
-
-### What unlocks at TGE?
-
-10M sale tokens + 2.9M liquidity tokens (12.9M total, 50% of supply). Zero backer or team tokens unlock at launch.
-
-### How does the treasury work?
-
-The treasury is funded entirely by transaction revenue from a working product, and token holders decide how to deploy those funds through MetaDAO futarchy on Solana, a decision-market where participants stake capital on a proposal's expected effect on value. There is no automatic buyback schedule. The [Treasury and Buy-and-Burn](/for-token-holders/treasury-and-buy-and-burn) section covers the full mechanics, including the revenue share and the buy-and-burn roadmap.
-
-### Is supply fixed?
-
-Yes, fixed at launch (25.8M $P2P). Future issuance requires governance approval through MetaDAO futarchy on Solana, the decision-market that governs token minting. The protocol runs on transaction revenue, not token emissions.
-
-### Why Base for the protocol, and where does the token live?
-
-The protocol contracts run on Base for its low fees, fast finality, and Ethereum tooling, which make frequent small transactions practical. The $P2P token is an SPL token already live on Solana. Broader protocol deployment to Solana is on the roadmap. Chain choice does not lock the token design.
-
-### How do I separate what's live from what's planned?
-
-Inline notes throughout the docs mark features planned for future releases. For contract-level detail on what is deployed, see [`/for-builders`](/for-builders/start-here).
-
----
-
 ## Get $P2P
 
 import { LivePrice, CopyAddress } from '../../src/components/TokenBuyWidgets';
@@ -354,3 +318,40 @@ Always verify the contract address above before buying. Never click $P2P buy lin
 ## Disclosures
 
 The $P2P token is a utility and governance token. It is not an asset-referenced token or an e-money token, and it is not equity, debt, or a security. It carries governance rights and protocol utility, with no redemption rights and no claim on the issuer's or foundation's assets, revenue, or profit. Value, if any, derives from protocol usage and network participation, not from any promise of returns. US persons were excluded from the primary sale.
+
+
+## FAQ
+
+### Why does P2P need a token?
+
+P2P on/off ramping is essential financial infrastructure in emerging markets. Without a token, control over this infrastructure stays with a single operator who can change fees, censor users, or shut it down. The token transfers that control to the community.
+
+### Is this an ownership token?
+
+Yes. This is protocol ownership, distinct from equity in a traditional company. The "Why the Token Exists" section above covers the full ownership thesis.
+
+### How does the MetaDAO-style sale work?
+
+Users commit USDC during a 4-day window. If oversubscribed, allocations are pro-rata. Existing protocol users with XP get priority. No new private round happens at TGE. The sale is the primary distribution event.
+
+### What unlocks at TGE?
+
+10M sale tokens + 2.9M liquidity tokens (12.9M total, 50% of supply). Zero backer or team tokens unlock at launch.
+
+### How does the treasury work?
+
+The treasury is funded entirely by transaction revenue from a working product, and token holders decide how to deploy those funds through MetaDAO futarchy on Solana, a decision-market where participants stake capital on a proposal's expected effect on value. There is no automatic buyback schedule. The [Treasury and Buy-and-Burn](/for-token-holders/treasury-and-buy-and-burn) section covers the full mechanics, including the revenue share and the buy-and-burn roadmap.
+
+### Is supply fixed?
+
+Yes, fixed at launch (25.8M $P2P). Future issuance requires governance approval through MetaDAO futarchy on Solana, the decision-market that governs token minting. The protocol runs on transaction revenue, not token emissions.
+
+### Why Base for the protocol, and where does the token live?
+
+The protocol contracts run on Base for its low fees, fast finality, and Ethereum tooling, which make frequent small transactions practical. The $P2P token is an SPL token already live on Solana. Broader protocol deployment to Solana is on the roadmap. Chain choice does not lock the token design.
+
+### How do I separate what's live from what's planned?
+
+Inline notes throughout the docs mark features planned for future releases. For contract-level detail on what is deployed, see [`/for-builders`](/for-builders/start-here).
+
+---
