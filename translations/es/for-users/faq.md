@@ -1,6 +1,6 @@
 ---
 id: faq
-sidebar_position: 8
+sidebar_position: 13
 title: "FAQ"
 slug: faq
 ---
@@ -24,3 +24,19 @@ No se almacena ningún dato personal en bruto (Información de Identificación P
 ## ¿Cómo sé cuál es el siguiente paso?
 
 El estado de su orden (`PLACED`, `ACCEPTED`, `PAID`, `COMPLETED`, `CANCELLED`) se lo indica. Cada estado implica una acción específica a continuación. La aplicación le guía durante todo el proceso.
+
+## ¿Qué tipo de billetera utilizo?
+
+Se proporciona una billetera dentro de la aplicación durante el inicio de sesión, por lo que no necesita traer la suya. La cuenta es de autocustodia, lo que significa que usted controla las claves y el protocolo no puede recuperar el acceso por usted.
+
+## ¿Por qué mi saldo parece haberse perdido?
+
+Su saldo se mantiene en su cuenta dentro de la aplicación. Verifíquelo primero en la aplicación y consulte la dirección de su cuenta en BaseScan para confirmar el estado on-chain. Si el saldo aún parece incorrecto, contacte al soporte dentro de la aplicación antes de intentar cualquier transferencia on-chain manual.
+
+## ¿La aplicación admite passkeys?
+
+Sí. Puede iniciar sesión con una passkey. Como medida de protección, agregue más de un método de inicio de sesión en la configuración de su billetera, de modo que la pérdida de cualquier método individual no le impida acceder a una cuenta de autocustodia.
+
+## ¿Puedo instalar la aplicación en mi teléfono o computadora?
+
+No existe una publicación en tiendas de aplicaciones nativas. La aplicación se instala como una Progressive Web App (PWA). En dispositivos móviles, abra el sitio y elija Agregar a pantalla de inicio desde el menú del navegador. En una computadora, abra el sitio en Chrome y elija Instalar aplicación desde el menú.

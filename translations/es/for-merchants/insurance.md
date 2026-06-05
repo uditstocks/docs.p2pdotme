@@ -7,14 +7,14 @@ slug: insurance
 
 Cada Círculo incluye pools de seguro para proteger a los participantes.
 
-**CAIP (Circle Admin Insurance Pool).** Cobertura de primera línea financiada por un porcentaje del volumen del Círculo más stakes recortados (slashed).
+**CAIP (Circle Admin Insurance Pool, Pool de Seguro del Administrador de Círculo).** Cobertura de primera línea financiada por un porcentaje del volumen del Círculo más stakes recortados (slashed).
 
-**CALR (Circle Admin Locked Rewards).** Una porción de las ganancias del admin bloqueada como buffer rotativo.
+**CALR (Circle Admin Loss Reserve, Reserva de Pérdidas del Administrador de Círculo).** Una porción de las ganancias del administrador bloqueada como buffer rotativo.
 
-**PIP (Protocol Insurance Pool).** Respaldo para fallas sistémicas o pools de nivel inferior agotados.
+**PIP (Pool Insurance Pool, Pool de Seguro del Protocolo).** Respaldo a nivel de protocolo para fallas sistémicas o pools de niveles inferiores agotados.
 
-Los reclamos se extraen de los pools en orden estricto de prioridad. CAIP primero, luego CALR, luego PIP.
+Los pools y su financiamiento en cadena están en funcionamiento. Cuando el flujo de reclamos esté activo, los reclamos se extraerán primero del CAIP del Círculo correspondiente, luego del CALR del administrador responsable, con el PIP como respaldo a nivel de protocolo que reabastece los pools agotados.
 
-*Los pools de seguro nativos de Círculo con lógica programable de slash/recompensa y flujos de reclamos están planificados para una versión futura.*
+El flujo completo de reclamos, que incluye la presentación, aprobación y liquidación, está siendo finalizado y aún no está disponible.
 
 ---

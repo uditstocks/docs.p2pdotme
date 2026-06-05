@@ -105,6 +105,7 @@ const sidebars: SidebarsConfig = {
             "for-merchants/insurance",
             "for-merchants/risk-and-reliability-practices",
             "for-merchants/troubleshooting",
+            "for-merchants/circle-admin-operations",
             "for-merchants/faq"
         ]
     },
@@ -125,6 +126,11 @@ const sidebars: SidebarsConfig = {
             "for-users/understanding-order-states",
             "for-users/disputes-and-evidence",
             "for-users/troubleshooting",
+            "for-users/circles-of-trust",
+            "for-users/verification-and-limits",
+            "for-users/security-and-safety",
+            "for-users/verifying-transactions-on-chain",
+            "for-users/self-custody-and-fund-recovery",
             "for-users/faq"
         ]
     },
@@ -147,6 +153,7 @@ const sidebars: SidebarsConfig = {
             "for-community/discord-structure",
             "for-community/principles",
             "for-community/brand-kit",
+            "for-community/community-resources",
             "for-community/faq"
         ]
     }

@@ -388,6 +388,10 @@
               "title": "Resolución de problemas"
             },
             {
+              "doc_id": "circle-admin-operations",
+              "title": "Operaciones del Administrador de Círculo"
+            },
+            {
               "doc_id": "faq",
               "title": "FAQ"
             }
@@ -429,6 +433,26 @@
             {
               "doc_id": "troubleshooting",
               "title": "Solución de problemas"
+            },
+            {
+              "doc_id": "circles-of-trust",
+              "title": "Circles of Trust"
+            },
+            {
+              "doc_id": "verification-and-limits",
+              "title": "Verificación y límites"
+            },
+            {
+              "doc_id": "security-and-safety",
+              "title": "Seguridad y protección"
+            },
+            {
+              "doc_id": "verifying-transactions-on-chain",
+              "title": "Verificación de transacciones on-chain"
+            },
+            {
+              "doc_id": "self-custody-and-fund-recovery",
+              "title": "Autocustodia y recuperación de fondos"
             },
             {
               "doc_id": "faq",
@@ -480,6 +504,10 @@
             {
               "doc_id": "brand-kit",
               "title": "Kit de Marca"
+            },
+            {
+              "doc_id": "community-resources",
+              "title": "Recursos de la Comunidad"
             },
             {
               "doc_id": "faq",
@@ -771,6 +799,10 @@
               "title": "Solução de Problemas"
             },
             {
+              "doc_id": "circle-admin-operations",
+              "title": "Operações do Administrador de Círculo"
+            },
+            {
               "doc_id": "faq",
               "title": "FAQ"
             }
@@ -812,6 +844,26 @@
             {
               "doc_id": "troubleshooting",
               "title": "Solução de Problemas"
+            },
+            {
+              "doc_id": "circles-of-trust",
+              "title": "Circles of Trust"
+            },
+            {
+              "doc_id": "verification-and-limits",
+              "title": "Verificação e Limites"
+            },
+            {
+              "doc_id": "security-and-safety",
+              "title": "Segurança e Proteção"
+            },
+            {
+              "doc_id": "verifying-transactions-on-chain",
+              "title": "Verificando Transações On-Chain"
+            },
+            {
+              "doc_id": "self-custody-and-fund-recovery",
+              "title": "Autocustódia e Recuperação de Fundos"
             },
             {
               "doc_id": "faq",
@@ -863,6 +915,10 @@
             {
               "doc_id": "brand-kit",
               "title": "Kit de Marca"
+            },
+            {
+              "doc_id": "community-resources",
+              "title": "Recursos da Comunidade"
             },
             {
               "doc_id": "faq",
@@ -1154,6 +1210,10 @@
               "title": "Pemecahan Masalah"
             },
             {
+              "doc_id": "circle-admin-operations",
+              "title": "Operasi Circle Admin"
+            },
+            {
               "doc_id": "faq",
               "title": "FAQ"
             }
@@ -1195,6 +1255,26 @@
             {
               "doc_id": "troubleshooting",
               "title": "Pemecahan Masalah"
+            },
+            {
+              "doc_id": "circles-of-trust",
+              "title": "Circles of Trust"
+            },
+            {
+              "doc_id": "verification-and-limits",
+              "title": "Verifikasi dan Batas Transaksi"
+            },
+            {
+              "doc_id": "security-and-safety",
+              "title": "Keamanan dan Perlindungan"
+            },
+            {
+              "doc_id": "verifying-transactions-on-chain",
+              "title": "Memverifikasi Transaksi On-Chain"
+            },
+            {
+              "doc_id": "self-custody-and-fund-recovery",
+              "title": "Self-Custody dan Pemulihan Dana"
             },
             {
               "doc_id": "faq",
@@ -1246,6 +1326,10 @@
             {
               "doc_id": "brand-kit",
               "title": "Kit Merek"
+            },
+            {
+              "doc_id": "community-resources",
+              "title": "Sumber Daya Komunitas"
             },
             {
               "doc_id": "faq",
