@@ -28,6 +28,12 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Validate content (style, securities, FAQ order)
+        run: python3 scripts/lint_content.py
+
+      - name: Validate markdown sources
+        run: python3 build_docs.py --validate-only
+
       - name: Build documentation from sources
         run: python3 build_docs.py
 

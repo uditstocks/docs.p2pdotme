@@ -417,8 +417,9 @@ const config: Config = {{
   url: '{site_url}',
   baseUrl: '/',
 
-  onBrokenLinks: 'warn',
-  onBrokenMarkdownLinks: 'warn',
+  onBrokenLinks: 'throw',
+  onBrokenAnchors: 'throw',
+  onBrokenMarkdownLinks: 'throw',
 
   headTags: [
     // Favicons - dark icon for light mode, light icon for dark mode
