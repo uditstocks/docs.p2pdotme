@@ -168,6 +168,8 @@ The bottleneck for geographic expansion is local knowledge. Open-source configs 
 
 ## SDK
 
+<a class="button button--primary" href="https://discord.com/channels/1443615331783545004/1496425860008509571" target="_blank" style={{ display: 'inline-block', marginBottom: '16px' }}>Get SDK Support on Discord</a>
+
 The easiest way to integrate P2P Protocol into your application is via the TypeScript SDK (`@p2pdotme/sdk`). It provides pre-built modules for orders, user profiles, pricing, currency config, ZK-KYC, fraud detection, and QR parsing, plus an optional React provider and hooks.
 
 **Framework-agnostic.** The core is pure TypeScript, with optional React hooks.
