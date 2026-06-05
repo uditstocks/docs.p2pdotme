@@ -19,15 +19,14 @@ npm run start
 
 ```
 Documentation/                 # Git repository root
-├── sources/                   # 📁 SOURCE OF TRUTH - Add your MD files here
+├── content/                   # 📁 SOURCE OF TRUTH - authored MD files (renamed from sources/)
 │   ├── whitepaper.md         # Whitepaper documentation
-│   └── sdk.md                # SDK documentation
+│   └── for-builders.md       # Builders documentation (incl. SDK)
 │
 ├── docs.config.json          # ⚙️ Configuration for all documentation
 ├── build_docs.py             # 🔧 Build script
 │
-├── docs/                     # Generated whitepaper docs (auto-generated)
-├── sdk/                      # Generated SDK docs (auto-generated)
+├── generated/                # Generated split pages served by Docusaurus (auto-generated, gitignored)
 ├── sidebars/                 # Generated sidebars (auto-generated)
 ├── docusaurus.config.ts      # Generated config (auto-generated)
 │
@@ -44,7 +43,7 @@ Documentation/                 # Git repository root
 
 ### Step 1: Create your markdown file
 
-Add a new `.md` file to the `sources/` folder:
+Add a new `.md` file to the `content/` folder:
 
 ```markdown
 # **My Documentation Title**
@@ -73,7 +72,7 @@ Edit `docs.config.json` and add your doc to the `docs` array:
   "docs": [
     {
       "id": "mydoc",
-      "source": "sources/mydoc.md",
+      "source": "content/mydoc.md",
       "outputDir": "mydoc",
       "routeBasePath": "mydoc",
       "navbarLabel": "My Doc",

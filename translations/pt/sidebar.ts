@@ -56,9 +56,9 @@ const sidebars: SidebarsConfig = {
             "for-token-holders/progressive-decentralization",
             "for-token-holders/insurance",
             "for-token-holders/protocol-metrics",
-            "for-token-holders/faq",
             "for-token-holders/get-p2p",
-            "for-token-holders/disclosures"
+            "for-token-holders/disclosures",
+            "for-token-holders/faq"
         ]
     },
     {
@@ -79,8 +79,8 @@ const sidebars: SidebarsConfig = {
             "for-builders/fiat-to-fiat-remittance",
             "for-builders/global-currency-expansion",
             "for-builders/rollout-sequence",
-            "for-builders/faq",
-            "for-builders/sdk"
+            "for-builders/sdk",
+            "for-builders/faq"
         ]
     },
     {
