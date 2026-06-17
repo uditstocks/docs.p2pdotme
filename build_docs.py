@@ -695,7 +695,7 @@ export default config;
 
             # Skip validation for pre-generated docs
             if doc_config.get('skipGeneration', False):
-                print(f"  ⏭️  Skipping validation for {doc_name} (pre-generated)")
+                print(f"  [skip] Skipping validation for {doc_name} (pre-generated)")
                 continue
 
             source_path = self.root_dir / doc_config['source']
@@ -769,7 +769,7 @@ export default config;
 
             # Check if this doc should skip generation (e.g., pre-generated translations)
             if doc_config.get('skipGeneration', False):
-                print(f"  ⏭️  Skipping generation (pre-generated files)")
+                print(f"  [skip] Skipping generation (pre-generated files)")
                 if 'preGeneratedFiles' in doc_config:
                     output_dir = self.website_dir / doc_config['outputDir']
                     enriched_files = []
@@ -783,7 +783,7 @@ export default config;
                                 enriched['url_slug'] = slug_match.group(1).strip()
                         enriched_files.append(enriched)
                     self._all_generated_files[doc_config['id']] = enriched_files
-                    print(f"  ✅ Loaded {len(enriched_files)} pre-generated files")
+                    print(f"  [ok] Loaded {len(enriched_files)} pre-generated files")
                 continue
 
             # Read source file
