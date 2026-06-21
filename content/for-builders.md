@@ -15,6 +15,7 @@ This page covers what builders need to integrate with, extend, or contribute to 
 - [Currency expansion](/for-builders/global-currency-expansion)
 - [FAQ](/for-builders/faq)
 - [SDK](/for-builders/sdk)
+- [P2PKit Integration](/for-builders/p2pkit-integration)
 
 Also see [`/whitepaper`](/whitepaper/abstract) for protocol design and [`/for-token-holders`](/for-token-holders/start-here) for token governance and economics.
 
@@ -920,5 +921,83 @@ RP hooks are whitelisted in the `ReputationManager`. Order volume updates, dispu
 ### Where does governance detail live for token holders?
 
 Token-holder governance (voting model, quorum, progressive decentralization) is documented in [`/for-token-holders`](/for-token-holders/start-here).
+
+## P2PKit Integration
+
+P2PKit enables developers to accept local payments and settle in USDC, reaching users in markets where traditional card payments don't work.
+
+### Overview
+
+P2PKit orchestrates local payments globally, enabling your application to:
+
+- **Accept local payments** - Users pay via QR codes, UPI, PIX, bank transfers, and other local methods
+- **Settle in USDC** - Receive on-chain payments in USDC on Base, not in local bank accounts
+- **Verify instantly** - On-chain payment verification without self-reporting risk
+- **Expand globally** - Reach new markets without managing local payment infrastructure
+
+### How It Works
+
+#### 1. User Initiates Payment
+Users scan a QR code or select their preferred payment method (UPI, PIX, bank transfer, etc.) in your application. No crypto knowledge or new app needed.
+
+#### 2. Local Partner Collection
+P2PKit instantly finds a verified partner in the customer's market who collects the payment locally.
+
+#### 3. Payment Verification
+Once the partner confirms receipt of funds, the transaction settles on-chain. All verification is cryptographic and verifiable.
+
+#### 4. USDC Settlement
+Your application receives USDC on Base, ready to spend, transfer, or hold—settled in a single token across all markets.
+
+### Key Features
+
+- **Zero Custody Risk** - Non-custodial smart contracts handle all settlement
+- **Instant Settlement** - USDC arrives on Base immediately after payment confirmation
+- **Multi-Currency Support** - Accept payments in 25+ fiat currencies
+- **Method Flexibility** - Support for Wise, Venmo, PIX, UPI, bank transfers, MercadoPago, and more
+- **Global Reach** - Operate in emerging markets without local banking relationships
+
+### Supported Payment Methods
+
+| Method | Currencies |
+|--------|-----------|
+| **Wise** | USD, EUR, GBP, etc. |
+| **Venmo** | USD |
+| **PIX** | BRL |
+| **UPI** | INR |
+| **Bank Transfers** | Multiple |
+| **MercadoPago** | BRL, ARS, MXN |
+| **Revolut** | USD, EUR, GBP |
+| **Zelle** | USD |
+| **Monzo** | GBP |
+
+### Integration Path
+
+To integrate P2PKit with the P2P Protocol:
+
+1. **Configure P2PKit** - Set up payment methods and settlement accounts
+2. **Create Orders** - Generate P2PKit orders from your application
+3. **Receive Settlement** - USDC arrives on Base for transaction processing
+4. **Route to P2P** - Use P2P Protocol for on/off-ramp operations if needed
+
+### API Reference
+
+For complete integration details and SDKs, visit:
+
+- **Official Documentation**: [p2pkit.com](https://p2pkit.com/)
+- **SDK Packages**: `@zkp2p/offramp-sdk` and related packages available on npm
+
+### Use Cases
+
+- **Global Remittances** - Accept local payments, settle in USDC for on-chain transfer
+- **Merchant Settlements** - Accept payments from any market, settle in a single stablecoin
+- **Cross-Border Commerce** - Simplify multi-currency transactions
+- **DeFi On-Ramps** - Connect local payment methods to on-chain liquidity
+
+### Next Steps
+
+- Review P2P Protocol integration points in [`/for-builders/sdk`](/for-builders/sdk)
+- Explore protocol parameters in [`/for-builders/protocol-parameters`](/for-builders/protocol-parameters)
+- Check contract references in [`/for-builders/contract-references`](/for-builders/contract-references)
 
 ---

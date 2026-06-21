@@ -18,6 +18,7 @@ Halaman ini mencakup apa yang dibutuhkan para builder untuk berintegrasi, memper
 - [Perluasan mata uang](/id/for-builders/global-currency-expansion)
 - [FAQ](/id/for-builders/faq)
 - [SDK](/id/for-builders/sdk)
+- [Integrasi P2PKit](/id/for-builders/p2pkit-integration)
 
 Lihat juga [`/whitepaper`](/id/whitepaper/abstract) untuk desain protokol dan [`/for-token-holders`](/id/for-token-holders/start-here) untuk tata kelola token dan ekonomi.
 

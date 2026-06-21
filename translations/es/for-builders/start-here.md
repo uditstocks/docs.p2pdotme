@@ -18,6 +18,7 @@ Esta página cubre lo que los desarrolladores necesitan para integrarse, extende
 - [Expansión de divisas](/es/for-builders/global-currency-expansion)
 - [Preguntas frecuentes](/es/for-builders/faq)
 - [SDK](/es/for-builders/sdk)
+- [Integración P2PKit](/es/for-builders/p2pkit-integration)
 
 Consulta también [`/whitepaper`](/es/whitepaper/abstract) para el diseño del protocolo y [`/for-token-holders`](/es/for-token-holders/start-here) para la gobernanza del token y la economía.
 

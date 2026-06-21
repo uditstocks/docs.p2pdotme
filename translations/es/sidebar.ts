@@ -79,8 +79,9 @@ const sidebars: SidebarsConfig = {
             "for-builders/fiat-to-fiat-remittance",
             "for-builders/global-currency-expansion",
             "for-builders/rollout-sequence",
+            "for-builders/faq",
             "for-builders/sdk",
-            "for-builders/faq"
+            "for-builders/p2pkit-integration"
         ]
     },
     {
