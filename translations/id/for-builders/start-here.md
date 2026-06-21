@@ -16,9 +16,9 @@ Halaman ini mencakup apa yang dibutuhkan para builder untuk berintegrasi, memper
 - [Referensi kontrak](/id/for-builders/contract-references)
 - [Perluasan remitansi](/id/for-builders/fiat-to-fiat-remittance)
 - [Perluasan mata uang](/id/for-builders/global-currency-expansion)
-- [FAQ](/id/for-builders/faq)
 - [SDK](/id/for-builders/sdk)
 - [Integrasi P2PKit](/id/for-builders/p2pkit-integration)
+- [FAQ](/id/for-builders/faq)
 
 Lihat juga [`/whitepaper`](/id/whitepaper/abstract) untuk desain protokol dan [`/for-token-holders`](/id/for-token-holders/start-here) untuk tata kelola token dan ekonomi.
 
