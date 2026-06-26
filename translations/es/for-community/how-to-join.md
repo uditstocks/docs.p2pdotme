@@ -5,7 +5,7 @@ title: "Cómo unirse"
 slug: how-to-join
 ---
 
-Cualquier persona puede convertirse en Candidato uniéndose a [Discord](https://discord.gg/p2pfoundation), sin ningún requisito de XP para hacerlo.
+Cualquier persona puede convertirse en Candidato uniéndose a [Discord](https://discord.gg/4Ftpq4eJuC), sin ningún requisito de XP para hacerlo.
 
 Pasar de Candidato a "Cipher" requiere los siguientes pasos.
 

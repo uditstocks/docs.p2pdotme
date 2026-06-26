@@ -5,7 +5,7 @@ title: "Como Participar"
 slug: how-to-join
 ---
 
-Qualquer pessoa pode se tornar um Candidato ingressando no [Discord](https://discord.gg/p2pfoundation), sem nenhum requisito de XP para isso.
+Qualquer pessoa pode se tornar um Candidato ingressando no [Discord](https://discord.gg/4Ftpq4eJuC), sem nenhum requisito de XP para isso.
 
 A transição de Candidato para "Cipher" requer as seguintes etapas.
 

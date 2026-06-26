@@ -107,7 +107,7 @@ The "community manager" function described in older P2P.me material maps to the 
 
 ## How to Join
 
-Anyone can become a Candidate by joining [Discord](https://discord.gg/p2pfoundation), and there is no XP requirement to do so.
+Anyone can become a Candidate by joining [Discord](https://discord.gg/4Ftpq4eJuC), and there is no XP requirement to do so.
 
 Moving from Candidate to "Cipher" requires the following steps.
 
