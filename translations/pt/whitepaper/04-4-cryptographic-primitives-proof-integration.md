@@ -17,7 +17,7 @@ O protocolo atualmente suporta verificação de identidade através de múltiplo
 
 Cada verificação bem-sucedida fortalece a reputação on-chain do usuário e expande sua capacidade de transação dentro do protocolo.
 
-## 4.2 Módulo de Evidência para Verificação de Transações Bancárias (Roadmap)
+## 4.2 Módulo de Evidência para Verificação de Transações Bancárias (Roadmap) {#42-evidence-module-for-bank-transaction-verification-roadmap}
 
 Um módulo de evidências planejado estenderá as capacidades ZK do protocolo à verificação de transações bancárias para resolução de disputas on-chain. Este módulo utilizará provas baseadas em TLS para que um usuário ou comerciante possa produzir uma testemunha criptográfica de que uma afirmação específica sobre uma transferência bancária ou comprovante de pagamento é verdadeira, sem expor credenciais ou detalhes da transação.
 

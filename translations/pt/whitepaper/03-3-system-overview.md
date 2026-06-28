@@ -15,7 +15,7 @@ O protocolo envolve vários participantes-chave trabalhando juntos para habilita
 
 **Contratos de Protocolo** são os contratos inteligentes on-chain que orquestram todo o ciclo de vida do pedido. Eles gerenciam a fila de pedidos, a correspondência baseada em pontuações de credibilidade, a verificação de estado e os resultados finais de liquidação. Estes contratos operam atualmente na Base L2 (expansão multicadeia para Solana está planejada).
 
-**Verificadores de Prova** atualmente validam provas ZK-KYC para verificação de identidade (IDs governamentais, contas sociais e passaportes via Reclaim Protocol e outros verificadores ZK). A verificação de transações bancárias está planejada (veja [Seção 4.2](/pt/whitepaper/cryptographic-primitives-proof-integration)).
+**Verificadores de Prova** atualmente validam provas ZK-KYC para verificação de identidade (IDs governamentais, contas sociais e passaportes via Reclaim Protocol e outros verificadores ZK). A verificação de transações bancárias está planejada (veja [Seção 4.2](/pt/whitepaper/cryptographic-primitives-proof-integration#42-evidence-module-for-bank-transaction-verification-roadmap)).
 
 **Governança** está dividida em duas camadas. Os parâmetros do protocolo e as atualizações na Base são governados pelos detentores de $P2P por meio de um Governor on-chain, enquanto a cunhagem de tokens, as mudanças de oferta e a alocação do tesouro são governadas na Solana por meio do mercado de decisão on-chain da MetaDAO. A implementação atual é operada por admin/multisig, com uma transição para uma governança mais ampla dos detentores de tokens em andamento conforme o protocolo amadurece.
 
@@ -147,7 +147,7 @@ flowchart LR
 - O **comerciante** desempenha a função de mediar a liquidez nas transações.
 - O **ônus de confirmar o pagamento** recai sobre o comerciante (para off-ramps) ou pode ser fornecido por qualquer uma das partes.
 - **ZK-KYC realiza verificação de identidade sem necessidade de confiança** para o usuário sem expor dados pessoais.
-- **Evidências são submetidas e revisadas** em disputas. No sistema atual, os resultados são executados por meio de liquidação de admin on-chain. Uma resolução mais ampla conduzida por verificadores e governança permanece no roadmap (veja [Seção 4.2](/pt/whitepaper/cryptographic-primitives-proof-integration)).
+- **Evidências são submetidas e revisadas** em disputas. No sistema atual, os resultados são executados por meio de liquidação de admin on-chain. Uma resolução mais ampla conduzida por verificadores e governança permanece no roadmap (veja [Seção 4.2](/pt/whitepaper/cryptographic-primitives-proof-integration#42-evidence-module-for-bank-transaction-verification-roadmap)).
 - O **Reclaim Protocol** habilita a verificação de contas sociais com preservação de privacidade via zkTLS. O Aadhaar é verificado por meio do Anon Aadhaar e passaporte ou documento de identidade nacional por meio do ZKPassport.
 
 ---

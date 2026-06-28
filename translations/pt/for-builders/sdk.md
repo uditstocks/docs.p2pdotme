@@ -5,6 +5,8 @@ title: "SDK"
 slug: sdk
 ---
 
+<a class="button button--primary" href="https://discord.com/channels/1443615331783545004/1496425860008509571" target="_blank" style={{ display: 'inline-block', marginBottom: '16px' }}>Obtenha suporte do SDK no Discord</a>
+
 A maneira mais simples de integrar o P2P Protocol ao seu aplicativo é pelo SDK TypeScript (`@p2pdotme/sdk`). Ele oferece módulos prontos para pedidos, perfis de usuário, precificacao, configuracao de moedas, ZK-KYC, deteccao de fraude e leitura de QR, alem de um provider React opcional com hooks.
 
 **Independente de framework.** O nucleo e TypeScript puro, com hooks React opcionais.

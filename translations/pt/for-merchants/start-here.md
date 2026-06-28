@@ -5,13 +5,13 @@ title: "Comece Aqui"
 slug: start-here
 ---
 
-Este guia abrange a operação de comerciantes no P2P Protocol, desde o cadastro e staking até o gerenciamento de pedidos, disputas e Circles of Trust.
+Este guia abrange a operação de comerciantes no P2P Protocol, desde o cadastro e staking até o gerenciamento de pedidos, disputas e Círculos de Confiança.
 
 - [Pré-requisitos para comerciantes](/pt/for-merchants/merchant-readiness)
 - [Fluxo de configuração](/pt/for-merchants/merchant-setup-flow)
 - [Gerenciamento de pedidos](/pt/for-merchants/handling-orders)
 - [Controles operacionais](/pt/for-merchants/operational-controls)
-- [Circles of Trust](/pt/for-merchants/circles-of-trust)
+- [Círculos de Confiança](/pt/for-merchants/circles-of-trust)
 - [Canais de pagamento e controles por país](/pt/for-merchants/payment-channels-and-country-controls)
 - [Atribuição de pedidos](/pt/for-merchants/order-assignment)
 - [Disputas](/pt/for-merchants/disputes)
