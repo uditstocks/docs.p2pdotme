@@ -325,6 +325,10 @@
               "title": "SDK"
             },
             {
+              "doc_id": "p2pkit-integration",
+              "title": "Integración P2PKit"
+            },
+            {
               "doc_id": "faq",
               "title": "Preguntas frecuentes"
             }
@@ -736,6 +740,10 @@
               "title": "SDK"
             },
             {
+              "doc_id": "p2pkit-integration",
+              "title": "Integração P2PKit"
+            },
+            {
               "doc_id": "faq",
               "title": "FAQ"
             }
@@ -1145,6 +1153,10 @@
             {
               "doc_id": "sdk",
               "title": "SDK"
+            },
+            {
+              "doc_id": "p2pkit-integration",
+              "title": "Integrasi P2PKit"
             },
             {
               "doc_id": "faq",

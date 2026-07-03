@@ -80,6 +80,7 @@ const sidebars: SidebarsConfig = {
             "for-builders/global-currency-expansion",
             "for-builders/rollout-sequence",
             "for-builders/sdk",
+            "for-builders/p2pkit-integration",
             "for-builders/faq"
         ]
     },
