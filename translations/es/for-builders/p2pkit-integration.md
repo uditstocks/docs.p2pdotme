@@ -29,7 +29,7 @@ P2PKit encuentra instantáneamente un socio verificado en el mercado del cliente
 Una vez que el socio confirma la recepción de fondos, la transacción liquida en cadena. Toda verificación es criptográfica y verificable.
 
 ### 4. Liquidación en USDC
-Su aplicación recibe USDC en Base, listo para gastar, transferir o mantener—liquidado en un único token en todos los mercados.
+Su aplicación recibe USDC en Base, listo para gastar, transferir o mantener. Liquidado en un único token en todos los mercados.
 
 ## Características Clave
 
@@ -67,7 +67,6 @@ Para integrar P2PKit con el Protocolo P2P:
 Para detalles completos de integración y SDK, visite:
 
 - **Documentación Oficial**: [p2pkit.com](https://p2pkit.com/)
-- **Paquetes SDK**: `@zkp2p/offramp-sdk` y paquetes relacionados disponibles en npm
 
 ## Casos de Uso
 

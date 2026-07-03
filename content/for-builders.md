@@ -954,7 +954,6 @@ To integrate P2PKit with the P2P Protocol:
 For complete integration details and SDKs, visit:
 
 - **Official Documentation**: [p2pkit.com](https://p2pkit.com/)
-- **SDK Packages**: `@zkp2p/offramp-sdk` and related packages available on npm
 
 ### Use Cases
 

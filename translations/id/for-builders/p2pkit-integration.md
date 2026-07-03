@@ -29,7 +29,7 @@ P2PKit secara instan menemukan mitra terverifikasi di pasar pelanggan yang mengu
 Setelah mitra mengonfirmasi penerimaan dana, transaksi diselesaikan on-chain. Semua verifikasi bersifat kriptografis dan dapat diverifikasi.
 
 ### 4. Penyelesaian USDC
-Aplikasi Anda menerima USDC di Base, siap dibelanjakan, ditransfer, atau disimpan—diselesaikan dalam satu token di semua pasar.
+Aplikasi Anda menerima USDC di Base, siap dibelanjakan, ditransfer, atau disimpan. Diselesaikan dalam satu token di semua pasar.
 
 ## Fitur Utama
 
@@ -67,7 +67,6 @@ Untuk mengintegrasikan P2PKit dengan Protokol P2P:
 Untuk detail integrasi lengkap dan SDK, kunjungi:
 
 - **Dokumentasi Resmi**: [p2pkit.com](https://p2pkit.com/)
-- **Paket SDK**: `@zkp2p/offramp-sdk` dan paket terkait tersedia di npm
 
 ## Kasus Penggunaan
 
