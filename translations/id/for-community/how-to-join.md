@@ -5,7 +5,7 @@ title: "Cara Bergabung"
 slug: how-to-join
 ---
 
-Siapa pun dapat menjadi Kandidat dengan bergabung di [Discord](https://discord.gg/p2pfoundation), dan tidak ada persyaratan XP untuk melakukannya.
+Siapa pun dapat menjadi Kandidat dengan bergabung di [Discord](https://discord.gg/4Ftpq4eJuC), dan tidak ada persyaratan XP untuk melakukannya.
 
 Untuk berpindah dari Kandidat menjadi "Cipher", diperlukan langkah-langkah berikut.
 
