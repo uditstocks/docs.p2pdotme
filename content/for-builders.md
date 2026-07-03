@@ -208,9 +208,9 @@ You need three addresses for your network:
 #### Base Sepolia (Testnet)
 
 ```env
-REACT_APP_DIAMOND_ADDRESS=0xce868398FDaDcA368EAc203222874D6888532aE2
-REACT_APP_USDC_ADDRESS=0xDABa329Ed949f28F64019f22c33c3B253B2Ded60
-REACT_APP_SUBGRAPH_URL=https://api.studio.thegraph.com/query/110312/indexer-one/version/latest
+REACT_APP_DIAMOND_ADDRESS=0xeb0BB8E3c014D915D9B2df03aBB130a1Fb44beb9
+REACT_APP_USDC_ADDRESS=0x4095fE4f1E636f11A95820BA2bB87F335Bd1040d
+REACT_APP_SUBGRAPH_URL=https://api.studio.thegraph.com/query/1745491/event-indexer/v0.0.6
 ```
 
 #### Base Mainnet (Production)
@@ -252,9 +252,9 @@ REACT_APP_RPC_URL=https://sepolia.base.org
 REACT_APP_CHAIN_ID=84532
 
 # Contract Addresses
-REACT_APP_DIAMOND_ADDRESS=0xce868398FDaDcA368EAc203222874D6888532aE2
-REACT_APP_USDC_ADDRESS=0xDABa329Ed949f28F64019f22c33c3B253B2Ded60
-REACT_APP_SUBGRAPH_URL=https://api.studio.thegraph.com/query/110312/indexer-one/version/latest
+REACT_APP_DIAMOND_ADDRESS=0xeb0BB8E3c014D915D9B2df03aBB130a1Fb44beb9
+REACT_APP_USDC_ADDRESS=0x4095fE4f1E636f11A95820BA2bB87F335Bd1040d
+REACT_APP_SUBGRAPH_URL=https://api.studio.thegraph.com/query/1745491/event-indexer/v0.0.6
 
 # Your Account (for testing; development only!)
 REACT_APP_PRIVATE_KEY=<your-private-key-here>
@@ -773,15 +773,15 @@ const publicClient = createPublicClient({
 
 const orders = createOrders({
   publicClient,
-  diamondAddress: "0xce868398FDaDcA368EAc203222874D6888532aE2",
-  usdcAddress: "0xDABa329Ed949f28F64019f22c33c3B253B2Ded60",
-  subgraphUrl: "https://api.studio.thegraph.com/query/110312/indexer-one/version/latest",
+  diamondAddress: "0xeb0BB8E3c014D915D9B2df03aBB130a1Fb44beb9",
+  usdcAddress: "0x4095fE4f1E636f11A95820BA2bB87F335Bd1040d",
+  subgraphUrl: "https://api.studio.thegraph.com/query/1745491/event-indexer/v0.0.6",
 });
 
 const profile = createProfile({
   publicClient,
-  diamondAddress: "0xce868398FDaDcA368EAc203222874D6888532aE2",
-  usdcAddress: "0xDABa329Ed949f28F64019f22c33c3B253B2Ded60",
+  diamondAddress: "0xeb0BB8E3c014D915D9B2df03aBB130a1Fb44beb9",
+  usdcAddress: "0x4095fE4f1E636f11A95820BA2bB87F335Bd1040d",
 });
 
 // Use them
