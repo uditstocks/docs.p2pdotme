@@ -1,7 +1,7 @@
 ---
 id: circles-of-trust
 sidebar_position: 5
-title: "Circles of Trust"
+title: "Círculos de Confiança"
 slug: circles-of-trust
 ---
 
@@ -26,7 +26,7 @@ flowchart TD
     assignment --> settlement
 ```
 
-O registro de merchants é o núcleo operacional que os Circles of Trust envolvem. Todas as operações de merchants são on-chain e controladas por funções de acesso.
+O registro de merchants é o núcleo operacional que os Círculos de Confiança envolvem. Todas as operações de merchants são on-chain e controladas por funções de acesso.
 
 *Entidades de Círculo de primeira classe com ciclo de vida dedicado, funções de Administrador de Círculo com requisitos explícitos de stake e agrupamento de merchants com escopo de Círculo estão planejados para uma versão futura.*
 

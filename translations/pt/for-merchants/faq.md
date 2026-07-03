@@ -21,9 +21,9 @@ Envie as evidências prontamente. A contestação é resolvida on-chain com base
 
 Sim. Alterne o status online/offline ou desative canais quando não puder atender pedidos.
 
-## O que é um Circles of Trust e como ele me afeta?
+## O que é um Círculo de Confiança e como ele me afeta?
 
-Um Circle é um grupo de comerciantes com respaldo comunitário. Os Circle Admins supervisionam as operações, e membros da comunidade podem delegar USDC ao pool do seu Circle para receber uma parcela das recompensas dos comerciantes. Como comerciante, sua principal interação ocorre por meio do registro de comerciantes e dos canais de pagamento que os Circles englobam.
+Um Círculo é um grupo de comerciantes com respaldo comunitário. Os Administradores de Círculo supervisionam as operações, e membros da comunidade podem delegar USDC ao pool do seu Círculo para receber uma parcela das recompensas dos comerciantes. Como comerciante, sua principal interação ocorre por meio do registro de comerciantes e dos canais de pagamento que os Círculos englobam.
 
 ## Como obtenho receita?
 

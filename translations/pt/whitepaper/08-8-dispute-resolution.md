@@ -5,7 +5,7 @@ title: "8. Resolução de Disputas"
 slug: dispute-resolution
 ---
 
-O Protocolo é projetado para minimizar a divulgação desnecessária de dados durante disputas. Se um usuário registrar uma disputa, a contraparte pode enviar evidências da transação sem expor dados pessoais adicionais. Na implementação atual do contrato, as disputas são resolvidas on-chain por administradores autorizados com base nas evidências apresentadas e nas regras de responsabilidade do Protocolo. A verificação de transações bancárias com preservação de privacidade e um processo de liquidação automatizada mais avançado fazem parte do roadmap (veja [Seção 4.2](/pt/whitepaper/cryptographic-primitives-proof-integration)).
+O Protocolo é projetado para minimizar a divulgação desnecessária de dados durante disputas. Se um usuário registrar uma disputa, a contraparte pode enviar evidências da transação sem expor dados pessoais adicionais. Na implementação atual do contrato, as disputas são resolvidas on-chain por administradores autorizados com base nas evidências apresentadas e nas regras de responsabilidade do Protocolo. A verificação de transações bancárias com preservação de privacidade e um processo de liquidação automatizada mais avançado fazem parte do roadmap (veja [Seção 4.2](/pt/whitepaper/cryptographic-primitives-proof-integration#42-evidence-module-for-bank-transaction-verification-roadmap)).
 
 ## 8.1 Prazos e Ônus da Prova
 
