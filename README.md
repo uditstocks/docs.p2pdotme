@@ -1,204 +1,105 @@
 # P2P Foundation Documentation
 
-Automated documentation pipeline for P2P Foundation using Docusaurus.
+Source repository for [docs.p2p.foundation](https://docs.p2p.foundation), the official documentation of the P2P Foundation.
+
+Documentation is authored as one markdown file per audience in `content/` and compiled into a multi-section [Docusaurus](https://docusaurus.io/) site by `build_docs.py`, driven by `docs.config.json`. The site covers the protocol whitepaper and dedicated guides for token holders, builders, merchants, users, and the community, published in English, Spanish, Portuguese, and Indonesian. Offline search, Mermaid diagrams, and an embedded AI assistant are configured through the same pipeline.
+
+## Requirements
+
+- Node.js 20 or later
+- Python 3 (3.11 in CI, standard library only)
 
 ## Quick Start
 
 ```bash
-# Install dependencies
 npm install
-
-# Build documentation from sources
-python3 build_docs.py
-
-# Start dev server
-npm run start
+python3 build_docs.py   # use `python` on Windows
+npm start
 ```
+
+The site is served at `http://localhost:3000`.
 
 ## Project Structure
 
 ```
-Documentation/                 # Git repository root
-├── content/                   # 📁 SOURCE OF TRUTH - authored MD files (renamed from sources/)
-│   ├── whitepaper.md         # Whitepaper documentation
-│   └── for-builders.md       # Builders documentation (incl. SDK)
-│
-├── docs.config.json          # ⚙️ Configuration for all documentation
-├── build_docs.py             # 🔧 Build script
-│
-├── generated/                # Generated split pages served by Docusaurus (auto-generated, gitignored)
-├── sidebars/                 # Generated sidebars (auto-generated)
-├── docusaurus.config.ts      # Generated config (auto-generated)
-│
-├── src/                      # React components & styling
-├── static/                   # Static assets (images, etc.)
-├── package.json              # Node.js dependencies
-│
-└── .github/
-    └── workflows/
-        └── deploy.yml        # CI/CD pipeline
+content/                  Source of truth: one markdown file per doc section
+docs.config.json          Pipeline configuration: docs, navbar, footer, integrations
+build_docs.py             Compiles content/ into pages, sidebars, and site config
+translations/             Hand-maintained Spanish, Portuguese, and Indonesian pages
+scripts/lint_content.py   Content style linter, enforced in CI
+src/                      React components, theme customizations, custom pages
+static/                   Static assets (brand, images)
+netlify.toml              Production build and deploy configuration
+.github/workflows/        Pull request build validation
 ```
 
-## Adding New Documentation
+`generated/`, `sidebars/`, and `docusaurus.config.ts` are build outputs and are gitignored. Do not edit `docusaurus.config.ts` by hand. It is regenerated from `docs.config.json` on every build.
 
-### Step 1: Create your markdown file
+## Adding or Editing Documentation
 
-Add a new `.md` file to the `content/` folder:
+1. Edit or create a markdown file in `content/`. Use a single H1 (`#`) for the document title, H2 (`##`) for chapters, and H3 (`###`) for subsections. Each H2 becomes its own page (`splitByHeading: 2`). List the H1 title in `skipSections` so it does not become a page.
+2. For a new document, register it in the `docs` array of `docs.config.json`:
 
-```markdown
-# **My Documentation Title**
+   ```json
+   {
+     "id": "my-doc",
+     "source": "content/my-doc.md",
+     "outputDir": "my-doc",
+     "routeBasePath": "my-doc",
+     "navbarLabel": "My Doc",
+     "navbarPosition": "left",
+     "sidebarId": "myDocSidebar",
+     "extractImages": false,
+     "splitByHeading": 2,
+     "numberSections": false,
+     "generateTocLinks": false,
+     "sidebarStyle": "flat",
+     "skipSections": ["My Doc"]
+   }
+   ```
 
-Introduction text here.
+3. Build and preview with `python3 build_docs.py && npm start`.
 
-# **1. First Chapter**
+### Content Style
 
-## **1.1 Subsection**
+CI rejects content that violates the house style, enforced by `scripts/lint_content.py`:
 
-Content here...
+- No emoji or decorative glyphs
+- No em or en dashes, and no semicolons in prose
+- Write "token holders", never "investors", and link to `/for-token-holders/`
+- FAQ must be the final section of every "For ..." guide (the whitepaper is exempt)
 
-# **2. Second Chapter**
-
-More content...
-```
-
-**Important:** Use `#` (H1) for main chapters and `##` (H2) for subsections.
-
-### Step 2: Add to configuration
-
-Edit `docs.config.json` and add your doc to the `docs` array:
-
-```json
-{
-  "docs": [
-    {
-      "id": "mydoc",
-      "source": "content/mydoc.md",
-      "outputDir": "mydoc",
-      "routeBasePath": "mydoc",
-      "navbarLabel": "My Doc",
-      "navbarPosition": "left",
-      "sidebarId": "mydocSidebar",
-      "extractImages": true,
-      "splitByHeading": 1,
-      "numberSections": true,
-      "generateTocLinks": true,
-      "skipSections": ["My Documentation Title"]
-    }
-  ]
-}
-```
-
-### Step 3: Build
+Run it locally before pushing:
 
 ```bash
-python3 build_docs.py
+python3 scripts/lint_content.py
 ```
 
-That's it! Your documentation will be available at `/mydoc` with a navbar link.
+## Translations
 
-## Configuration Options
+Translated pages live in `translations/{es,pt,id}` as final Docusaurus markdown and are tracked in git.
 
-| Option | Type | Description |
-|--------|------|-------------|
-| `id` | string | Unique identifier for the doc |
-| `source` | string | Path to source markdown file |
-| `outputDir` | string | Where to generate the doc files |
-| `routeBasePath` | string | URL path (e.g., `/sdk`) |
-| `navbarLabel` | string | Label shown in navbar |
-| `navbarPosition` | string | `left` or `right` |
-| `sidebarId` | string | Sidebar identifier |
-| `extractImages` | boolean | Extract base64 images to files |
-| `splitByHeading` | number | Split on heading level (1 = H1) |
-| `numberSections` | boolean | Add number prefixes to files |
-| `generateTocLinks` | boolean | Generate TOC links in sidebar |
-| `skipSections` | array | Section titles to exclude |
+- To update a page, edit its file directly (for example `translations/es/whitepaper/00-abstract.md`).
+- To add a page, also register it in the matching `preGeneratedFiles` list in `docs.config.json` and in `translations/<lang>/sidebar.ts`.
 
 ## Commands
 
-```bash
-# Build all documentation
-python3 build_docs.py
+| Command | Purpose |
+| --- | --- |
+| `python3 build_docs.py` | Compile content into the site |
+| `python3 build_docs.py --clean` | Delete generated output and rebuild |
+| `python3 build_docs.py --validate-only` | Validate markdown structure without building |
+| `python3 scripts/lint_content.py` | Check content style rules |
+| `npm start` | Local development server |
+| `npm run build` | Production build into `build/` |
+| `npm run serve` | Preview the production build |
+| `npm run typecheck` | TypeScript checks |
 
-# Clean and rebuild
-python3 build_docs.py --clean
+## CI and Deployment
 
-# Start development server
-npm run start
-
-# Build for production
-npm run build
-```
-
-## CI/CD Pipeline
-
-The repository includes a GitHub Actions workflow (`.github/workflows/deploy.yml`) that:
-
-1. **On every push to `main`:**
-   - Builds documentation from sources
-   - Builds the Docusaurus site
-   - Deploys to GitHub Pages
-
-2. **On pull requests:**
-   - Builds and validates (no deployment)
-
-### Setup GitHub Pages
-
-1. Go to your repo Settings → Pages
-2. Set Source to "GitHub Actions"
-3. Push to `main` branch to trigger deployment
-
-## Markdown Format Guidelines
-
-### Chapter Structure
-
-Use H1 (`#`) for main chapters:
-```markdown
-# **0. Vision**
-# **1. Getting Started**
-# **2. API Reference**
-```
-
-Use H2 (`##`) for subsections:
-```markdown
-## **1.1 Installation**
-## **1.2 Configuration**
-```
-
-### Images
-
-You can embed base64 images and they'll be automatically extracted:
-```markdown
-![Description][image1]
-
-[image1]: data:image/png;base64,iVBORw0KGgo...
-```
-
-### Code Blocks
-
-Standard markdown code blocks are supported:
-````markdown
-```typescript
-const client = new P2PClient({ apiKey: 'xxx' });
-```
-````
-
-## Deployment Options
-
-### GitHub Pages (included)
-Push to `main` branch - automatic deployment via GitHub Actions.
-
-### Vercel
-```bash
-npm run build
-# Deploy the `build/` folder
-```
-
-### Netlify
-Connect your GitHub repo, set build command to:
-```
-python3 build_docs.py && npm run build
-```
+- **Pull requests:** GitHub Actions runs the Build Validation workflow: content lint, markdown validation, and a full site build.
+- **Production:** Netlify builds and deploys `main` using the command in `netlify.toml` and publishes `build/`.
 
 ## License
 
-© P2P Foundation
+© P2P Foundation. All rights reserved.
