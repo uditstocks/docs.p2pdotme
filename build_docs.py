@@ -40,6 +40,10 @@ class DocBuilder:
         slug = re.sub(r'[^\w\s-]', '', text.lower())
         slug = re.sub(r'[-\s]+', '-', slug).strip('-')
         return slug
+
+    def _escape_ts(self, text: str) -> str:
+        """Escape a value for embedding in a single-quoted TypeScript string."""
+        return str(text).replace('\\', '\\\\').replace("'", "\\'")
     
     def _extract_images(self, content: str, doc_id: str) -> Tuple[str, int]:
         """Extract base64 images from markdown and save them as files.
@@ -212,11 +216,12 @@ class DocBuilder:
         output_dir.mkdir(parents=True, exist_ok=True)
         
         generated_files = []
-        
+        seen_filenames = {}  # filename -> section title, to catch silent overwrites
+
         for i, section in enumerate(sections):
             # Create filename with number prefix for ordering
             chapter_num = section.get('chapter_num')
-            
+
             if doc_config.get('numberSections', True):
                 if chapter_num is not None:
                     # Use chapter number from the document itself
@@ -226,7 +231,15 @@ class DocBuilder:
                     filename = f"{i:02d}-{section['slug']}.md"
             else:
                 filename = f"{section['slug']}.md"
-            
+
+            if filename in seen_filenames:
+                raise SystemExit(
+                    f"ERROR: Duplicate section filename '{filename}' in doc '{doc_config['id']}': "
+                    f"sections '{seen_filenames[filename]}' and '{section['title']}' resolve to the "
+                    f"same file. Rename one of the headings so they produce unique slugs."
+                )
+            seen_filenames[filename] = section['title']
+
             filepath = output_dir / filename
             
             # Document ID is filename without .md extension
@@ -236,10 +249,11 @@ class DocBuilder:
             url_slug = re.sub(r'^\d+-', '', section['slug'])
             
             # Add frontmatter with explicit id to match sidebar references
+            # json.dumps escapes quotes/backslashes so titles can't break the YAML
             frontmatter = f"""---
 id: {doc_id}
 sidebar_position: {i}
-title: "{section['title']}"
+title: {json.dumps(section['title'])}
 slug: {url_slug}
 ---
 
@@ -344,6 +358,15 @@ export default sidebars;
         footer_config = self.config.get('footer', {})
         social_links = footer_config.get('socialLinks', {})
         site_url = os.environ.get('DOCS_SITE_URL') or self.config.get('url', 'https://docs.p2p.foundation')
+        # Escape user-provided strings so quotes can't break the generated TS file
+        site_title = self._escape_ts(self.config.get("siteTitle", "P2P Foundation Docs"))
+        site_tagline = self._escape_ts(self.config.get("siteTagline", "Documentation"))
+        site_description = self._escape_ts(self.config.get(
+            "siteTagline",
+            "Documentation for P2P Foundation - Building the future of peer-to-peer finance"))
+        logo_alt = self._escape_ts(navbar_config.get("logo", {}).get("alt", "P2P Foundation"))
+        logo_src = self._escape_ts(navbar_config.get("logo", {}).get("src", "img/p2p-foundation-main.svg"))
+        logo_src_dark = self._escape_ts(navbar_config.get("logo", {}).get("srcDark", "img/p2p-foundation-2.svg"))
         # Build plugins array: Biel.ai + pre-generated docs plugins
         plugins = []
 
@@ -406,8 +429,8 @@ import type {{Config}} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {{
-  title: '{self.config.get("siteTitle", "P2P Foundation Docs")}',
-  tagline: '{self.config.get("siteTagline", "Documentation")}',
+  title: '{site_title}',
+  tagline: '{site_tagline}',
   favicon: 'img/favicon.svg',
 
   markdown: {{
@@ -453,14 +476,14 @@ const config: Config = {{
       tagName: 'meta',
       attributes: {{
         property: 'og:title',
-        content: '{self.config.get("siteTitle", "P2P Foundation Docs")}',
+        content: '{site_title}',
       }},
     }},
     {{
       tagName: 'meta',
       attributes: {{
         property: 'og:description',
-        content: '{self.config.get("siteTagline", "Documentation for P2P Foundation - Building the future of peer-to-peer finance")}',
+        content: '{site_description}',
       }},
     }},
     {{
@@ -495,14 +518,14 @@ const config: Config = {{
       tagName: 'meta',
       attributes: {{
         name: 'twitter:title',
-        content: '{self.config.get("siteTitle", "P2P Foundation Docs")}',
+        content: '{site_title}',
       }},
     }},
     {{
       tagName: 'meta',
       attributes: {{
         name: 'twitter:description',
-        content: '{self.config.get("siteTagline", "Documentation for P2P Foundation - Building the future of peer-to-peer finance")}',
+        content: '{site_description}',
       }},
     }},
     {{
@@ -516,7 +539,7 @@ const config: Config = {{
       tagName: 'meta',
       attributes: {{
         name: 'description',
-        content: '{self.config.get("siteTagline", "Documentation for P2P Foundation - Building the future of peer-to-peer finance")}',
+        content: '{site_description}',
       }},
     }},
   ],
@@ -580,9 +603,9 @@ const config: Config = {{
     navbar: {{
       title: '',
       logo: {{
-        alt: '{navbar_config.get("logo", {}).get("alt", "P2P Foundation")}',
-        src: '{navbar_config.get("logo", {}).get("src", "img/p2p-foundation-main.svg")}',
-        srcDark: '{navbar_config.get("logo", {}).get("srcDark", "img/p2p-foundation-2.svg")}',
+        alt: '{logo_alt}',
+        src: '{logo_src}',
+        srcDark: '{logo_src_dark}',
       }},
       items: [
         {{
